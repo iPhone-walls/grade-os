@@ -92,6 +92,7 @@ button{cursor:pointer;-webkit-tap-highlight-color:transparent}
 .syncline span[data-sync-text]{flex:1;min-width:0}
 .syncline button{border:0;background:rgba(255,255,255,.12);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;color:var(--fg)}
 .syncline[data-state="local"] button{display:none}
+.syncline[data-state="view"] .sdot,.syncline[data-state="needkey"] .sdot{background:var(--accent);box-shadow:0 0 8px var(--accent)}
 .connect{display:flex;flex-direction:column;gap:12px;margin-top:4px}
 .swrow button{border:0;background:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--dim);font-size:10.5px;font-weight:700;line-height:1.15;text-align:center}
 .swrow button i{display:block;width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,.3);box-shadow:inset 0 1px 2px rgba(255,255,255,.6),0 6px 14px -6px rgba(0,0,0,.5)}
@@ -255,10 +256,11 @@ window.GHStore=(()=>{
   const OWNER='iPhone-walls', REPO='grade-os', BRANCH='data', PATH='data.json';
   const GH='https://api.github.com/repos/'+OWNER+'/'+REPO;
   const API=GH+'/contents/'+PATH;
+  const RAW='https://raw.githubusercontent.com/'+OWNER+'/'+REPO+'/'+BRANCH+'/'+PATH;
   const ls={get(k){try{return localStorage.getItem(k)}catch(e){return null}},
             set(k,v){try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}}};
   const EMPTY=()=>({tasks:{},exams:{},state:{}});
-  let token=ls.get('gos-token'), local=ls.get('gos-mode')==='local';
+  let token=ls.get('gos-token'), local=false; ls.set('gos-mode',null);
   let data=EMPTY(), sha=null, pending=[], saving=false, timer=null, poller=null, status='idle';
   const listeners=new Set();
   try{const c=JSON.parse(ls.get('gos-cache')||'null'); if(c&&c.data){data={...EMPTY(),...c.data}; sha=c.sha||null}}catch(e){}
@@ -274,9 +276,21 @@ window.GHStore=(()=>{
   function setStatus(s){
     status=s;
     const el=document.getElementById('syncLine'); if(!el) return;
-    const txt={ok:'Synced with GitHub',offline:'Offline. Changes will sync when you’re back online.',saving:'Saving…',local:'Saved on this device only',idle:'Connecting…'}[s]||'';
+    const txt={view:'Showing your list. Add your sync key to save changes.',needkey:'Not saved yet. Add your sync key.',ok:'Synced with GitHub',offline:'Offline. Changes will sync when you’re back online.',saving:'Saving…',local:'Saved on this device only',idle:'Connecting…'}[s]||'';
     el.querySelector('[data-sync-text]').textContent=txt;
     el.dataset.state=s;
+    const kb=el.querySelector('[data-act]'); if(kb){const nk=(s==='view'||s==='needkey');kb.dataset.act=nk?'addkey':'disconnect';kb.textContent=nk?'Add key':'Remove key'}
+  }
+  async function fetchPublic(){
+    let r;
+    try{r=await fetch(RAW+'?t='+Date.now(),{cache:'no-store'})}catch(e){throw err('net')}
+    if(!r.ok) throw err('net');
+    const d=await r.json(); return {...EMPTY(),...d};
+  }
+  async function pullPublic(){
+    if(token||local||pending.length) return;
+    try{const d=await fetchPublic(); if(JSON.stringify(d)!==JSON.stringify(data)){data=d;emit()} setStatus('view')}
+    catch(e){setStatus('offline')}
   }
   async function fetchRemote(){
     let r;
@@ -289,7 +303,8 @@ window.GHStore=(()=>{
     return {data:d,sha:j.sha};
   }
   function authFail(){
-    token=null; ls.set('gos-token',null); clearInterval(poller);
+    token=null; ls.set('gos-token',null);
+    setStatus(pending.length?'needkey':'view');
     window.dispatchEvent(new CustomEvent('gos-auth'));
   }
   async function pull(){
@@ -299,7 +314,8 @@ window.GHStore=(()=>{
   }
   function mutate(fn){
     fn(data); emit();
-    if(local||!token) return Promise.resolve();
+    if(local) return Promise.resolve();
+    if(!token){pending.push(fn);setStatus('needkey');window.dispatchEvent(new CustomEvent('gos-needkey'));return Promise.resolve()}
     pending.push(fn); setStatus('saving');
     clearTimeout(timer); timer=setTimeout(flush,500);
     return Promise.resolve();
@@ -354,7 +370,7 @@ window.GHStore=(()=>{
       }}
   };
   return {
-    mode:()=>token?'gh':local?'local':null,
+    mode:()=>token?'gh':local?'local':'view',
     async connect(tok){
       tok=String(tok||'').trim();
       if(!tok) throw err('input','Paste your sync key first.');
@@ -366,24 +382,25 @@ window.GHStore=(()=>{
       const prev=token; token=tok;
       let f; try{f=await fetchRemote()}catch(e){token=prev;throw e}
       ls.set('gos-token',tok); local=false; ls.set('gos-mode',null);
-      const hadLocal=Object.keys(data.tasks||{}).length>0;
-      if(f.sha||!hadLocal){data=f.data;sha=f.sha;persist()}
-      else{sha=null;pending.push(()=>{});setTimeout(flush,100)}
+      data=f.data; sha=f.sha;
+      pending.forEach(fn=>fn(data)); emit();
+      if(pending.length){setStatus('saving');setTimeout(flush,100)} else setStatus('ok');
     },
     useLocal(){local=true;ls.set('gos-mode','local')},
-    disconnect(){token=null;local=false;ls.set('gos-token',null);ls.set('gos-mode',null);clearInterval(poller)},
+    disconnect(){token=null;local=false;ls.set('gos-token',null);ls.set('gos-mode',null);setStatus('view');pullPublic()},
     open(){
-      setStatus(local?'local':'idle');
+      setStatus(local?'local':token?'idle':'view');
       if(!local){
-        pull();
+        const tickPull=()=>token?pull():pullPublic();
+        tickPull();
         clearInterval(poller);
-        poller=setInterval(()=>{if(!document.hidden)pull()},45000);
-        document.addEventListener('visibilitychange',()=>{if(!document.hidden)pull()});
-        window.addEventListener('online',()=>{pending.length?flush():pull()});
+        poller=setInterval(()=>{if(!document.hidden)tickPull()},45000);
+        document.addEventListener('visibilitychange',()=>{if(!document.hidden)tickPull()});
+        window.addEventListener('online',()=>{token&&pending.length?flush():tickPull()});
       }
       return api;
     },
-    refreshStatus(){setStatus(local?'local':status)}
+    refreshStatus(){setStatus(local?'local':(!token&&!pending.length)?'view':status)}
   };
 })();
 </script>
@@ -738,38 +755,37 @@ function attach(store){
   db.doc('state/me').onSnapshot(s=>{if(s.exists) st={xp:0,streak:0,lastDay:'',snoozed:{},...s.data()};render()},fail);
 }
 function showConnect(msg){
-  db=null;
-  $('#view').innerHTML=`<section class="glass rest">
-    <div class="eyebrow"><span class="dot"></span>One-time setup</div>
-    <h1>Connect your sync</h1>
-    <p>Paste your GRADE OS sync key once on this device. After that your tasks, XP and tests stay the same on your phone, iPad and laptop.</p>
-    <form id="connectForm" class="connect" novalidate>
-      <div class="field"><label for="c-token">Sync key</label>
-      <input id="c-token" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_..."></div>
-      <p class="err" id="c-err" ${msg?'':'hidden'}>${esc(msg||'')}</p>
-      <div class="actions"><button class="btn primary" type="submit" id="c-go">Connect</button>
-      <button type="button" class="btn ghost small" data-act="localonly" style="grid-column:1/-1">Use on this device only</button></div>
-    </form>
-    <p class="note">The key lives only on this device. It can only read and write your grade-os repo.</p>
-  </section>`;
+  $('#layer').innerHTML=`<div class="scrim" data-act="close"><form class="glass sheet" id="connectForm" novalidate>
+    <h2>Add your sync key</h2>
+    <p class="muted" style="margin:0">Your list is already here. The key just lets this device save changes (ticking things off, XP, new tasks). Paste it once per device.</p>
+    <div class="field"><label for="c-token">Sync key</label>
+    <input id="c-token" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_..."></div>
+    <p class="err" id="c-err" ${msg?'':'hidden'}>${esc(msg||'')}</p>
+    <div class="actions"><button class="btn primary" type="submit" id="c-go">Save key</button>
+    <button type="button" class="btn ghost small" data-act="close" style="grid-column:1/-1">Not now</button></div>
+  </form></div>`;
+  setTimeout(()=>{const i=$('#c-token');i&&i.focus()},50);
 }
+let keyAsked=false;
+window.addEventListener('gos-needkey',()=>{if(!keyAsked){keyAsked=true;showConnect()}else toast('Not saved yet. Tap the theme button → Add key.')});
 document.addEventListener('submit',async ev=>{
   if(ev.target.id!=='connectForm') return; ev.preventDefault();
   const btn=$('#c-go'), e=$('#c-err'); btn.disabled=true; btn.textContent='Connecting…'; e.hidden=true;
-  try{await window.GHStore.connect($('#c-token').value); attach(window.GHStore.open()); toast('Connected. You’re synced.')}
+  try{await window.GHStore.connect($('#c-token').value); $('#layer').innerHTML=''; toast('Key saved. Everything syncs now.')}
   catch(x){e.textContent=x.message||'Could not connect.'; e.hidden=false; btn.disabled=false; btn.textContent='Connect'}
 });
 document.addEventListener('click',ev=>{
-  const b=ev.target.closest('[data-act="localonly"],[data-act="disconnect"]'); if(!b) return;
-  if(b.dataset.act==='localonly'){window.GHStore.useLocal();attach(window.GHStore.open());toast('Saving on this device only.')}
-  else{window.GHStore.disconnect();showConnect();toast('Sync key removed from this device.')}
+  const b=ev.target.closest('[data-act="addkey"],[data-act="disconnect"]'); if(!b) return;
+  ev.stopPropagation();
+  if(b.dataset.act==='addkey'){showConnect()}
+  else{window.GHStore.disconnect();toast('Sync key removed from this device.')}
 });
 window.addEventListener('gos-auth',()=>{showConnect('Your sync key stopped working (it may have expired). Make a new one on GitHub and paste it here.')});
 (async()=>{
   render();
   if(window.claude&&window.claude.use){db=await window.claude.use('db'); if(db) return attach(db)}
   const G=window.GHStore;
-  if(G){ if(G.mode()) attach(G.open()); else showConnect(); return }
+  if(G){ attach(G.open()); return }
   $('#view').innerHTML=`<section class="glass rest"><div class="eyebrow"><span class="dot" style="background:var(--warn)"></span>Offline</div><h1>Can’t reach your list.</h1><p>Reload the page to try again.</p></section>`;
 })();
 })();
