@@ -92,7 +92,7 @@ button{cursor:pointer;-webkit-tap-highlight-color:transparent}
 .syncline span[data-sync-text]{flex:1;min-width:0}
 .syncline button{border:0;background:rgba(255,255,255,.12);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;color:var(--fg)}
 .syncline[data-state="local"] button{display:none}
-.syncline[data-state="view"] .sdot,.syncline[data-state="needkey"] .sdot{background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.syncline[data-state="device"] .sdot{background:var(--accent);box-shadow:0 0 8px var(--accent)}
 .connect{display:flex;flex-direction:column;gap:12px;margin-top:4px}
 .swrow button{border:0;background:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--dim);font-size:10.5px;font-weight:700;line-height:1.15;text-align:center}
 .swrow button i{display:block;width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,.3);box-shadow:inset 0 1px 2px rgba(255,255,255,.6),0 6px 14px -6px rgba(0,0,0,.5)}
@@ -110,7 +110,7 @@ h1.task{font-family:var(--display);font-weight:800;font-size:clamp(27px,7vw,36px
 .meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .meta div{padding:11px 13px;display:flex;flex-direction:column;gap:2px;min-width:0}
 .meta small{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);font-weight:700}
-.meta strong{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;line-height:1.2}
+.meta strong{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;overflow-wrap:break-word;line-height:1.2}
 
 .timer{display:flex;flex-direction:column;align-items:center;gap:12px;padding:4px 0 2px}
 .clock{font-family:var(--display);font-weight:700;font-size:clamp(68px,22vw,104px);letter-spacing:-.04em;font-variant-numeric:tabular-nums;line-height:.95;text-shadow:0 4px 30px rgba(0,0,40,.3)}
@@ -212,47 +212,35 @@ h1.task{font-family:var(--display);font-weight:800;font-size:clamp(27px,7vw,36px
 .legend span{display:inline-flex;align-items:center;gap:5px}
 .legend i{width:8px;height:8px;border-radius:50%}
 .legend i.tring{background:transparent;box-shadow:0 0 0 2px var(--crit)}
-.ask{display:flex;flex-direction:column;gap:12px;padding-bottom:110px}
-.askbar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.modes button{padding:7px 14px}
-.btn.mini{min-height:34px;padding:6px 12px;font-size:12.5px}
-.msgs{display:flex;flex-direction:column;gap:10px;min-width:0}
-.amsg{max-width:88%;padding:11px 15px;border-radius:22px;font-size:15px;line-height:1.45;min-width:0;overflow-wrap:anywhere}
-.amsg p{margin:0}.amsg p+p,.amsg p+ul,.amsg p+ol,.amsg ul+p,.amsg ol+p{margin-top:8px}
-.amsg ul,.amsg ol{margin:6px 0;padding-left:20px}.amsg li+li{margin-top:3px}
-.amsg code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;background:rgba(255,255,255,.12);padding:1px 5px;border-radius:6px}
-.amsg pre{margin:8px 0;padding:10px 12px;border-radius:14px;background:rgba(0,0,0,.28);overflow-x:auto}.amsg pre code{background:none;padding:0}
-.amsg.me{align-self:flex-end;background:rgba(255,255,255,.92);color:#10122e;border-bottom-right-radius:8px;box-shadow:0 10px 24px -14px rgba(0,0,0,.5)}
-.amsg.bot{align-self:flex-start;background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 0 0 1px rgba(255,255,255,.1);border-bottom-left-radius:8px}
-.amsg.act{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;padding:7px 13px;font-size:13px;font-weight:700;background:rgba(111,245,179,.18);color:#d9ffec;border-radius:999px}
-.amsg.act svg{width:15px;height:15px;flex-shrink:0}
-.amsg.err-msg{align-self:flex-start;background:rgba(255,125,142,.18);color:#ffe0e5;font-size:14px}
-.mfiles{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}.mfiles img{width:96px;height:auto;max-width:100%;border-radius:12px}
-.fchip{font-size:12px;font-weight:700;padding:4px 9px;border-radius:999px;background:rgba(16,18,46,.1)}
-.typing{display:flex;gap:5px;padding:14px 16px}.typing i{width:7px;height:7px;border-radius:50%;background:#fff;opacity:.5;animation:blink 1.2s infinite}.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
-@keyframes blink{50%{opacity:1;transform:translateY(-2px)}}
-.ask-hello{padding:10px 4px;display:flex;flex-direction:column;gap:10px}
-.ask-hello h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,7vw,34px);line-height:1.08;margin:0;letter-spacing:-.02em}
-.ask-hello p{margin:0;color:var(--dim)}
-.sugs{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.sugs button{border:0;padding:9px 14px;border-radius:999px;font-weight:700;font-size:13.5px;background:rgba(255,255,255,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.35);text-align:left}
-.composer{position:fixed;left:50%;transform:translateX(-50%);width:min(528px,calc(100% - 24px));bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:5;padding:8px;border-radius:28px;display:flex;flex-direction:column;gap:6px}
-.crow{display:flex;align-items:flex-end;gap:8px}
-.crow textarea{flex:1;min-width:0;border:0;resize:none;background:transparent;padding:9px 4px;font-size:16px;line-height:1.35;max-height:140px;color:var(--fg)}
-.crow textarea::placeholder{color:var(--faint)}
-.crow textarea:focus{outline:none}
-.crow .icon-btn{cursor:pointer;flex-shrink:0}
-.send{width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:#10122e;display:grid;place-items:center;flex-shrink:0}
-.send:disabled{opacity:.45}
-.send svg{width:18px;height:18px}
-.atts{display:flex;flex-wrap:wrap;gap:6px}.atts:empty{display:none}
-.att{display:inline-flex;align-items:center;gap:6px;max-width:100%;padding:4px 4px 4px 4px;border-radius:14px;background:rgba(255,255,255,.12);font-size:12px;font-weight:700}
-.att img,.att svg{width:30px;height:30px;border-radius:9px;object-fit:cover}
-.att span{max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.att button{border:0;background:rgba(255,255,255,.18);width:22px;height:22px;border-radius:50%;line-height:1;font-weight:800}
-.steps{margin:0;padding-left:20px;color:var(--dim);display:flex;flex-direction:column;gap:4px}
-.steps a{color:#fff;font-weight:700}
-body[data-tab="ask"] .app{padding-bottom:200px}
+.split{display:flex;flex-direction:column;gap:16px;min-width:0}
+.cols{display:flex;flex-direction:column;gap:16px;min-width:0}
+.bossgrid{display:flex;flex-direction:column;gap:12px}
+@media (hover:hover){
+  .btn:hover{filter:brightness(1.08)}
+  .btn.ghost:hover,.icon-btn:hover,.round:hover{background:rgba(255,255,255,.2)}
+  .nav button:not([aria-current="page"]):hover{color:#fff;background:rgba(255,255,255,.1)}
+  .day:hover:not([aria-pressed="true"]){background:rgba(255,255,255,.09)}
+  .row:hover{background:rgba(255,255,255,.14)}
+  .swrow button:hover i{border-color:rgba(255,255,255,.8)}
+}
+@media (min-width:960px){
+  .app{max-width:1180px;padding-inline:32px;padding-block:28px 130px;gap:22px}
+  .split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;align-items:start}
+  .split>.side{position:sticky;top:24px}
+  .cal-split{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+  .cal-split>.section{position:sticky;top:24px}
+  .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+  .cols>.rest{grid-column:1/-1}
+  .bossgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+  .now{padding:34px 32px 30px;gap:22px}
+  h1.task{font-size:44px}
+  .day{min-height:66px}
+  .fab{right:max(32px,calc(50% - 590px + 32px));bottom:calc(30px + env(safe-area-inset-bottom,0px))}
+  .swatches{right:32px;top:76px}
+  .mark{font-size:20px}
+}
+@media (min-width:1400px){.app{max-width:1280px}.fab{right:max(32px,calc(50% - 640px + 32px))}}
+.field input,.field select,.crow textarea{font-size:16px}
 .emptyday{padding:16px;color:var(--dim);font-size:14px}
 @media (min-width:720px){.app{padding-block:34px 134px}}
 @media (max-width:400px){.nav button{padding:8px 9px;font-size:12px}}
@@ -272,7 +260,7 @@ body[data-tab="ask"] .app{padding-bottom:200px}
   <div class="swatches glass" id="swatches" hidden>
     <h3>Theme</h3>
     <div class="swrow" id="swatchRow"></div>
-    <div class="syncline" id="syncLine" data-state="idle"><span class="sdot"></span><span data-sync-text>Connecting…</span><button type="button" data-act="disconnect">Remove key</button></div>
+    <div class="syncline" id="syncLine" data-state="idle"><span class="sdot"></span><span data-sync-text>Loading…</span><button type="button" data-act="addkey">Sync devices</button></div>
   </div>
   <div id="view">
     <section class="glass rest">
@@ -288,7 +276,6 @@ body[data-tab="ask"] .app{padding-bottom:200px}
   <button data-tab="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1" fill="currentColor"/><circle cx="4" cy="12" r="1" fill="currentColor"/><circle cx="4" cy="18" r="1" fill="currentColor"/></svg>Plan</button>
   <button data-tab="cal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="5" width="17" height="15.5" rx="3.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Calendar</button>
   <button data-tab="tests"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>Tests</button>
-  <button data-tab="ask"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>Ask</button>
 </nav>
 <button class="fab glass" id="fab" aria-label="Add a task" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></button>
 <div id="layer"></div>
@@ -303,41 +290,47 @@ window.GHStore=(()=>{
   const ls={get(k){try{return localStorage.getItem(k)}catch(e){return null}},
             set(k,v){try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}}};
   const EMPTY=()=>({tasks:{},exams:{},state:{}});
-  let token=ls.get('gos-token'), local=false; ls.set('gos-mode',null);
-  let data=EMPTY(), sha=null, pending=[], saving=false, timer=null, poller=null, status='idle';
+  const clone=o=>o===undefined?undefined:JSON.parse(JSON.stringify(o));
+  ['gos-mode','gos-ai-key','gos-ai-mode','gos-chat'].forEach(k=>ls.set(k,null));
+  let token=ls.get('gos-token');
+  /* base = last copy from GitHub; ops = this device's changes not yet on GitHub; data = base + ops */
+  let base=EMPTY(), sha=null, ops=[], data=EMPTY(), saving=false, timer=null, poller=null, status='idle';
   const listeners=new Set();
-  try{const c=JSON.parse(ls.get('gos-cache')||'null'); if(c&&c.data){data={...EMPTY(),...c.data}; sha=c.sha||null}}catch(e){}
+  try{const c=JSON.parse(ls.get('gos-base')||'null'); if(c&&c.data){base={...EMPTY(),...c.data};sha=c.sha||null}
+      else{const old=JSON.parse(ls.get('gos-cache')||'null'); if(old&&old.data) base={...EMPTY(),...old.data}}}catch(e){}
+  try{ops=JSON.parse(ls.get('gos-ops')||'[]')||[]}catch(e){ops=[]}
 
+  function applyOp(d,o){
+    const col=(d[o.c]=d[o.c]||{});
+    if(o.op==='set') col[o.id]=clone(o.v);
+    else if(o.op==='update'){ if(col[o.id]) Object.assign(col[o.id],clone(o.v)) }
+    else if(o.op==='delete') delete col[o.id];
+  }
+  const rebuild=()=>{data=clone(base); ops.forEach(o=>applyOp(data,o))};
+  rebuild();
+  const persist=()=>{ls.set('gos-base',JSON.stringify({data:base,sha}));ls.set('gos-ops',JSON.stringify(ops))};
+  const emit=()=>{persist();listeners.forEach(f=>{try{f()}catch(e){console.error(e)}})};
   const b64e=s=>{const by=new TextEncoder().encode(s);let bin='';for(let i=0;i<by.length;i+=0x8000)bin+=String.fromCharCode.apply(null,by.subarray(i,i+0x8000));return btoa(bin)};
   const b64d=s=>new TextDecoder().decode(Uint8Array.from(atob(String(s).replace(/\s/g,'')),c=>c.charCodeAt(0)));
-  const clone=o=>o===undefined?undefined:JSON.parse(JSON.stringify(o));
-  const persist=()=>ls.set('gos-cache',JSON.stringify({data,sha}));
-  const emit=()=>{persist();listeners.forEach(f=>{try{f()}catch(e){console.error(e)}})};
   const hdr=t=>({'Authorization':'Bearer '+(t||token),'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'});
   const err=(code,msg)=>{const e=new Error(msg||code);e.code=code;return e};
 
   function setStatus(s){
     status=s;
     const el=document.getElementById('syncLine'); if(!el) return;
-    const txt={view:'Showing your list. Add your sync key to save changes.',needkey:'Not saved yet. Add your sync key.',ok:'Synced with GitHub',offline:'Offline. Changes will sync when you’re back online.',saving:'Saving…',local:'Saved on this device only',idle:'Connecting…'}[s]||'';
+    const txt={device:'Your changes save on this device.',ok:'Synced across your devices.',saving:'Syncing…',offline:'Offline. Will sync when you’re back.',idle:'Loading…'}[s]||'';
     el.querySelector('[data-sync-text]').textContent=txt;
     el.dataset.state=s;
-    const kb=el.querySelector('[data-act]'); if(kb){const nk=(s==='view'||s==='needkey');kb.dataset.act=nk?'addkey':'disconnect';kb.textContent=nk?'Add key':'Remove key'}
+    const kb=el.querySelector('[data-act]');
+    if(kb){kb.dataset.act=token?'disconnect':'addkey';kb.textContent=token?'Turn off sync':'Sync devices'}
   }
   async function fetchPublic(){
-    let r;
-    try{r=await fetch(RAW+'?t='+Date.now(),{cache:'no-store'})}catch(e){throw err('net')}
+    let r; try{r=await fetch(RAW+'?t='+Date.now(),{cache:'no-store'})}catch(e){throw err('net')}
     if(!r.ok) throw err('net');
-    const d=await r.json(); return {...EMPTY(),...d};
-  }
-  async function pullPublic(){
-    if(token||local||pending.length) return;
-    try{const d=await fetchPublic(); if(JSON.stringify(d)!==JSON.stringify(data)){data=d;emit()} setStatus('view')}
-    catch(e){setStatus('offline')}
+    return {...EMPTY(),...(await r.json())};
   }
   async function fetchRemote(){
-    let r;
-    try{r=await fetch(API+'?ref='+BRANCH+'&t='+Date.now(),{headers:hdr(),cache:'no-store'})}catch(e){throw err('net')}
+    let r; try{r=await fetch(API+'?ref='+BRANCH+'&t='+Date.now(),{headers:hdr(),cache:'no-store'})}catch(e){throw err('net','GitHub didn’t answer. Try again in a minute.')}
     if(r.status===404) return {data:EMPTY(),sha:null};
     if(r.status===401) throw err('auth','That key didn’t work. Copy it again from GitHub, the whole thing.');
     if(!r.ok) throw err('net','GitHub didn’t answer. Try again in a minute.');
@@ -345,53 +338,42 @@ window.GHStore=(()=>{
     try{d={...d,...JSON.parse(b64d(j.content))}}catch(e){}
     return {data:d,sha:j.sha};
   }
-  function authFail(){
-    token=null; ls.set('gos-token',null);
-    setStatus(pending.length?'needkey':'view');
-    window.dispatchEvent(new CustomEvent('gos-auth'));
-  }
   async function pull(){
-    if(local||!token||pending.length||saving) return;
-    try{const r=await fetchRemote(); if(r.sha!==sha){data=r.data;sha=r.sha;emit()} setStatus('ok')}
-    catch(e){e.code==='auth'?authFail():setStatus('offline')}
+    if(saving) return;
+    try{
+      if(token){const r=await fetchRemote(); if(r.sha!==sha){base=r.data;sha=r.sha;rebuild();emit()} if(ops.length) flush(); else setStatus('ok')}
+      else{const d=await fetchPublic(); if(JSON.stringify(d)!==JSON.stringify(base)){base=d;rebuild();emit()} setStatus('device')}
+    }catch(e){
+      if(e.code==='auth'){token=null;ls.set('gos-token',null);setStatus('device')}
+      else setStatus(token?'offline':'device');
+    }
   }
-  function mutate(fn){
-    fn(data); emit();
-    if(local) return Promise.resolve();
-    if(!token){pending.push(fn);setStatus('needkey');window.dispatchEvent(new CustomEvent('gos-needkey'));return Promise.resolve()}
-    pending.push(fn); setStatus('saving');
-    clearTimeout(timer); timer=setTimeout(flush,500);
+  function mutate(o){
+    ops.push(o); applyOp(data,o); emit();
+    if(token){setStatus('saving');clearTimeout(timer);timer=setTimeout(flush,500)}
     return Promise.resolve();
   }
   async function flush(){
-    if(saving||!pending.length||!token) return;
+    if(saving||!ops.length||!token) return;
     saving=true;
-    const batch=pending.splice(0);
-    let tries=0, ok=false;
+    const n=ops.length; let tries=0, ok=false;
     while(true){
       try{
-        const body={message:'GRADE OS update',branch:BRANCH,content:b64e(JSON.stringify(data,null,1))};
+        const next=clone(base); ops.slice(0,n).forEach(o=>applyOp(next,o));
+        const body={message:'GRADE OS update',branch:BRANCH,content:b64e(JSON.stringify(next,null,1))};
         if(sha) body.sha=sha;
-        let r;
-        try{r=await fetch(API,{method:'PUT',headers:{...hdr(),'Content-Type':'application/json'},body:JSON.stringify(body)})}catch(e){throw err('net')}
-        if(r.ok){const j=await r.json(); sha=j.content.sha; persist(); ok=true; break}
+        let r; try{r=await fetch(API,{method:'PUT',headers:{...hdr(),'Content-Type':'application/json'},body:JSON.stringify(body)})}catch(e){throw err('net')}
+        if(r.ok){const j=await r.json(); base=next; sha=j.content.sha; ops=ops.slice(n); rebuild(); persist(); ok=true; break}
         if(r.status===401) throw err('auth');
-        if((r.status===409||r.status===422)&&tries<3){
-          tries++;
-          const fresh=await fetchRemote(); data=fresh.data; sha=fresh.sha;
-          batch.forEach(f=>f(data)); pending.forEach(f=>f(data)); emit();
-          continue;
-        }
+        if((r.status===409||r.status===422)&&tries<3){tries++; const f=await fetchRemote(); base=f.data; sha=f.sha; rebuild(); emit(); continue}
         throw err('net');
       }catch(e){
-        if(e.code==='auth'){authFail();break}
-        pending.unshift(...batch); setStatus('offline');
-        clearTimeout(timer); timer=setTimeout(flush,15000);
-        break;
+        if(e.code==='auth'){token=null;ls.set('gos-token',null);setStatus('device');break}
+        setStatus('offline'); clearTimeout(timer); timer=setTimeout(flush,15000); break;
       }
     }
     saving=false;
-    if(ok){ if(pending.length){clearTimeout(timer);timer=setTimeout(flush,300)} else setStatus('ok') }
+    if(ok){ if(ops.length){clearTimeout(timer);timer=setTimeout(flush,300)} else setStatus('ok') }
   }
   const snapCol=n=>{const c=data[n]||{};const docs=Object.keys(c).sort().map(id=>({id,exists:true,metadata:{},data:()=>clone(c[id])}));return{docs,size:docs.length,empty:!docs.length,metadata:{}}};
   const api={
@@ -399,7 +381,7 @@ window.GHStore=(()=>{
       path:n,
       onSnapshot(next){const f=()=>next(snapCol(n));listeners.add(f);setTimeout(f,0);return()=>listeners.delete(f)},
       async get(){return snapCol(n)},
-      async add(doc){const id='t'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);const v=clone(doc);await mutate(d=>{(d[n]=d[n]||{})[id]=clone(v)});return api.doc(n+'/'+id)},
+      async add(doc){const id='t'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);await mutate({op:'set',c:n,id,v:clone(doc)});return api.doc(n+'/'+id)},
       doc(id){return api.doc(n+'/'+id)}
     }},
     doc(p){const i=p.lastIndexOf('/'),c=p.slice(0,i),id=p.slice(i+1);
@@ -407,43 +389,35 @@ window.GHStore=(()=>{
       return{id,path:p,
         onSnapshot(next){const f=()=>next(snap());listeners.add(f);setTimeout(f,0);return()=>listeners.delete(f)},
         async get(){return snap()},
-        set(v){const val=clone(v);return mutate(d=>{(d[c]=d[c]||{})[id]=clone(val)})},
-        update(v){const val=clone(v);return mutate(d=>{const cur=(d[c]=d[c]||{})[id];if(cur)Object.assign(cur,clone(val))})},
-        delete(){return mutate(d=>{if(d[c])delete d[c][id]})}
+        set(v){return mutate({op:'set',c,id,v:clone(v)})},
+        update(v){return mutate({op:'update',c,id,v:clone(v)})},
+        delete(){return mutate({op:'delete',c,id})}
       }}
   };
   return {
-    mode:()=>token?'gh':local?'local':'view',
     async connect(tok){
       tok=String(tok||'').trim();
       if(!tok) throw err('input','Paste your sync key first.');
-      let r;
-      try{r=await fetch(GH,{headers:hdr(tok),cache:'no-store'})}catch(e){throw err('net','GitHub didn’t answer. Check your connection and try again.')}
+      let r; try{r=await fetch(GH,{headers:hdr(tok),cache:'no-store'})}catch(e){throw err('net','GitHub didn’t answer. Check your connection and try again.')}
       if(r.status===401) throw err('auth','That key didn’t work. Copy it again from GitHub, the whole thing.');
       if(r.status===403||r.status===404) throw err('access','The key works, but it can’t see grade-os. Edit the key on GitHub: give it that repo with Contents: Read and write.');
       if(!r.ok) throw err('net','GitHub didn’t answer. Try again in a minute.');
       const prev=token; token=tok;
       let f; try{f=await fetchRemote()}catch(e){token=prev;throw e}
-      ls.set('gos-token',tok); local=false; ls.set('gos-mode',null);
-      data=f.data; sha=f.sha;
-      pending.forEach(fn=>fn(data)); emit();
-      if(pending.length){setStatus('saving');setTimeout(flush,100)} else setStatus('ok');
+      ls.set('gos-token',tok); base=f.data; sha=f.sha; rebuild(); emit();
+      if(ops.length){setStatus('saving');setTimeout(flush,100)} else setStatus('ok');
     },
-    useLocal(){local=true;ls.set('gos-mode','local')},
-    disconnect(){token=null;local=false;ls.set('gos-token',null);ls.set('gos-mode',null);setStatus('view');pullPublic()},
+    disconnect(){token=null;ls.set('gos-token',null);setStatus('device');pull()},
     open(){
-      setStatus(local?'local':token?'idle':'view');
-      if(!local){
-        const tickPull=()=>token?pull():pullPublic();
-        tickPull();
-        clearInterval(poller);
-        poller=setInterval(()=>{if(!document.hidden)tickPull()},45000);
-        document.addEventListener('visibilitychange',()=>{if(!document.hidden)tickPull()});
-        window.addEventListener('online',()=>{token&&pending.length?flush():tickPull()});
-      }
+      setStatus(token?'idle':'device');
+      pull();
+      clearInterval(poller);
+      poller=setInterval(()=>{if(!document.hidden)pull()},45000);
+      document.addEventListener('visibilitychange',()=>{if(!document.hidden)pull()});
+      window.addEventListener('online',pull);
       return api;
     },
-    refreshStatus(){setStatus(local?'local':(!token&&!pending.length)?'view':status)}
+    refreshStatus(){setStatus(status)}
   };
 })();
 </script>
@@ -477,7 +451,7 @@ function rel(iso){
   const tk=dayKey(now), dk=dayKey(d), tm=dayKey(new Date(now.getTime()+864e5));
   if(dk===tk) return h<3?'in '+Math.max(1,Math.round(h*60))+' min':'Today '+fmtTime(d);
   if(dk===tm) return 'Tomorrow '+fmtTime(d);
-  if(h<24*6) return new Date(d).toLocaleDateString('en-CA',{weekday:'long'})+' '+fmtTime(d);
+  if(h<24*6) return new Date(d).toLocaleDateString('en-CA',{weekday:'short'}).replace('.','')+' '+fmtTime(d);
   return fmtDay(d);
 }
 const daysUntil=iso=>Math.ceil((new Date(dayKey(iso)+'T00:00:00')-new Date(dayKey(new Date())+'T00:00:00'))/864e5);
@@ -585,8 +559,8 @@ function renderNow(){
   const t=q[0], mins=Math.min(t.mins||30,50);
   const running=timer&&timer.id===t.id;
   const stopAt=running?timer.endsAt:Date.now()+mins*6e4;
-  const next=q.slice(1,4);
-  return `
+  const next=q.slice(1,window.innerWidth>=960?7:4);
+  return `<div class="split">
   <section class="glass now" aria-live="polite">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
       <div class="eyebrow"><span class="dot"></span>Do this now</div>${courseTag(t.course)}
@@ -610,8 +584,8 @@ function renderNow(){
       <button class="btn ghost small" data-act="snooze">Not now</button>
     </div>
   </section>
-  ${next.length?`<section class="section"><div class="shead"><h2>Up next</h2><span>picked for you</span></div>
-    ${next.map(rowHTML).join('')}</section>`:''}`;
+  ${next.length?`<section class="section side"><div class="shead"><h2>Up next</h2><span>picked for you</span></div>
+    ${next.map(x=>rowHTML(x)).join('')}</section>`:''}</div>`;
 }
 function rowHTML(t,withActions){
   const k=COURSES[t.course]||COURSES.LIFE;
@@ -640,13 +614,13 @@ function renderPlan(){
   let html=groups.filter(g=>g[1].length).map(([n,l])=>`<section class="section"><div class="shead"><h2>${n}</h2><span>${l.length}</span></div>${l.map(t=>rowHTML(t,true)).join('')}</section>`).join('');
   if(!open.length) html=`<section class="glass rest"><h1>List’s empty.</h1><p>Add a deadline with the + button and it slots into the queue automatically.</p></section>`;
   if(done.length) html+=`<section class="section"><div class="shead"><h2>Recently done</h2><span>tap ✓ to reopen</span></div>${done.map(t=>rowHTML(t,true)).join('')}</section>`;
-  return html;
+  return `<div class="cols">${html}</div>`;
 }
 function renderTests(){
   const now=Date.now();
   const list=exams.filter(e=>new Date(e.date)>now-864e5).sort((a,b)=>new Date(a.date)-new Date(b.date));
   if(!list.length) return `<section class="glass rest"><h1>No tests on the board.</h1><p>Once a midterm date is known it shows up here as a boss to beat.</p></section>`;
-  return `<section class="section"><div class="shead"><h2>Boss fights</h2><span>prep blocks drain the bar</span></div>`+
+  return `<section class="section"><div class="shead"><h2>Boss fights</h2><span>prep blocks drain the bar</span></div><div class="bossgrid">`+
     list.map(e=>{
       const k=COURSES[e.course]||COURSES.LIFE, d=daysUntil(e.date), goal=e.goal||6, done=Math.min(e.done||0,goal);
       const hp=100-Math.round(done/goal*100);
@@ -657,7 +631,7 @@ function renderTests(){
         <div class="hp"><div class="label"><span>Boss HP</span><span>${done}/${goal} prep blocks</span></div><div class="bar"><i style="width:${hp}%"></i></div></div>
         ${e.note?`<div class="note">${esc(e.note)}</div>`:''}
         ${d<=14?'<div class="note">Prep blocks for this now appear in your Now queue, one per day.</div>':''}
-      </article>`}).join('')+`</section>`;
+      </article>`}).join('')+`</div></section>`;
 }
 function renderCal(){
   const now=new Date(), today=dayKey(now); if(!calSel) calSel=today;
@@ -687,7 +661,7 @@ function renderCal(){
     return `<div class="row frost examrow"><span class="stripe" style="background:var(--crit);color:var(--crit)"></span><div style="min-width:0"><div class="t">${esc(e.name)}</div><div class="s"><span>${esc(k.name)}</span><span>·</span><span>${esc(e.weight)}% of grade</span>${e.tentative?'<span>·</span><span>date not final</span>':''}</div></div><div class="end"><span class="pill ${dd<=7?'crit':'warn'}">${dd<0?'Done':dd===0?'Today':dd+' days'}</span></div></div>`;
   }).join(''):`<div class="frost emptyday">Nothing due. ${calSel>=today?'Tap + to add something for this day.':''}</div>`;
   const legend=Object.keys(COURSES).map(c=>`<span><i style="background:${COURSES[c].color}"></i>${esc(COURSES[c].name)}</span>`).join('')+'<span><i class="tring"></i>Test day</span>';
-  return `<section class="glass cal">
+  return `<div class="split cal-split"><section class="glass cal">
     <div class="calhead">
       <button class="icon-btn" data-act="calprev" aria-label="Previous month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 5l-7 7 7 7"/></svg></button>
       <div class="calt"><h2>${calMonth.toLocaleDateString('en-CA',{month:'long'})}</h2><small>${y}</small></div>
@@ -696,7 +670,7 @@ function renderCal(){
     <div class="grid7">${wd}${cells}</div>
     <div class="legend">${legend}</div>
   </section>
-  <section class="section"><div class="shead"><h2>${esc(selDate.toLocaleDateString('en-CA',{weekday:'long',month:'short',day:'numeric'}))}</h2>${calSel!==today||calMonth.getMonth()!==now.getMonth()?'<button class="btn ghost small" data-act="caltoday" style="min-height:34px;padding:6px 14px;font-size:13px">Today</button>':`<span>${sel.length} item${sel.length===1?'':'s'}</span>`}</div>${agenda}</section>`;
+  <section class="section"><div class="shead"><h2>${esc(selDate.toLocaleDateString('en-CA',{weekday:'long',month:'short',day:'numeric'}))}</h2>${calSel!==today||calMonth.getMonth()!==now.getMonth()?'<button class="btn ghost small" data-act="caltoday" style="min-height:34px;padding:6px 14px;font-size:13px">Today</button>':`<span>${sel.length} item${sel.length===1?'':'s'}</span>`}</div>${agenda}</section></div>`;
 }
 document.addEventListener('click',ev=>{
   const d=ev.target.closest('[data-day]');
@@ -710,11 +684,9 @@ document.addEventListener('click',ev=>{
 function render(){
   $('#stats').innerHTML=statsHTML();
   document.querySelectorAll('.nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===tab?'page':'false'));
-  $('#fab').hidden=tab==='now'||tab==='ask';
-  document.body.dataset.tab=tab;
+  $('#fab').hidden=tab==='now';
   if(!db){return}
   if(!loaded.t||!loaded.e) return;
-  if(tab==='ask'){ if(!document.getElementById('askRoot')&&!document.getElementById('aiKeyForm')){$('#view').innerHTML=renderAsk();paintMsgs()} return }
   $('#view').innerHTML=tab==='now'?renderNow():tab==='plan'?renderPlan():tab==='cal'?renderCal():renderTests();
   paintTimer();
 }
@@ -791,263 +763,6 @@ document.addEventListener('submit',async ev=>{
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#layer').innerHTML) $('#layer').innerHTML=''});
 setInterval(()=>{if(!document.hidden&&!$('#layer').innerHTML) render()},60000);
 
-/* ---------- Ask (AI assistant) ---------- */
-const AI_MODELS={quick:{id:'claude-haiku-4-5-20251001',label:'Quick'},smart:{id:'claude-sonnet-5-5',label:'Smart'}};
-const lsg=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
-const lss=(k,v)=>{try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}};
-let aiKey=lsg('gos-ai-key'), aiMode=lsg('gos-ai-mode')==='smart'?'smart':'quick';
-let chat=[], apiMsgs=[], pendingFiles=[], aiBusy=false;
-try{chat=JSON.parse(lsg('gos-chat')||'[]')}catch(e){chat=[]}
-const saveChat=()=>lss('gos-chat',JSON.stringify(chat.slice(-40)));
-for(const m of chat){if(m.role!=='user'&&m.role!=='assistant')continue;const last=apiMsgs[apiMsgs.length-1];const txt=((m.files&&m.files.length)?'[shared '+m.files.map(f=>f.name).join(', ')+'] ':'')+(m.text||'');if(last&&last.role===m.role&&typeof last.content==='string'){last.content+='\n'+txt}else apiMsgs.push({role:m.role,content:txt||'...'})}
-while(apiMsgs.length&&apiMsgs[apiMsgs.length-1].role==='user') apiMsgs.pop();
-
-function md(src){
-  const parts=String(src||'').split(/```/);
-  return parts.map((p,i)=>{
-    if(i%2) return `<pre><code>${esc(p.replace(/^[a-z]*\n/i,''))}</code></pre>`;
-    const inline=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/`([^`]+)`/g,'<code>$1</code>');
-    const out=[]; let list=null;
-    p.split('\n').forEach(line=>{
-      const m=line.match(/^\s*(?:[-•*]|\d+[.)])\s+(.*)$/);
-      if(m){ if(!list){list=/^\s*\d/.test(line)?'ol':'ul';out.push(`<${list}>`)} out.push(`<li>${inline(m[1])}</li>`); return }
-      if(list){out.push(`</${list}>`);list=null}
-      if(line.trim()) out.push(`<p>${inline(line)}</p>`);
-    });
-    if(list) out.push(`</${list}>`);
-    return out.join('');
-  }).join('');
-}
-
-function aiSystem(){
-  const now=new Date();
-  const when=now.toLocaleString('en-CA',{timeZone:'America/Toronto',weekday:'long',year:'numeric',month:'long',day:'numeric',hour:'numeric',minute:'2-digit'});
-  const open=tasks.filter(t=>t.status!=='done').map(t=>({id:t.id,title:t.title,course:t.course,due:t.due,weight:t.weight,mins:t.mins,repeats:!!(t.repeat&&t.repeat.length)}));
-  const done=tasks.filter(t=>t.status==='done').map(t=>({id:t.id,title:t.title,course:t.course,doneAt:t.doneAt}));
-  const ex=exams.map(e=>({id:e.id,name:e.name,course:e.course,date:e.date,weight:e.weight,tentative:!!e.tentative,prepBlocksDone:e.done||0,prepGoal:e.goal||6}));
-  const top=queue()[0];
-  return `You are the assistant inside GRADE OS, Udhav's personal study app. He's a Business Technology Management student at TMU in Toronto. He's on academic probation this term and capped at 4 courses, so his GPA matters a lot. He also runs a digital iPhone wallpaper business (iPhone Walls / Walluxe Heaven / Techno Universe).
-
-Style: casual, direct, short punchy sentences, Canadian spelling, no fluff, no corporate tone. He calls you "lil bro"; match the energy. Keep answers short unless he asks for depth. Use light markdown only: **bold** and bullet lists. No headings.
-
-Right now it is ${when} (Toronto time).
-
-His courses:
-- ITM200 Fundamentals of Programming (Python). Homework 10%, midterm 40%, final 50%.
-- ITM301 IT Infrastructure (networking, CompTIA Network+). Labs/assignments 20%, group project 10%, midterm 30%, final 40%. No calculators on exams, so subnetting is by hand.
-- PCS181 Intro to Astronomy. Activities 10%, clickers 10%, project 30%, midterm 15%, final 35%.
-- ECN503 Economic Development. Essay draft, final essay, presentation.
-
-HARD RULE, academic integrity: ITM200 and ITM301 ban generative AI for anything submitted, and PCS181 allows AI only for grammar. Never write, solve, debug or rewrite graded work (homework, labs, assignments, projects, essays) for him, even partly, even if he insists. Do help by explaining concepts in your own examples, making practice questions, quizzing him, checking his understanding, and planning. If he asks for graded answers, say no in one line and offer the closest legit help. Getting flagged for misconduct on probation would be brutal.
-
-His data (JSON):
-Open tasks: ${JSON.stringify(open)}
-Done tasks: ${JSON.stringify(done.slice(-15))}
-Tests: ${JSON.stringify(ex)}
-XP: ${st.xp||0}, streak: ${st.streak||0} days.
-The app's current "do this now" pick: ${top?JSON.stringify({title:top.title,course:top.course,due:top.due}):'nothing'}.
-
-Tools: you can add tasks and tests, mark tasks done, and update tasks. When he shares an outline, syllabus or screenshot with dates, pull out every dated assessment and add it, after checking the lists above so you don't add duplicates. Use course codes ITM200, ITM301, PCS181, ECN503, BIZ (wallpaper business), LIFE (anything else). Dates are ISO 8601 with the Toronto offset (-04:00 until Nov 1 2026, then -05:00). If a time isn't given, use 23:59. After using tools, say briefly what you changed.
-
-If he sounds stuck or is procrastinating, give him one concrete next step with a time box. If he ever says something that suggests he's not safe, take it seriously and point him to 988 (call or text, Canada).`;
-}
-const COURSE_ENUM=['ITM200','ITM301','PCS181','ECN503','BIZ','LIFE'];
-const AI_TOOLS=[
-  {name:'add_task',description:'Add a task or deadline to his list.',input_schema:{type:'object',properties:{title:{type:'string'},course:{type:'string',enum:COURSE_ENUM},due:{type:'string',description:'ISO 8601 date-time with offset, e.g. 2026-10-14T23:59:00-04:00'},weight:{type:'number',description:'Percent of final grade, 0 if unknown'},mins:{type:'number',description:'Rough minutes needed'},detail:{type:'string',description:'One short line on what to do'}},required:['title','course']}},
-  {name:'add_test',description:'Add a test, quiz, midterm or exam. Prep blocks appear automatically two weeks out.',input_schema:{type:'object',properties:{name:{type:'string'},course:{type:'string',enum:COURSE_ENUM},date:{type:'string',description:'ISO 8601 date-time with offset'},weight:{type:'number'},tentative:{type:'boolean'},note:{type:'string'}},required:['name','course','date']}},
-  {name:'complete_task',description:'Mark a task done by its id.',input_schema:{type:'object',properties:{task_id:{type:'string'}},required:['task_id']}},
-  {name:'update_task',description:'Change a task: due date, weight, title, detail or minutes.',input_schema:{type:'object',properties:{task_id:{type:'string'},title:{type:'string'},due:{type:'string'},weight:{type:'number'},mins:{type:'number'},detail:{type:'string'}},required:['task_id']}}
-];
-const fmtShort=iso=>{try{return new Date(iso).toLocaleDateString('en-CA',{month:'short',day:'numeric'})}catch(e){return ''}};
-async function runTool(u){
-  const i=u.input||{};
-  try{
-    if(u.name==='add_task'){
-      if(!i.title) return {out:'Missing title.'};
-      const doc={title:String(i.title),course:COURSE_ENUM.includes(i.course)?i.course:'LIFE',due:i.due?new Date(i.due).toISOString():null,weight:Number(i.weight)||0,mins:Math.max(5,Number(i.mins)||40),status:'todo',createdAt:new Date().toISOString()};
-      if(i.detail) doc.detail=String(i.detail);
-      if(doc.course==='ITM200'||doc.course==='ITM301') doc.noAI=true;
-      const ref=await db.collection('tasks').add(doc);
-      return {out:'Added with id '+ref.id, chip:`Added ${doc.title}${doc.due?' · '+fmtShort(doc.due):''}`};
-    }
-    if(u.name==='add_test'){
-      const id=(i.course||'x').toLowerCase()+'-'+Date.now().toString(36);
-      const doc={course:COURSE_ENUM.includes(i.course)?i.course:'LIFE',name:String(i.name),date:new Date(i.date).toISOString(),weight:Number(i.weight)||0,goal:6,done:0,lastPrep:'',tentative:!!i.tentative};
-      if(i.note) doc.note=String(i.note);
-      await db.doc('exams/'+id).set(doc);
-      return {out:'Test added with id '+id, chip:`Added test ${doc.name} · ${fmtShort(doc.date)}`};
-    }
-    if(u.name==='complete_task'){
-      const t=tasks.find(x=>x.id===i.task_id); if(!t) return {out:'No task with that id.'};
-      await db.doc('tasks/'+t.id).update({status:'done',doneAt:new Date().toISOString()});
-      return {out:'Marked done.', chip:`Done: ${t.title}`};
-    }
-    if(u.name==='update_task'){
-      const t=tasks.find(x=>x.id===i.task_id); if(!t) return {out:'No task with that id.'};
-      const patch={}; ['title','detail'].forEach(k=>{if(i[k]!=null) patch[k]=String(i[k])});
-      ['weight','mins'].forEach(k=>{if(i[k]!=null) patch[k]=Number(i[k])||0});
-      if(i.due) patch.due=new Date(i.due).toISOString();
-      await db.doc('tasks/'+t.id).update(patch);
-      return {out:'Updated.', chip:`Updated ${patch.title||t.title}`};
-    }
-  }catch(e){return {out:'Failed: '+(e.message||e)}}
-  return {out:'Unknown tool.'};
-}
-function trimmedMsgs(){
-  let m=apiMsgs.slice(-24);
-  while(m.length&&!(m[0].role==='user'&&!(Array.isArray(m[0].content)&&m[0].content.some(c=>c.type==='tool_result')))) m=m.slice(1);
-  const cut=m.length-6;
-  return m.map((x,idx)=>{
-    if(idx>=cut||!Array.isArray(x.content)) return x;
-    return {...x,content:x.content.map(c=>(c.type==='image'||c.type==='document')?{type:'text',text:'[file shared earlier]'}:c)};
-  });
-}
-async function callClaude(){
-  for(let round=0;round<6;round++){
-    let r;
-    try{
-      r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':aiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-        body:JSON.stringify({model:AI_MODELS[aiMode].id,max_tokens:1600,system:aiSystem(),tools:AI_TOOLS,messages:trimmedMsgs()})});
-    }catch(e){throw new Error('Couldn’t reach Claude. Check your connection and try again.')}
-    if(!r.ok){
-      let msg=''; try{msg=(await r.json()).error.message||''}catch(e){}
-      if(r.status===401) throw Object.assign(new Error('That AI key didn’t work. Remove it in settings and paste it again.'),{badKey:true});
-      if(/credit balance/i.test(msg)) throw new Error('Your Claude API credit is empty. Add some at console.anthropic.com → Billing.');
-      if(r.status===429) throw new Error('Too many messages at once. Wait a minute and try again.');
-      if(r.status===529||r.status>=500) throw new Error('Claude is busy right now. Try again in a minute.');
-      throw new Error('Claude couldn’t answer that ('+r.status+'). '+msg.slice(0,140));
-    }
-    const j=await r.json();
-    apiMsgs.push({role:'assistant',content:j.content});
-    const text=j.content.filter(c=>c.type==='text').map(c=>c.text).join('\n').trim();
-    const uses=j.content.filter(c=>c.type==='tool_use');
-    if(text) addMsg({role:'assistant',text});
-    if(j.stop_reason!=='tool_use'||!uses.length) return;
-    const results=[];
-    for(const u of uses){const res=await runTool(u); results.push({type:'tool_result',tool_use_id:u.id,content:res.out}); if(res.chip) addMsg({role:'action',text:res.chip})}
-    apiMsgs.push({role:'user',content:results});
-  }
-}
-function addMsg(m){chat.push(m);saveChat();paintMsgs()}
-function msgHTML(m){
-  if(m.role==='action') return `<div class="amsg act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l5 5 9-10"/></svg>${esc(m.text)}</div>`;
-  if(m.role==='error') return `<div class="amsg err-msg">${esc(m.text)}</div>`;
-  const files=(m.files||[]).map(f=>f.thumb?`<img src="${f.thumb}" alt="${esc(f.name)}">`:`<span class="fchip">${esc(f.name)}</span>`).join('');
-  return `<div class="amsg ${m.role==='user'?'me':'bot'}">${files?`<div class="mfiles">${files}</div>`:''}${m.role==='user'?`<p>${esc(m.text||'').replace(/\n/g,'<br>')}</p>`:md(m.text)}</div>`;
-}
-function paintMsgs(){
-  const el=document.getElementById('msgs'); if(!el) return;
-  const nc=document.getElementById('aiclear'); if(nc) nc.hidden=!chat.length;
-  el.innerHTML=chat.length?chat.map(msgHTML).join('')+(aiBusy?'<div class="amsg bot typing"><i></i><i></i><i></i></div>':''):suggestHTML();
-  requestAnimationFrame(()=>window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}));
-}
-function suggestHTML(){
-  const s=['What should I do tonight?','How ready am I for my midterms?','Quiz me on Python loops','Make a study plan for ITM301','Add the deadlines from this outline'];
-  return `<div class="ask-hello"><h1>Ask me anything about your stuff.</h1><p>I can see your tasks, tests and XP. Send a screenshot or course PDF and I’ll explain it, quiz you on it, or add its deadlines.</p><div class="sugs">${s.map(x=>`<button type="button" data-sug="${esc(x)}">${esc(x)}</button>`).join('')}</div></div>`;
-}
-function attsHTML(){
-  return pendingFiles.map((f,i)=>`<span class="att">${f.thumb?`<img src="${f.thumb}" alt="">`:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/></svg>'}<span>${esc(f.name)}</span><button type="button" data-unatt="${i}" aria-label="Remove ${esc(f.name)}">×</button></span>`).join('');
-}
-function renderAsk(){
-  if(!aiKey) return `<section class="glass rest">
-    <div class="eyebrow"><span class="dot"></span>One-time setup</div>
-    <h1>Turn on your AI assistant</h1>
-    <p>Ask runs on Claude with its own API key. It’s separate from your Claude subscription and pay-as-you-go: Quick mode is well under a cent per question, and a screenshot adds about a cent.</p>
-    <ol class="steps"><li>Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a> and sign in.</li><li>Billing → add $5 of credit. That lasts a long time.</li><li>API keys → Create key → copy it.</li><li>Paste it below. It stays on this device only.</li></ol>
-    <form id="aiKeyForm" class="connect" novalidate>
-      <div class="field"><label for="ai-key">Claude API key</label><input id="ai-key" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sk-ant-..."></div>
-      <p class="err" id="ai-err" hidden></p>
-      <div class="actions"><button class="btn primary" type="submit">Turn on Ask</button></div>
-    </form></section>`;
-  return `<section class="ask" id="askRoot">
-    <div class="askbar"><div class="seg modes" role="group" aria-label="Answer mode">${Object.keys(AI_MODELS).map(k=>`<button type="button" data-aimode="${k}" aria-pressed="${k===aiMode}">${AI_MODELS[k].label}</button>`).join('')}</div>
-    <div style="display:flex;gap:6px"><button type="button" class="btn ghost small mini" data-act="aiclear" id="aiclear" ${chat.length?'':'hidden'}>New chat</button><button type="button" class="btn ghost small mini" data-act="aikeyoff">Remove key</button></div></div>
-    <div class="msgs" id="msgs"></div>
-  </section>
-  <form id="askForm" class="composer glass" novalidate>
-    <div class="atts" id="atts">${attsHTML()}</div>
-    <div class="crow">
-      <label class="icon-btn" for="askFile" aria-label="Attach a screenshot, PDF or notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5l-8.6 8.6a5 5 0 0 1-7.1-7.1l8.6-8.6a3.3 3.3 0 0 1 4.7 4.7l-8.6 8.6a1.7 1.7 0 0 1-2.4-2.4l7.9-7.9"/></svg></label>
-      <input id="askFile" type="file" accept="image/*,application/pdf,.txt,.md,.csv" multiple hidden>
-      <textarea id="askInput" rows="1" placeholder="Ask about your stuff…" aria-label="Message"></textarea>
-      <button class="send" type="submit" aria-label="Send" ${aiBusy?'disabled':''}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-    </div>
-  </form>`;
-}
-function shrinkImage(file){
-  return new Promise((res,rej)=>{
-    const url=URL.createObjectURL(file), img=new Image();
-    img.onload=()=>{
-      const max=1568, s=Math.min(1,max/Math.max(img.width,img.height));
-      const c=document.createElement('canvas'); c.width=Math.round(img.width*s); c.height=Math.round(img.height*s);
-      c.getContext('2d').drawImage(img,0,0,c.width,c.height);
-      const data=c.toDataURL('image/jpeg',.86);
-      const t=document.createElement('canvas'), ts=Math.min(1,160/Math.max(img.width,img.height)); t.width=Math.round(img.width*ts); t.height=Math.round(img.height*ts);
-      t.getContext('2d').drawImage(img,0,0,t.width,t.height);
-      URL.revokeObjectURL(url);
-      res({name:file.name||'screenshot',block:{type:'image',source:{type:'base64',media_type:'image/jpeg',data:data.split(',')[1]}},thumb:t.toDataURL('image/jpeg',.7)});
-    };
-    img.onerror=()=>{URL.revokeObjectURL(url);rej(new Error('Couldn’t read that image.'))};
-    img.src=url;
-  });
-}
-const readAs=(file,how)=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=()=>rej(r.error);how==='text'?r.readAsText(file):r.readAsDataURL(file)});
-async function addFiles(list){
-  for(const f of list){
-    try{
-      if(f.type.startsWith('image/')) pendingFiles.push(await shrinkImage(f));
-      else if(f.type==='application/pdf'){
-        if(f.size>20e6){toast('That PDF is over 20 MB. Send a smaller one.');continue}
-        const d=await readAs(f,'url'); pendingFiles.push({name:f.name,block:{type:'document',source:{type:'base64',media_type:'application/pdf',data:String(d).split(',')[1]}}});
-      }else{
-        const txt=await readAs(f,'text'); pendingFiles.push({name:f.name,block:{type:'text',text:`File "${f.name}":\n${String(txt).slice(0,60000)}`}});
-      }
-    }catch(e){toast(e.message||'Couldn’t read that file.')}
-  }
-  const a=document.getElementById('atts'); if(a) a.innerHTML=attsHTML();
-}
-async function sendAsk(text){
-  text=(text||'').trim();
-  if(aiBusy||(!text&&!pendingFiles.length)) return;
-  const files=pendingFiles; pendingFiles=[];
-  const content=[...files.map(f=>f.block),{type:'text',text:text||'Take a look at this.'}];
-  apiMsgs.push({role:'user',content});
-  chat.push({role:'user',text,files:files.map(f=>({name:f.name,thumb:f.thumb||null}))}); saveChat();
-  aiBusy=true; const inp=document.getElementById('askInput'); if(inp){inp.value='';inp.style.height=''}
-  const a=document.getElementById('atts'); if(a) a.innerHTML='';
-  const sb=document.querySelector('#askForm .send'); if(sb) sb.disabled=true;
-  paintMsgs();
-  try{await callClaude()}
-  catch(e){
-    apiMsgs.pop();
-    addMsg({role:'error',text:e.message});
-    if(e.badKey){aiKey=null;lss('gos-ai-key',null)}
-  }
-  aiBusy=false; if(sb) sb.disabled=false; paintMsgs();
-}
-document.addEventListener('submit',ev=>{
-  if(ev.target.id==='askForm'){ev.preventDefault();sendAsk(document.getElementById('askInput').value);return}
-  if(ev.target.id==='aiKeyForm'){
-    ev.preventDefault();
-    const v=document.getElementById('ai-key').value.trim(), e=document.getElementById('ai-err');
-    if(!/^sk-ant-/.test(v)){e.textContent='That doesn’t look like a Claude API key. It starts with sk-ant-.';e.hidden=false;return}
-    aiKey=v; lss('gos-ai-key',v); $('#view').innerHTML=renderAsk(); paintMsgs(); toast('Ask is on.');
-  }
-});
-document.addEventListener('click',ev=>{
-  const s=ev.target.closest('[data-sug]'); if(s){const i=document.getElementById('askInput'); if(/outline/.test(s.dataset.sug)){i.value=s.dataset.sug;document.getElementById('askFile').click()} else sendAsk(s.dataset.sug); return}
-  const u=ev.target.closest('[data-unatt]'); if(u){pendingFiles.splice(Number(u.dataset.unatt),1);document.getElementById('atts').innerHTML=attsHTML();return}
-  const m=ev.target.closest('[data-aimode]'); if(m){aiMode=m.dataset.aimode;lss('gos-ai-mode',aiMode);document.querySelectorAll('[data-aimode]').forEach(b=>b.setAttribute('aria-pressed',b===m));toast(aiMode==='smart'?'Smart mode: better answers, a bit slower.':'Quick mode: fast and cheap.');return}
-  const b=ev.target.closest('[data-act="aiclear"],[data-act="aikeyoff"],[data-act="aikeyyes"]'); if(!b) return;
-  if(b.dataset.act==='aiclear'){chat=[];apiMsgs=[];saveChat();$('#view').innerHTML=renderAsk();paintMsgs();return}
-  if(b.dataset.act==='aikeyoff'){b.dataset.act='aikeyyes';b.textContent='Tap again to remove';setTimeout(()=>{if(b.isConnected){b.dataset.act='aikeyoff';b.textContent='Remove key'}},3000);return}
-  if(b.dataset.act==='aikeyyes'){aiKey=null;lss('gos-ai-key',null);$('#view').innerHTML=renderAsk();toast('AI key removed from this device.')}
-});
-document.addEventListener('change',ev=>{if(ev.target.id==='askFile'){addFiles([...ev.target.files]);ev.target.value=''}});
-document.addEventListener('paste',ev=>{if(tab!=='ask'||!aiKey) return; const fs=[...(ev.clipboardData?.files||[])]; if(fs.length){ev.preventDefault();addFiles(fs)}});
-document.addEventListener('input',ev=>{if(ev.target.id==='askInput'){const t=ev.target;t.style.height='';t.style.height=Math.min(t.scrollHeight,140)+'px'}});
-document.addEventListener('keydown',ev=>{if(ev.target.id==='askInput'&&ev.key==='Enter'&&!ev.shiftKey&&!ev.isComposing&&window.matchMedia('(hover:hover)').matches){ev.preventDefault();sendAsk(ev.target.value)}});
-
 /* ---------- boot ---------- */
 function attach(store){
   db=store; loaded={t:false,e:false};
@@ -1058,31 +773,27 @@ function attach(store){
 }
 function showConnect(msg){
   $('#layer').innerHTML=`<div class="scrim" data-act="close"><form class="glass sheet" id="connectForm" novalidate>
-    <h2>Add your sync key</h2>
-    <p class="muted" style="margin:0">Your list is already here. The key just lets this device save changes (ticking things off, XP, new tasks). Paste it once per device.</p>
-    <div class="field"><label for="c-token">Sync key</label>
+    <h2>Sync your devices</h2>
+    <p class="muted" style="margin:0">Optional. Without this, everything still works and saves on this device. Paste your GitHub sync key if you want your phone and laptop to share ticks, XP and new tasks.</p>
+    <div class="field"><label for="c-token">GitHub sync key</label>
     <input id="c-token" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_..."></div>
     <p class="err" id="c-err" ${msg?'':'hidden'}>${esc(msg||'')}</p>
-    <div class="actions"><button class="btn primary" type="submit" id="c-go">Save key</button>
-    <button type="button" class="btn ghost small" data-act="close" style="grid-column:1/-1">Not now</button></div>
+    <div class="actions"><button class="btn primary" type="submit" id="c-go">Turn on sync</button>
+    <button type="button" class="btn ghost small" data-act="close" style="grid-column:1/-1">Cancel</button></div>
   </form></div>`;
-  setTimeout(()=>{const i=$('#c-token');i&&i.focus()},50);
 }
-let keyAsked=false;
-window.addEventListener('gos-needkey',()=>{if(!keyAsked){keyAsked=true;showConnect()}else toast('Not saved yet. Tap the theme button → Add key.')});
 document.addEventListener('submit',async ev=>{
   if(ev.target.id!=='connectForm') return; ev.preventDefault();
   const btn=$('#c-go'), e=$('#c-err'); btn.disabled=true; btn.textContent='Connecting…'; e.hidden=true;
-  try{await window.GHStore.connect($('#c-token').value); $('#layer').innerHTML=''; toast('Key saved. Everything syncs now.')}
+  try{await window.GHStore.connect($('#c-token').value); $('#layer').innerHTML=''; toast('Sync is on.')}
   catch(x){e.textContent=x.message||'Could not connect.'; e.hidden=false; btn.disabled=false; btn.textContent='Connect'}
 });
 document.addEventListener('click',ev=>{
   const b=ev.target.closest('[data-act="addkey"],[data-act="disconnect"]'); if(!b) return;
   ev.stopPropagation();
   if(b.dataset.act==='addkey'){showConnect()}
-  else{window.GHStore.disconnect();toast('Sync key removed from this device.')}
+  else{window.GHStore.disconnect();toast('Sync turned off. Changes save on this device.')}
 });
-window.addEventListener('gos-auth',()=>{showConnect('Your sync key stopped working (it may have expired). Make a new one on GitHub and paste it here.')});
 (async()=>{
   render();
   if(window.claude&&window.claude.use){db=await window.claude.use('db'); if(db) return attach(db)}
