@@ -1,0 +1,202 @@
+{
+ "tasks": {
+  "pcs181-act6": {
+   "course": "PCS181",
+   "detail": "Due 11:59 PM the day of class. No lates, but your 4 lowest get dropped.",
+   "due": "2026-10-01T23:59:00-04:00",
+   "mins": 30,
+   "status": "todo",
+   "title": "PCS181 In-class activity 6",
+   "weight": 1
+  },
+  "biz-batch": {
+   "course": "BIZ",
+   "detail": "2 faces, 1 sentence, 1 object with a story, 2 pretty fillers. Best face top-left. Post to iphone_walls29. One set, then stop.",
+   "due": "2026-10-08T00:00:00.000Z",
+   "lastDone": "2026-10-05T21:20:09.190Z",
+   "mins": 45,
+   "repeat": [
+    3,
+    6
+   ],
+   "repeatTime": "20:00",
+   "status": "todo",
+   "title": "Wallpaper batch: make + post one 6-frame set",
+   "weight": 3
+  },
+  "itm301-a5": {
+   "course": "ITM301",
+   "due": "2026-11-01T23:59:00-05:00",
+   "mins": 90,
+   "noAI": true,
+   "status": "todo",
+   "title": "ITM301 Assignment 5",
+   "weight": 4
+  },
+  "life-weekly": {
+   "course": "LIFE",
+   "detail": "Check D2L for new marks and any new deadlines. Add anything missing here with the + button.",
+   "due": "2026-10-04T10:00:00-04:00",
+   "mins": 10,
+   "repeat": [
+    0
+   ],
+   "repeatTime": "10:00",
+   "status": "todo",
+   "title": "Sunday check: marks + next 7 days",
+   "weight": 2
+  },
+  "itm200-hw3": {
+   "course": "ITM200",
+   "doneAt": "2026-09-28T18:57:00-04:00",
+   "due": "2026-09-29T23:59:00-04:00",
+   "mins": 60,
+   "noAI": true,
+   "status": "done",
+   "title": "ITM200 HW3",
+   "weight": 1
+  },
+  "ecn503-pres": {
+   "course": "ECN503",
+   "due": "2026-12-02T14:00:00-05:00",
+   "mins": 120,
+   "status": "todo",
+   "title": "ECN503 Presentation",
+   "weight": 0
+  },
+  "pcs181-plan": {
+   "course": "PCS181",
+   "detail": "Pick the topic first, then find sources. The bibliography is where the time goes.",
+   "due": "2026-10-07T23:59:00-04:00",
+   "mins": 120,
+   "status": "todo",
+   "title": "PCS181 Project plan + annotated bibliography",
+   "weight": 10
+  },
+  "itm301-project": {
+   "course": "ITM301",
+   "detail": "No late submissions at all.",
+   "due": "2026-11-22T23:59:00-05:00",
+   "mins": 240,
+   "noAI": true,
+   "status": "todo",
+   "title": "ITM301 Group project",
+   "weight": 10
+  },
+  "itm301-a3": {
+   "course": "ITM301",
+   "detail": "Read the whole thing, then go question by question. Use the textbook and lecture slides.",
+   "doneAt": "2026-10-05T21:20:07.838Z",
+   "due": "2026-10-04T23:59:00-04:00",
+   "mins": 90,
+   "noAI": true,
+   "status": "done",
+   "title": "ITM301 Assignment 3",
+   "weight": 4
+  },
+  "ecn503-draft": {
+   "course": "ECN503",
+   "detail": "Draft for feedback by Nov 18. Weight not confirmed yet.",
+   "due": "2026-11-11T14:00:00-05:00",
+   "mins": 180,
+   "status": "todo",
+   "title": "ECN503 Essay draft",
+   "weight": 0
+  },
+  "biz-repost": {
+   "course": "BIZ",
+   "detail": "Liquid Glass bundle is the top seller. Repost it with a free bonus wallpaper.",
+   "due": "2026-10-04T19:00:00-04:00",
+   "mins": 25,
+   "repeat": [
+    0
+   ],
+   "repeatTime": "19:00",
+   "status": "todo",
+   "title": "Repost a best-selling pack with a free add-on",
+   "weight": 2
+  },
+  "ecn503-final": {
+   "course": "ECN503",
+   "due": "2026-11-25T14:00:00-05:00",
+   "mins": 240,
+   "status": "todo",
+   "title": "ECN503 Essay final",
+   "weight": 0
+  },
+  "itm301-a4": {
+   "course": "ITM301",
+   "due": "2026-10-11T23:59:00-04:00",
+   "mins": 90,
+   "noAI": true,
+   "status": "todo",
+   "title": "ITM301 Assignment 4",
+   "weight": 4
+  },
+  "pcs181-final": {
+   "course": "PCS181",
+   "due": "2026-12-02T23:59:00-05:00",
+   "mins": 240,
+   "status": "todo",
+   "title": "PCS181 Final project",
+   "weight": 20
+  },
+  "life-ecn-outline": {
+   "course": "LIFE",
+   "detail": "Open ECN503 on D2L, find the outline, screenshot the grading section and schedule, send it to Claude.",
+   "doneAt": "2026-09-29T15:19:36.083Z",
+   "due": "2026-09-29T20:00:00-04:00",
+   "mins": 10,
+   "status": "done",
+   "title": "Screenshot the ECN503 outline: grade breakdown + test dates",
+   "weight": 0
+  }
+ },
+ "exams": {
+  "itm301-mid": {
+   "course": "ITM301",
+   "date": "2026-10-27T12:00:00-04:00",
+   "done": 0,
+   "goal": 8,
+   "lastPrep": "",
+   "name": "ITM301 Midterm",
+   "note": "Week 7, likely Tue Oct 27. No calculators, so practise subnetting by hand.",
+   "tentative": true,
+   "weight": 30
+  },
+  "pcs181-mid": {
+   "course": "PCS181",
+   "date": "2026-10-23T12:00:00-04:00",
+   "done": 0,
+   "goal": 5,
+   "lastPrep": "",
+   "name": "PCS181 Midterm",
+   "note": "Section 011 sits it Fri Oct 23. Check D2L for the time and room.",
+   "tentative": false,
+   "weight": 15
+  },
+  "itm200-mid": {
+   "course": "ITM200",
+   "date": "2026-10-26T12:00:00-04:00",
+   "done": 0,
+   "goal": 10,
+   "lastPrep": "",
+   "name": "ITM200 Midterm",
+   "note": "Week of Oct 26, exact day TBA. Exams are 90% of this course.",
+   "tentative": true,
+   "weight": 40
+  }
+ },
+ "state": {
+  "me": {
+   "lastDay": "2026-10-05",
+   "snoozed": {
+    "biz-repost": 1791242416181,
+    "life-weekly": 1791242424293,
+    "pcs181-act6": 1791242427401
+   },
+   "streak": 1,
+   "xp": 170
+  }
+ }
+}
