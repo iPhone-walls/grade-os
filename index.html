@@ -167,7 +167,7 @@ h1.task{font-family:var(--display);font-weight:800;font-size:clamp(27px,7vw,36px
 
 /* floating tab bar */
 .nav{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:5;display:flex;gap:2px;padding:5px;border-radius:999px}
-.nav button{border:0;background:transparent;padding:9px 15px;border-radius:999px;font-weight:700;font-size:13px;color:var(--dim);display:flex;flex-direction:column;align-items:center;gap:2px;transition:background .25s,color .25s}
+.nav button{border:0;background:transparent;padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px;color:var(--dim);display:flex;flex-direction:column;align-items:center;gap:2px;transition:background .25s,color .25s}
 .nav button[aria-current="page"]{background:rgba(255,255,255,.22);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
 .nav svg{width:21px;height:21px}
 .fab{position:fixed;right:max(16px,calc(50% - 280px + 16px));bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:5;width:58px;height:58px;border-radius:50%;border:0;display:grid;place-items:center;color:#fff}
@@ -212,9 +212,51 @@ h1.task{font-family:var(--display);font-weight:800;font-size:clamp(27px,7vw,36px
 .legend span{display:inline-flex;align-items:center;gap:5px}
 .legend i{width:8px;height:8px;border-radius:50%}
 .legend i.tring{background:transparent;box-shadow:0 0 0 2px var(--crit)}
+.ask{display:flex;flex-direction:column;gap:12px;padding-bottom:110px}
+.askbar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.modes button{padding:7px 14px}
+.btn.mini{min-height:34px;padding:6px 12px;font-size:12.5px}
+.msgs{display:flex;flex-direction:column;gap:10px;min-width:0}
+.amsg{max-width:88%;padding:11px 15px;border-radius:22px;font-size:15px;line-height:1.45;min-width:0;overflow-wrap:anywhere}
+.amsg p{margin:0}.amsg p+p,.amsg p+ul,.amsg p+ol,.amsg ul+p,.amsg ol+p{margin-top:8px}
+.amsg ul,.amsg ol{margin:6px 0;padding-left:20px}.amsg li+li{margin-top:3px}
+.amsg code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;background:rgba(255,255,255,.12);padding:1px 5px;border-radius:6px}
+.amsg pre{margin:8px 0;padding:10px 12px;border-radius:14px;background:rgba(0,0,0,.28);overflow-x:auto}.amsg pre code{background:none;padding:0}
+.amsg.me{align-self:flex-end;background:rgba(255,255,255,.92);color:#10122e;border-bottom-right-radius:8px;box-shadow:0 10px 24px -14px rgba(0,0,0,.5)}
+.amsg.bot{align-self:flex-start;background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 0 0 1px rgba(255,255,255,.1);border-bottom-left-radius:8px}
+.amsg.act{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;padding:7px 13px;font-size:13px;font-weight:700;background:rgba(111,245,179,.18);color:#d9ffec;border-radius:999px}
+.amsg.act svg{width:15px;height:15px;flex-shrink:0}
+.amsg.err-msg{align-self:flex-start;background:rgba(255,125,142,.18);color:#ffe0e5;font-size:14px}
+.mfiles{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}.mfiles img{width:96px;height:auto;max-width:100%;border-radius:12px}
+.fchip{font-size:12px;font-weight:700;padding:4px 9px;border-radius:999px;background:rgba(16,18,46,.1)}
+.typing{display:flex;gap:5px;padding:14px 16px}.typing i{width:7px;height:7px;border-radius:50%;background:#fff;opacity:.5;animation:blink 1.2s infinite}.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{50%{opacity:1;transform:translateY(-2px)}}
+.ask-hello{padding:10px 4px;display:flex;flex-direction:column;gap:10px}
+.ask-hello h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,7vw,34px);line-height:1.08;margin:0;letter-spacing:-.02em}
+.ask-hello p{margin:0;color:var(--dim)}
+.sugs{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.sugs button{border:0;padding:9px 14px;border-radius:999px;font-weight:700;font-size:13.5px;background:rgba(255,255,255,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.35);text-align:left}
+.composer{position:fixed;left:50%;transform:translateX(-50%);width:min(528px,calc(100% - 24px));bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:5;padding:8px;border-radius:28px;display:flex;flex-direction:column;gap:6px}
+.crow{display:flex;align-items:flex-end;gap:8px}
+.crow textarea{flex:1;min-width:0;border:0;resize:none;background:transparent;padding:9px 4px;font-size:16px;line-height:1.35;max-height:140px;color:var(--fg)}
+.crow textarea::placeholder{color:var(--faint)}
+.crow textarea:focus{outline:none}
+.crow .icon-btn{cursor:pointer;flex-shrink:0}
+.send{width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:#10122e;display:grid;place-items:center;flex-shrink:0}
+.send:disabled{opacity:.45}
+.send svg{width:18px;height:18px}
+.atts{display:flex;flex-wrap:wrap;gap:6px}.atts:empty{display:none}
+.att{display:inline-flex;align-items:center;gap:6px;max-width:100%;padding:4px 4px 4px 4px;border-radius:14px;background:rgba(255,255,255,.12);font-size:12px;font-weight:700}
+.att img,.att svg{width:30px;height:30px;border-radius:9px;object-fit:cover}
+.att span{max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.att button{border:0;background:rgba(255,255,255,.18);width:22px;height:22px;border-radius:50%;line-height:1;font-weight:800}
+.steps{margin:0;padding-left:20px;color:var(--dim);display:flex;flex-direction:column;gap:4px}
+.steps a{color:#fff;font-weight:700}
+body[data-tab="ask"] .app{padding-bottom:200px}
 .emptyday{padding:16px;color:var(--dim);font-size:14px}
 @media (min-width:720px){.app{padding-block:34px 134px}}
-@media (max-width:380px){.lvl{display:none}.nav button{padding:8px 10px;font-size:12px}}
+@media (max-width:400px){.nav button{padding:8px 9px;font-size:12px}}
+@media (max-width:370px){.lvl{display:none}.nav button{padding:8px 6px;font-size:11px}}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -246,6 +288,7 @@ h1.task{font-family:var(--display);font-weight:800;font-size:clamp(27px,7vw,36px
   <button data-tab="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1" fill="currentColor"/><circle cx="4" cy="12" r="1" fill="currentColor"/><circle cx="4" cy="18" r="1" fill="currentColor"/></svg>Plan</button>
   <button data-tab="cal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="5" width="17" height="15.5" rx="3.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Calendar</button>
   <button data-tab="tests"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>Tests</button>
+  <button data-tab="ask"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>Ask</button>
 </nav>
 <button class="fab glass" id="fab" aria-label="Add a task" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></button>
 <div id="layer"></div>
@@ -667,9 +710,11 @@ document.addEventListener('click',ev=>{
 function render(){
   $('#stats').innerHTML=statsHTML();
   document.querySelectorAll('.nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===tab?'page':'false'));
-  $('#fab').hidden=tab==='now';
+  $('#fab').hidden=tab==='now'||tab==='ask';
+  document.body.dataset.tab=tab;
   if(!db){return}
   if(!loaded.t||!loaded.e) return;
+  if(tab==='ask'){ if(!document.getElementById('askRoot')&&!document.getElementById('aiKeyForm')){$('#view').innerHTML=renderAsk();paintMsgs()} return }
   $('#view').innerHTML=tab==='now'?renderNow():tab==='plan'?renderPlan():tab==='cal'?renderCal():renderTests();
   paintTimer();
 }
@@ -745,6 +790,263 @@ document.addEventListener('submit',async ev=>{
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#layer').innerHTML) $('#layer').innerHTML=''});
 setInterval(()=>{if(!document.hidden&&!$('#layer').innerHTML) render()},60000);
+
+/* ---------- Ask (AI assistant) ---------- */
+const AI_MODELS={quick:{id:'claude-haiku-4-5-20251001',label:'Quick'},smart:{id:'claude-sonnet-5-5',label:'Smart'}};
+const lsg=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+const lss=(k,v)=>{try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}};
+let aiKey=lsg('gos-ai-key'), aiMode=lsg('gos-ai-mode')==='smart'?'smart':'quick';
+let chat=[], apiMsgs=[], pendingFiles=[], aiBusy=false;
+try{chat=JSON.parse(lsg('gos-chat')||'[]')}catch(e){chat=[]}
+const saveChat=()=>lss('gos-chat',JSON.stringify(chat.slice(-40)));
+for(const m of chat){if(m.role!=='user'&&m.role!=='assistant')continue;const last=apiMsgs[apiMsgs.length-1];const txt=((m.files&&m.files.length)?'[shared '+m.files.map(f=>f.name).join(', ')+'] ':'')+(m.text||'');if(last&&last.role===m.role&&typeof last.content==='string'){last.content+='\n'+txt}else apiMsgs.push({role:m.role,content:txt||'...'})}
+while(apiMsgs.length&&apiMsgs[apiMsgs.length-1].role==='user') apiMsgs.pop();
+
+function md(src){
+  const parts=String(src||'').split(/```/);
+  return parts.map((p,i)=>{
+    if(i%2) return `<pre><code>${esc(p.replace(/^[a-z]*\n/i,''))}</code></pre>`;
+    const inline=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/`([^`]+)`/g,'<code>$1</code>');
+    const out=[]; let list=null;
+    p.split('\n').forEach(line=>{
+      const m=line.match(/^\s*(?:[-•*]|\d+[.)])\s+(.*)$/);
+      if(m){ if(!list){list=/^\s*\d/.test(line)?'ol':'ul';out.push(`<${list}>`)} out.push(`<li>${inline(m[1])}</li>`); return }
+      if(list){out.push(`</${list}>`);list=null}
+      if(line.trim()) out.push(`<p>${inline(line)}</p>`);
+    });
+    if(list) out.push(`</${list}>`);
+    return out.join('');
+  }).join('');
+}
+
+function aiSystem(){
+  const now=new Date();
+  const when=now.toLocaleString('en-CA',{timeZone:'America/Toronto',weekday:'long',year:'numeric',month:'long',day:'numeric',hour:'numeric',minute:'2-digit'});
+  const open=tasks.filter(t=>t.status!=='done').map(t=>({id:t.id,title:t.title,course:t.course,due:t.due,weight:t.weight,mins:t.mins,repeats:!!(t.repeat&&t.repeat.length)}));
+  const done=tasks.filter(t=>t.status==='done').map(t=>({id:t.id,title:t.title,course:t.course,doneAt:t.doneAt}));
+  const ex=exams.map(e=>({id:e.id,name:e.name,course:e.course,date:e.date,weight:e.weight,tentative:!!e.tentative,prepBlocksDone:e.done||0,prepGoal:e.goal||6}));
+  const top=queue()[0];
+  return `You are the assistant inside GRADE OS, Udhav's personal study app. He's a Business Technology Management student at TMU in Toronto. He's on academic probation this term and capped at 4 courses, so his GPA matters a lot. He also runs a digital iPhone wallpaper business (iPhone Walls / Walluxe Heaven / Techno Universe).
+
+Style: casual, direct, short punchy sentences, Canadian spelling, no fluff, no corporate tone. He calls you "lil bro"; match the energy. Keep answers short unless he asks for depth. Use light markdown only: **bold** and bullet lists. No headings.
+
+Right now it is ${when} (Toronto time).
+
+His courses:
+- ITM200 Fundamentals of Programming (Python). Homework 10%, midterm 40%, final 50%.
+- ITM301 IT Infrastructure (networking, CompTIA Network+). Labs/assignments 20%, group project 10%, midterm 30%, final 40%. No calculators on exams, so subnetting is by hand.
+- PCS181 Intro to Astronomy. Activities 10%, clickers 10%, project 30%, midterm 15%, final 35%.
+- ECN503 Economic Development. Essay draft, final essay, presentation.
+
+HARD RULE, academic integrity: ITM200 and ITM301 ban generative AI for anything submitted, and PCS181 allows AI only for grammar. Never write, solve, debug or rewrite graded work (homework, labs, assignments, projects, essays) for him, even partly, even if he insists. Do help by explaining concepts in your own examples, making practice questions, quizzing him, checking his understanding, and planning. If he asks for graded answers, say no in one line and offer the closest legit help. Getting flagged for misconduct on probation would be brutal.
+
+His data (JSON):
+Open tasks: ${JSON.stringify(open)}
+Done tasks: ${JSON.stringify(done.slice(-15))}
+Tests: ${JSON.stringify(ex)}
+XP: ${st.xp||0}, streak: ${st.streak||0} days.
+The app's current "do this now" pick: ${top?JSON.stringify({title:top.title,course:top.course,due:top.due}):'nothing'}.
+
+Tools: you can add tasks and tests, mark tasks done, and update tasks. When he shares an outline, syllabus or screenshot with dates, pull out every dated assessment and add it, after checking the lists above so you don't add duplicates. Use course codes ITM200, ITM301, PCS181, ECN503, BIZ (wallpaper business), LIFE (anything else). Dates are ISO 8601 with the Toronto offset (-04:00 until Nov 1 2026, then -05:00). If a time isn't given, use 23:59. After using tools, say briefly what you changed.
+
+If he sounds stuck or is procrastinating, give him one concrete next step with a time box. If he ever says something that suggests he's not safe, take it seriously and point him to 988 (call or text, Canada).`;
+}
+const COURSE_ENUM=['ITM200','ITM301','PCS181','ECN503','BIZ','LIFE'];
+const AI_TOOLS=[
+  {name:'add_task',description:'Add a task or deadline to his list.',input_schema:{type:'object',properties:{title:{type:'string'},course:{type:'string',enum:COURSE_ENUM},due:{type:'string',description:'ISO 8601 date-time with offset, e.g. 2026-10-14T23:59:00-04:00'},weight:{type:'number',description:'Percent of final grade, 0 if unknown'},mins:{type:'number',description:'Rough minutes needed'},detail:{type:'string',description:'One short line on what to do'}},required:['title','course']}},
+  {name:'add_test',description:'Add a test, quiz, midterm or exam. Prep blocks appear automatically two weeks out.',input_schema:{type:'object',properties:{name:{type:'string'},course:{type:'string',enum:COURSE_ENUM},date:{type:'string',description:'ISO 8601 date-time with offset'},weight:{type:'number'},tentative:{type:'boolean'},note:{type:'string'}},required:['name','course','date']}},
+  {name:'complete_task',description:'Mark a task done by its id.',input_schema:{type:'object',properties:{task_id:{type:'string'}},required:['task_id']}},
+  {name:'update_task',description:'Change a task: due date, weight, title, detail or minutes.',input_schema:{type:'object',properties:{task_id:{type:'string'},title:{type:'string'},due:{type:'string'},weight:{type:'number'},mins:{type:'number'},detail:{type:'string'}},required:['task_id']}}
+];
+const fmtShort=iso=>{try{return new Date(iso).toLocaleDateString('en-CA',{month:'short',day:'numeric'})}catch(e){return ''}};
+async function runTool(u){
+  const i=u.input||{};
+  try{
+    if(u.name==='add_task'){
+      if(!i.title) return {out:'Missing title.'};
+      const doc={title:String(i.title),course:COURSE_ENUM.includes(i.course)?i.course:'LIFE',due:i.due?new Date(i.due).toISOString():null,weight:Number(i.weight)||0,mins:Math.max(5,Number(i.mins)||40),status:'todo',createdAt:new Date().toISOString()};
+      if(i.detail) doc.detail=String(i.detail);
+      if(doc.course==='ITM200'||doc.course==='ITM301') doc.noAI=true;
+      const ref=await db.collection('tasks').add(doc);
+      return {out:'Added with id '+ref.id, chip:`Added ${doc.title}${doc.due?' · '+fmtShort(doc.due):''}`};
+    }
+    if(u.name==='add_test'){
+      const id=(i.course||'x').toLowerCase()+'-'+Date.now().toString(36);
+      const doc={course:COURSE_ENUM.includes(i.course)?i.course:'LIFE',name:String(i.name),date:new Date(i.date).toISOString(),weight:Number(i.weight)||0,goal:6,done:0,lastPrep:'',tentative:!!i.tentative};
+      if(i.note) doc.note=String(i.note);
+      await db.doc('exams/'+id).set(doc);
+      return {out:'Test added with id '+id, chip:`Added test ${doc.name} · ${fmtShort(doc.date)}`};
+    }
+    if(u.name==='complete_task'){
+      const t=tasks.find(x=>x.id===i.task_id); if(!t) return {out:'No task with that id.'};
+      await db.doc('tasks/'+t.id).update({status:'done',doneAt:new Date().toISOString()});
+      return {out:'Marked done.', chip:`Done: ${t.title}`};
+    }
+    if(u.name==='update_task'){
+      const t=tasks.find(x=>x.id===i.task_id); if(!t) return {out:'No task with that id.'};
+      const patch={}; ['title','detail'].forEach(k=>{if(i[k]!=null) patch[k]=String(i[k])});
+      ['weight','mins'].forEach(k=>{if(i[k]!=null) patch[k]=Number(i[k])||0});
+      if(i.due) patch.due=new Date(i.due).toISOString();
+      await db.doc('tasks/'+t.id).update(patch);
+      return {out:'Updated.', chip:`Updated ${patch.title||t.title}`};
+    }
+  }catch(e){return {out:'Failed: '+(e.message||e)}}
+  return {out:'Unknown tool.'};
+}
+function trimmedMsgs(){
+  let m=apiMsgs.slice(-24);
+  while(m.length&&!(m[0].role==='user'&&!(Array.isArray(m[0].content)&&m[0].content.some(c=>c.type==='tool_result')))) m=m.slice(1);
+  const cut=m.length-6;
+  return m.map((x,idx)=>{
+    if(idx>=cut||!Array.isArray(x.content)) return x;
+    return {...x,content:x.content.map(c=>(c.type==='image'||c.type==='document')?{type:'text',text:'[file shared earlier]'}:c)};
+  });
+}
+async function callClaude(){
+  for(let round=0;round<6;round++){
+    let r;
+    try{
+      r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':aiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+        body:JSON.stringify({model:AI_MODELS[aiMode].id,max_tokens:1600,system:aiSystem(),tools:AI_TOOLS,messages:trimmedMsgs()})});
+    }catch(e){throw new Error('Couldn’t reach Claude. Check your connection and try again.')}
+    if(!r.ok){
+      let msg=''; try{msg=(await r.json()).error.message||''}catch(e){}
+      if(r.status===401) throw Object.assign(new Error('That AI key didn’t work. Remove it in settings and paste it again.'),{badKey:true});
+      if(/credit balance/i.test(msg)) throw new Error('Your Claude API credit is empty. Add some at console.anthropic.com → Billing.');
+      if(r.status===429) throw new Error('Too many messages at once. Wait a minute and try again.');
+      if(r.status===529||r.status>=500) throw new Error('Claude is busy right now. Try again in a minute.');
+      throw new Error('Claude couldn’t answer that ('+r.status+'). '+msg.slice(0,140));
+    }
+    const j=await r.json();
+    apiMsgs.push({role:'assistant',content:j.content});
+    const text=j.content.filter(c=>c.type==='text').map(c=>c.text).join('\n').trim();
+    const uses=j.content.filter(c=>c.type==='tool_use');
+    if(text) addMsg({role:'assistant',text});
+    if(j.stop_reason!=='tool_use'||!uses.length) return;
+    const results=[];
+    for(const u of uses){const res=await runTool(u); results.push({type:'tool_result',tool_use_id:u.id,content:res.out}); if(res.chip) addMsg({role:'action',text:res.chip})}
+    apiMsgs.push({role:'user',content:results});
+  }
+}
+function addMsg(m){chat.push(m);saveChat();paintMsgs()}
+function msgHTML(m){
+  if(m.role==='action') return `<div class="amsg act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l5 5 9-10"/></svg>${esc(m.text)}</div>`;
+  if(m.role==='error') return `<div class="amsg err-msg">${esc(m.text)}</div>`;
+  const files=(m.files||[]).map(f=>f.thumb?`<img src="${f.thumb}" alt="${esc(f.name)}">`:`<span class="fchip">${esc(f.name)}</span>`).join('');
+  return `<div class="amsg ${m.role==='user'?'me':'bot'}">${files?`<div class="mfiles">${files}</div>`:''}${m.role==='user'?`<p>${esc(m.text||'').replace(/\n/g,'<br>')}</p>`:md(m.text)}</div>`;
+}
+function paintMsgs(){
+  const el=document.getElementById('msgs'); if(!el) return;
+  const nc=document.getElementById('aiclear'); if(nc) nc.hidden=!chat.length;
+  el.innerHTML=chat.length?chat.map(msgHTML).join('')+(aiBusy?'<div class="amsg bot typing"><i></i><i></i><i></i></div>':''):suggestHTML();
+  requestAnimationFrame(()=>window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}));
+}
+function suggestHTML(){
+  const s=['What should I do tonight?','How ready am I for my midterms?','Quiz me on Python loops','Make a study plan for ITM301','Add the deadlines from this outline'];
+  return `<div class="ask-hello"><h1>Ask me anything about your stuff.</h1><p>I can see your tasks, tests and XP. Send a screenshot or course PDF and I’ll explain it, quiz you on it, or add its deadlines.</p><div class="sugs">${s.map(x=>`<button type="button" data-sug="${esc(x)}">${esc(x)}</button>`).join('')}</div></div>`;
+}
+function attsHTML(){
+  return pendingFiles.map((f,i)=>`<span class="att">${f.thumb?`<img src="${f.thumb}" alt="">`:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/></svg>'}<span>${esc(f.name)}</span><button type="button" data-unatt="${i}" aria-label="Remove ${esc(f.name)}">×</button></span>`).join('');
+}
+function renderAsk(){
+  if(!aiKey) return `<section class="glass rest">
+    <div class="eyebrow"><span class="dot"></span>One-time setup</div>
+    <h1>Turn on your AI assistant</h1>
+    <p>Ask runs on Claude with its own API key. It’s separate from your Claude subscription and pay-as-you-go: Quick mode is well under a cent per question, and a screenshot adds about a cent.</p>
+    <ol class="steps"><li>Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a> and sign in.</li><li>Billing → add $5 of credit. That lasts a long time.</li><li>API keys → Create key → copy it.</li><li>Paste it below. It stays on this device only.</li></ol>
+    <form id="aiKeyForm" class="connect" novalidate>
+      <div class="field"><label for="ai-key">Claude API key</label><input id="ai-key" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sk-ant-..."></div>
+      <p class="err" id="ai-err" hidden></p>
+      <div class="actions"><button class="btn primary" type="submit">Turn on Ask</button></div>
+    </form></section>`;
+  return `<section class="ask" id="askRoot">
+    <div class="askbar"><div class="seg modes" role="group" aria-label="Answer mode">${Object.keys(AI_MODELS).map(k=>`<button type="button" data-aimode="${k}" aria-pressed="${k===aiMode}">${AI_MODELS[k].label}</button>`).join('')}</div>
+    <div style="display:flex;gap:6px"><button type="button" class="btn ghost small mini" data-act="aiclear" id="aiclear" ${chat.length?'':'hidden'}>New chat</button><button type="button" class="btn ghost small mini" data-act="aikeyoff">Remove key</button></div></div>
+    <div class="msgs" id="msgs"></div>
+  </section>
+  <form id="askForm" class="composer glass" novalidate>
+    <div class="atts" id="atts">${attsHTML()}</div>
+    <div class="crow">
+      <label class="icon-btn" for="askFile" aria-label="Attach a screenshot, PDF or notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5l-8.6 8.6a5 5 0 0 1-7.1-7.1l8.6-8.6a3.3 3.3 0 0 1 4.7 4.7l-8.6 8.6a1.7 1.7 0 0 1-2.4-2.4l7.9-7.9"/></svg></label>
+      <input id="askFile" type="file" accept="image/*,application/pdf,.txt,.md,.csv" multiple hidden>
+      <textarea id="askInput" rows="1" placeholder="Ask about your stuff…" aria-label="Message"></textarea>
+      <button class="send" type="submit" aria-label="Send" ${aiBusy?'disabled':''}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+    </div>
+  </form>`;
+}
+function shrinkImage(file){
+  return new Promise((res,rej)=>{
+    const url=URL.createObjectURL(file), img=new Image();
+    img.onload=()=>{
+      const max=1568, s=Math.min(1,max/Math.max(img.width,img.height));
+      const c=document.createElement('canvas'); c.width=Math.round(img.width*s); c.height=Math.round(img.height*s);
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      const data=c.toDataURL('image/jpeg',.86);
+      const t=document.createElement('canvas'), ts=Math.min(1,160/Math.max(img.width,img.height)); t.width=Math.round(img.width*ts); t.height=Math.round(img.height*ts);
+      t.getContext('2d').drawImage(img,0,0,t.width,t.height);
+      URL.revokeObjectURL(url);
+      res({name:file.name||'screenshot',block:{type:'image',source:{type:'base64',media_type:'image/jpeg',data:data.split(',')[1]}},thumb:t.toDataURL('image/jpeg',.7)});
+    };
+    img.onerror=()=>{URL.revokeObjectURL(url);rej(new Error('Couldn’t read that image.'))};
+    img.src=url;
+  });
+}
+const readAs=(file,how)=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=()=>rej(r.error);how==='text'?r.readAsText(file):r.readAsDataURL(file)});
+async function addFiles(list){
+  for(const f of list){
+    try{
+      if(f.type.startsWith('image/')) pendingFiles.push(await shrinkImage(f));
+      else if(f.type==='application/pdf'){
+        if(f.size>20e6){toast('That PDF is over 20 MB. Send a smaller one.');continue}
+        const d=await readAs(f,'url'); pendingFiles.push({name:f.name,block:{type:'document',source:{type:'base64',media_type:'application/pdf',data:String(d).split(',')[1]}}});
+      }else{
+        const txt=await readAs(f,'text'); pendingFiles.push({name:f.name,block:{type:'text',text:`File "${f.name}":\n${String(txt).slice(0,60000)}`}});
+      }
+    }catch(e){toast(e.message||'Couldn’t read that file.')}
+  }
+  const a=document.getElementById('atts'); if(a) a.innerHTML=attsHTML();
+}
+async function sendAsk(text){
+  text=(text||'').trim();
+  if(aiBusy||(!text&&!pendingFiles.length)) return;
+  const files=pendingFiles; pendingFiles=[];
+  const content=[...files.map(f=>f.block),{type:'text',text:text||'Take a look at this.'}];
+  apiMsgs.push({role:'user',content});
+  chat.push({role:'user',text,files:files.map(f=>({name:f.name,thumb:f.thumb||null}))}); saveChat();
+  aiBusy=true; const inp=document.getElementById('askInput'); if(inp){inp.value='';inp.style.height=''}
+  const a=document.getElementById('atts'); if(a) a.innerHTML='';
+  const sb=document.querySelector('#askForm .send'); if(sb) sb.disabled=true;
+  paintMsgs();
+  try{await callClaude()}
+  catch(e){
+    apiMsgs.pop();
+    addMsg({role:'error',text:e.message});
+    if(e.badKey){aiKey=null;lss('gos-ai-key',null)}
+  }
+  aiBusy=false; if(sb) sb.disabled=false; paintMsgs();
+}
+document.addEventListener('submit',ev=>{
+  if(ev.target.id==='askForm'){ev.preventDefault();sendAsk(document.getElementById('askInput').value);return}
+  if(ev.target.id==='aiKeyForm'){
+    ev.preventDefault();
+    const v=document.getElementById('ai-key').value.trim(), e=document.getElementById('ai-err');
+    if(!/^sk-ant-/.test(v)){e.textContent='That doesn’t look like a Claude API key. It starts with sk-ant-.';e.hidden=false;return}
+    aiKey=v; lss('gos-ai-key',v); $('#view').innerHTML=renderAsk(); paintMsgs(); toast('Ask is on.');
+  }
+});
+document.addEventListener('click',ev=>{
+  const s=ev.target.closest('[data-sug]'); if(s){const i=document.getElementById('askInput'); if(/outline/.test(s.dataset.sug)){i.value=s.dataset.sug;document.getElementById('askFile').click()} else sendAsk(s.dataset.sug); return}
+  const u=ev.target.closest('[data-unatt]'); if(u){pendingFiles.splice(Number(u.dataset.unatt),1);document.getElementById('atts').innerHTML=attsHTML();return}
+  const m=ev.target.closest('[data-aimode]'); if(m){aiMode=m.dataset.aimode;lss('gos-ai-mode',aiMode);document.querySelectorAll('[data-aimode]').forEach(b=>b.setAttribute('aria-pressed',b===m));toast(aiMode==='smart'?'Smart mode: better answers, a bit slower.':'Quick mode: fast and cheap.');return}
+  const b=ev.target.closest('[data-act="aiclear"],[data-act="aikeyoff"],[data-act="aikeyyes"]'); if(!b) return;
+  if(b.dataset.act==='aiclear'){chat=[];apiMsgs=[];saveChat();$('#view').innerHTML=renderAsk();paintMsgs();return}
+  if(b.dataset.act==='aikeyoff'){b.dataset.act='aikeyyes';b.textContent='Tap again to remove';setTimeout(()=>{if(b.isConnected){b.dataset.act='aikeyoff';b.textContent='Remove key'}},3000);return}
+  if(b.dataset.act==='aikeyyes'){aiKey=null;lss('gos-ai-key',null);$('#view').innerHTML=renderAsk();toast('AI key removed from this device.')}
+});
+document.addEventListener('change',ev=>{if(ev.target.id==='askFile'){addFiles([...ev.target.files]);ev.target.value=''}});
+document.addEventListener('paste',ev=>{if(tab!=='ask'||!aiKey) return; const fs=[...(ev.clipboardData?.files||[])]; if(fs.length){ev.preventDefault();addFiles(fs)}});
+document.addEventListener('input',ev=>{if(ev.target.id==='askInput'){const t=ev.target;t.style.height='';t.style.height=Math.min(t.scrollHeight,140)+'px'}});
+document.addEventListener('keydown',ev=>{if(ev.target.id==='askInput'&&ev.key==='Enter'&&!ev.shiftKey&&!ev.isComposing&&window.matchMedia('(hover:hover)').matches){ev.preventDefault();sendAsk(ev.target.value)}});
 
 /* ---------- boot ---------- */
 function attach(store){
