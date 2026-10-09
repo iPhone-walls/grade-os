@@ -241,6 +241,81 @@ h1.task{font-family:var(--display);font-weight:800;font-size:clamp(27px,7vw,36px
 }
 @media (min-width:1400px){.app{max-width:1280px}.fab{right:max(32px,calc(50% - 640px + 32px))}}
 .field input,.field select,.crow textarea{font-size:16px}
+.studyhead{display:flex;min-width:0}
+.schips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:2px;gap:6px;min-width:0}
+.schips::-webkit-scrollbar{display:none}
+.schips button{display:inline-flex;align-items:baseline;gap:6px;white-space:nowrap;padding:9px 15px}
+.schips button small{font-size:11px;opacity:.7;font-weight:800;font-variant-numeric:tabular-nums}
+.sumgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sumcard{border:0;text-align:left;padding:14px;display:flex;flex-direction:column;gap:6px;color:var(--fg);min-width:0;border-radius:22px}
+.sumcard strong{font-family:var(--display);font-size:26px;font-weight:800;line-height:1;letter-spacing:-.02em}
+.sumcard .course{align-self:flex-start}
+.btn:disabled{opacity:.45;cursor:default}
+.sumcard small{font-size:12px;color:var(--dim);font-weight:600}
+.minibar{display:block;height:6px;border-radius:9px;background:rgba(255,255,255,.16);overflow:hidden}
+.minibar i{display:block;height:100%;background:var(--good);border-radius:inherit;box-shadow:0 0 8px var(--good)}
+.planbox{padding:18px 16px;display:flex;flex-direction:column;gap:4px}
+.planbox .shead{padding:0 4px 8px}
+.pday{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;padding:10px 8px;border-radius:16px;align-items:start}
+.pday+.pday{border-top:1px solid rgba(255,255,255,.08)}
+.pday.past{opacity:.45}
+.pday.today{background:rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+.pday.exam .pdate b{color:var(--crit)}
+.pdate{display:flex;flex-direction:column;font-variant-numeric:tabular-nums}
+.pdate b{font-size:14px}.pdate span{font-size:12px;color:var(--dim);font-weight:600}
+.pday ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:3px;font-size:14.5px}
+.pday.exam li:first-child{font-weight:800}
+.shero{padding:24px 22px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.gcol{display:flex;flex-direction:column;gap:14px;min-width:0}
+.trow{border:0;color:var(--fg);display:grid;grid-template-columns:minmax(0,1fr) auto 18px;gap:10px;align-items:center;padding:13px 14px;text-align:left;border-radius:18px}
+.trow .t{font-weight:700;font-size:14.5px}
+.tmeta{font-size:12.5px;color:var(--dim);font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tmeta em{font-style:normal;color:#ffc2cb}
+.trow svg{width:16px;height:16px;opacity:.6}
+.gsec{padding:4px 16px;border-radius:22px}
+.gsec summary{cursor:pointer;list-style:none;padding:12px 0;font-family:var(--display);font-weight:800;font-size:17px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.gsec summary::-webkit-details-marker{display:none}
+.gsec summary::after{content:"";flex-shrink:0;width:9px;height:9px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg);opacity:.6;transition:transform .2s}
+.gsec[open] summary::after{transform:rotate(-135deg)}
+.gsec>*:last-child{margin-bottom:14px}
+.gl{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;font-size:14.5px;line-height:1.45}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.checks li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px}
+.chk{flex-shrink:0;width:26px;height:26px;border-radius:9px;border:0;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.25);display:grid;place-items:center;color:transparent}
+.chk svg{width:15px;height:15px}
+.chk.on{background:var(--good);color:#03281a;box-shadow:none}
+.links{display:flex;flex-direction:column;gap:8px}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 14px;border-radius:16px;background:rgba(255,255,255,.1);color:#fff;font-weight:700;font-size:14px;text-decoration:none}
+.links a svg{width:15px;height:15px;flex-shrink:0;opacity:.7}
+.qscrim{align-items:flex-end}
+.quiz{max-width:640px;gap:14px}
+.qtop{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center}
+.qtop .course{justify-self:start;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.qcount{font-size:13px;font-weight:800;color:var(--dim);font-variant-numeric:tabular-nums}
+.qcount b{color:#fff}
+.qtopic{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.qq{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(19px,5vw,24px);line-height:1.25;letter-spacing:-.01em}
+.qcode{margin:0;padding:14px 16px;border-radius:16px;background:rgba(0,0,10,.38);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);overflow-x:auto;font-size:14px;line-height:1.5}
+.qcode code{font-family:ui-monospace,'SF Mono',Menlo,monospace;color:#e8ecff;white-space:pre}
+.qopts{display:flex;flex-direction:column;gap:8px}
+.qopt{border:0;text-align:left;display:flex;gap:12px;align-items:flex-start;padding:13px 14px;border-radius:18px;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);color:var(--fg);font-size:15px;font-weight:600;line-height:1.35;white-space:pre-wrap}
+.qopt .ql{flex-shrink:0;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:rgba(255,255,255,.16);font-size:12px;font-weight:800}
+.qopt.picked{background:rgba(255,255,255,.9);color:#10122e}.qopt.picked .ql{background:#10122e;color:#fff}
+.qopt.right{background:rgba(111,245,179,.28);box-shadow:inset 0 0 0 2px var(--good)}
+.qopt.wrong{background:rgba(255,125,142,.24);box-shadow:inset 0 0 0 2px var(--crit)}
+.qopt:disabled{cursor:default}
+.qfb{padding:12px 14px;border-radius:16px;font-size:14.5px;line-height:1.45}
+.qfb.ok{background:rgba(111,245,179,.18)}.qfb.no{background:rgba(255,125,142,.18)}
+.qscore{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.qscore strong{font-family:var(--display);font-size:64px;font-weight:800;line-height:1;letter-spacing:-.03em}
+.qscore span{color:var(--dim);font-weight:700}
+.qreview{display:flex;flex-direction:column;gap:10px}
+.qr{padding:12px 14px;border-radius:18px;display:flex;flex-direction:column;gap:8px}
+.qr .t{font-weight:700}.qr .s{font-size:13.5px;color:var(--dim)}.qr p{margin:0;font-size:13.5px;color:var(--dim)}
+.field input.good{box-shadow:inset 0 0 0 2px var(--good)}.field input.bad{box-shadow:inset 0 0 0 2px var(--crit)}
+@media (hover:hover){.qopt:not(:disabled):hover{background:rgba(255,255,255,.18)}.trow:hover,.sumcard:hover{background:rgba(255,255,255,.16)}.links a:hover{background:rgba(255,255,255,.18)}}
+@media (min-width:720px){.qscrim{align-items:center}.sumgrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:960px){.shero{padding:30px}.planbox{padding:22px}}
 .emptyday{padding:16px;color:var(--dim);font-size:14px}
 @media (min-width:720px){.app{padding-block:34px 134px}}
 @media (max-width:400px){.nav button{padding:8px 9px;font-size:12px}}
@@ -276,6 +351,7 @@ h1.task{font-family:var(--display);font-weight:800;font-size:clamp(27px,7vw,36px
   <button data-tab="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1" fill="currentColor"/><circle cx="4" cy="12" r="1" fill="currentColor"/><circle cx="4" cy="18" r="1" fill="currentColor"/></svg>Plan</button>
   <button data-tab="cal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="5" width="17" height="15.5" rx="3.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Calendar</button>
   <button data-tab="tests"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>Tests</button>
+  <button data-tab="study"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h7M9 12h5"/></svg>Study</button>
 </nav>
 <button class="fab glass" id="fab" aria-label="Add a task" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></button>
 <div id="layer"></div>
@@ -684,9 +760,10 @@ document.addEventListener('click',ev=>{
 function render(){
   $('#stats').innerHTML=statsHTML();
   document.querySelectorAll('.nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===tab?'page':'false'));
-  $('#fab').hidden=tab==='now';
+  $('#fab').hidden=tab==='now'||tab==='study';
   if(!db){return}
   if(!loaded.t||!loaded.e) return;
+  if(tab==='study'){ $('#view').innerHTML=renderStudy(); return }
   $('#view').innerHTML=tab==='now'?renderNow():tab==='plan'?renderPlan():tab==='cal'?renderCal():renderTests();
   paintTimer();
 }
@@ -762,6 +839,192 @@ document.addEventListener('submit',async ev=>{
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#layer').innerHTML) $('#layer').innerHTML=''});
 setInterval(()=>{if(!document.hidden&&!$('#layer').innerHTML) render()},60000);
+
+/* ---------- Study (midterm guide) ---------- */
+let STUDY=null, studyErr=false, studySel=null, studyOpen={};
+const sget=()=>{try{return JSON.parse(localStorage.getItem('gos-study')||'{}')}catch(e){return {}}};
+const sset=o=>{try{localStorage.setItem('gos-study',JSON.stringify(o))}catch(e){}};
+let SP=sget(); SP.res=SP.res||{}; SP.best=SP.best||{}; SP.ok=SP.ok||{};
+async function loadStudy(){
+  try{const r=await fetch('study.json?v='+Date.now(),{cache:'no-store'}); if(!r.ok) throw 0; STUDY=await r.json(); studyErr=false}
+  catch(e){studyErr=true}
+  if(tab==='study') render();
+}
+const daysTo=iso=>daysUntil(iso+'T12:00:00');
+function nextCourse(){const t=dayKey(new Date());return (STUDY.courses.find(c=>c.date>=t)||STUDY.courses[0]).code}
+function courseStats(c){
+  const n=c.q.length, seen=c.q.filter(q=>q.id in SP.res).length, right=c.q.filter(q=>SP.res[q.id]===1).length;
+  return {n,seen,right,miss:seen-right,pct:n?Math.round(right/n*100):0};
+}
+function renderStudy(){
+  if(studyErr) return `<section class="glass rest"><h1>Couldn’t load the study guide.</h1><p>Check your connection and refresh.</p></section>`;
+  if(!STUDY){loadStudy();return `<section class="glass rest"><div class="eyebrow"><span class="dot"></span>Study</div><h1>Loading your guide…</h1></section>`}
+  if(!studySel) studySel=nextCourse();
+  const chips=['plan',...STUDY.courses.map(c=>c.code)].map(k=>{
+    const c=STUDY.courses.find(x=>x.code===k);
+    const lab=k==='plan'?'Plan':k, d=c?daysTo(c.date):null;
+    return `<button type="button" data-scourse="${k}" aria-pressed="${studySel===k}">${lab}${c&&d>=0?`<small>${d===0?'today':d+'d'}</small>`:''}</button>`;
+  }).join('');
+  return `<div class="studyhead"><div class="seg schips" role="tablist" aria-label="Course">${chips}</div></div>`+(studySel==='plan'?renderPlanGuide():renderCourseGuide(STUDY.courses.find(c=>c.code===studySel)));
+}
+function renderPlanGuide(){
+  const today=dayKey(new Date());
+  const rows=STUDY.plan.map(([d,items])=>{
+    const dt=new Date(d+'T12:00:00'), past=d<today, isT=d===today;
+    const exam=items.some(x=>/MIDTERM/.test(x));
+    return `<div class="pday ${past?'past':''} ${isT?'today':''} ${exam?'exam':''}" ${isT?'id="planToday"':''}>
+      <div class="pdate"><b>${dt.toLocaleDateString('en-CA',{weekday:'short'}).replace('.','')}</b><span>${dt.toLocaleDateString('en-CA',{month:'short',day:'numeric'}).replace('.','')}</span></div>
+      <ul>${items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`}).join('');
+  const sum=STUDY.courses.map(c=>{const s=courseStats(c),d=daysTo(c.date);return `<button type="button" class="frost sumcard" data-scourse="${c.code}"><span class="course" style="color:${(COURSES[c.code]||COURSES.LIFE).color}"><b></b>${c.code}</span><strong>${d<0?'Done':d===0?'Today':d+' days'}</strong><small>${esc(c.dateLabel)} · ${c.weight}%</small><span class="minibar"><i style="width:${s.pct}%"></i></span><small>${s.right}/${s.n} practice Q right</small></button>`}).join('');
+  return `<section class="section"><div class="sumgrid">${sum}</div></section>
+  <section class="glass planbox"><div class="shead"><h2>Your midterm run, day by day</h2><span>Oct 8 → Oct 27</span></div>${rows}</section>`;
+}
+function renderCourseGuide(c){
+  const s=courseStats(c), d=daysTo(c.date), k=COURSES[c.code]||COURSES.LIFE;
+  const topics=[...new Set(c.q.map(q=>q.topic))];
+  const topicRows=topics.map(t=>{const qs=c.q.filter(q=>q.topic===t), r=qs.filter(q=>SP.res[q.id]===1).length, m=qs.filter(q=>SP.res[q.id]===0).length;
+    return `<button type="button" class="trow frost" data-quiz="topic" data-topic="${esc(t)}"><span class="t">${esc(t)}</span><span class="tmeta">${r}/${qs.length}${m?` · <em>${m} missed</em>`:''}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 5l7 7-7 7"/></svg></button>`}).join('');
+  const sec=(id,title,body)=>`<details class="frost gsec" ${studyOpen[c.code+id]!==false?'open':''} data-sec="${c.code+id}"><summary>${title}</summary>${body}</details>`;
+  const conf=SP.ok[c.code]||{};
+  return `<div class="split">
+  <section class="glass shero">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+      <div style="min-width:0">${courseTag(c.code)}<h1 class="task" style="margin-top:10px">${esc(c.name)} midterm</h1>
+      <p class="why" style="margin-top:6px">${esc(c.dateLabel)} · ${c.weight}% of your grade</p></div>
+      <div class="days"><strong style="color:${d<=3?'var(--crit)':d<=7?'var(--warn)':'var(--fg)'}">${d<0?'✓':d}</strong><small>${d<0?'done':'days'}</small></div>
+    </div>
+    <p class="why">${esc(c.format)}</p>
+    <div class="meta">
+      <div class="frost"><small>Answered</small><strong>${s.seen}/${s.n}</strong></div>
+      <div class="frost"><small>Right</small><strong>${s.right}</strong></div>
+      <div class="frost"><small>Best mock</small><strong>${SP.best[c.code]!=null?SP.best[c.code]+'%':'—'}</strong></div>
+    </div>
+    <div class="actions">
+      <button class="btn primary" data-quiz="mock">Mock test · 10 Q · 15 min</button>
+      <button class="btn ghost small" data-quiz="all">Practise all ${s.n}</button>
+      <button class="btn ghost small" data-quiz="missed" ${s.miss?'':'disabled'}>Redo missed (${s.miss})</button>
+    </div>
+    ${c.code==='ITM301'?`<button class="btn ghost small" data-act="subnet" style="width:100%">Subnet drill · no calculator</button>`:''}
+  </section>
+  <div class="side gcol">
+    <section class="section"><div class="shead"><h2>Practice by topic</h2><span>tap to drill</span></div>${topicRows}</section>
+  </div></div>
+  <div class="cols">
+    ${sec('cov','What’s on it',`<ul class="checks">${c.covers.map((x,i)=>`<li><button type="button" class="chk ${conf[i]?'on':''}" data-conf="${c.code}:${i}" aria-pressed="${!!conf[i]}" aria-label="Mark as reviewed: ${esc(x)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></button><span>${esc(x)}</span></li>`).join('')}</ul><p class="note">Tick each one once you’ve reviewed it.</p>`)}
+    ${sec('cheat','Must-know (cheat sheet material)',`<ul class="gl">${c.cheat.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`)}
+    ${sec('trap','Exam traps',`<ul class="gl">${c.traps.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`)}
+    ${sec('links','More practice online',`<div class="links">${c.links.map(l=>`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>`).join('')}</div><p class="note">Older tests from past terms are fine to practise with. Anything from THIS term’s tests is a misconduct risk, so skip it.</p>`)}
+  </div>`;
+}
+async function award(gain){const today=dayKey(new Date()),y=dayKey(new Date(Date.now()-864e5)); await saveState({xp:(st.xp||0)+gain,streak:st.lastDay===today?st.streak:(st.lastDay===y?(st.streak||0)+1:1),lastDay:today})}
+/* ---- quiz engine ---- */
+let QZ=null, qzTick=null;
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function startQuiz(mode,topic){
+  const c=STUDY.courses.find(x=>x.code===studySel); if(!c) return;
+  let qs=c.q;
+  if(mode==='topic') qs=qs.filter(q=>q.topic===topic);
+  if(mode==='missed') qs=qs.filter(q=>SP.res[q.id]===0);
+  qs=shuffle(qs); if(mode==='mock') qs=qs.slice(0,10);
+  qs=qs.map(q=>{const idx=shuffle(q.o.map((_,i)=>i));return {...q,o:idx.map(i=>q.o[i]),a:idx.indexOf(q.a)}});
+  if(!qs.length) return toast('Nothing to practise here yet.');
+  QZ={mode,course:c.code,qs,i:0,picks:[],answered:false,end:mode==='mock'?Date.now()+15*6e4:null,title:mode==='topic'?topic:mode==='mock'?'Mock test':mode==='missed'?'Missed questions':'All questions'};
+  paintQuiz();
+  clearInterval(qzTick); if(QZ.end) qzTick=setInterval(()=>{const el=document.getElementById('qzClock'); if(!QZ||!el) return clearInterval(qzTick); const l=QZ.end-Date.now(); if(l<=0){clearInterval(qzTick);finishQuiz();return} el.textContent=Math.floor(l/6e4)+':'+String(Math.floor(l%6e4/1e3)).padStart(2,'0')},1000);
+}
+function paintQuiz(){
+  const q=QZ.qs[QZ.i], pick=QZ.picks[QZ.i], showFb=QZ.mode!=='mock'&&QZ.answered;
+  const opts=q.o.map((o,j)=>{let cls='';if(showFb){if(j===q.a)cls='right';else if(j===pick)cls='wrong'}else if(QZ.mode==='mock'&&j===pick)cls='picked';
+    return `<button type="button" class="qopt ${cls}" data-pick="${j}" ${showFb?'disabled':''}><span class="ql">${'ABCD'[j]}</span><span>${esc(o)}</span></button>`}).join('');
+  const qtext=q.code?q.q.split('\n\n')[0]:q.q;
+  $('#layer').innerHTML=`<div class="scrim qscrim"><div class="glass sheet quiz" role="dialog" aria-modal="true" aria-label="${esc(QZ.title)}">
+    <div class="qtop"><span class="course" style="color:${(COURSES[QZ.course]||COURSES.LIFE).color}"><b></b>${QZ.course} · ${esc(QZ.title)}</span>
+    <span class="qcount">${QZ.end?`<b id="qzClock">15:00</b> · `:''}${QZ.i+1}/${QZ.qs.length}</span>
+    <button type="button" class="icon-btn" data-qz="close" aria-label="Close quiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div class="track"><i style="width:${(QZ.i)/QZ.qs.length*100}%"></i></div>
+    <div class="qtopic">${esc(q.topic)}</div>
+    <h2 class="qq">${esc(qtext)}</h2>
+    ${q.code?`<pre class="qcode"><code>${esc(q.code)}</code></pre>`:''}
+    <div class="qopts">${opts}</div>
+    ${showFb?`<div class="qfb ${pick===q.a?'ok':'no'}"><b>${pick===q.a?'Correct.':'Not quite. Answer: '+'ABCD'[q.a]+'.'}</b> ${esc(q.e)}</div>`:''}
+    <div class="actions">
+      ${QZ.mode==='mock'?`<button type="button" class="btn ghost small" data-qz="prev" ${QZ.i?'':'disabled'}>Back</button><button type="button" class="btn primary small" style="grid-column:auto" data-qz="${QZ.i===QZ.qs.length-1?'finish':'next'}">${QZ.i===QZ.qs.length-1?'Submit test':'Next'}</button>`
+      :`<button type="button" class="btn primary" data-qz="${QZ.i===QZ.qs.length-1?'finish':'next'}" ${QZ.answered?'':'disabled'}>${QZ.i===QZ.qs.length-1?'See results':'Next question'}</button>`}
+    </div></div></div>`;
+  if(QZ.end){const el=document.getElementById('qzClock'),l=QZ.end-Date.now(); if(el) el.textContent=Math.floor(l/6e4)+':'+String(Math.floor(l%6e4/1e3)).padStart(2,'0')}
+}
+async function finishQuiz(){
+  clearInterval(qzTick);
+  const qs=QZ.qs; let right=0;
+  qs.forEach((q,i)=>{const ok=QZ.picks[i]===q.a; if(QZ.picks[i]!=null||QZ.mode==='mock'){SP.res[q.id]=ok?1:0} if(ok) right++});
+  const pct=Math.round(right/qs.length*100);
+  if(QZ.mode==='mock') SP.best[QZ.course]=Math.max(SP.best[QZ.course]||0,pct);
+  sset(SP);
+  const wrong=qs.map((q,i)=>({q,p:QZ.picks[i]})).filter(x=>x.p!==x.q.a);
+  const gain=right*5;
+  $('#layer').innerHTML=`<div class="scrim qscrim"><div class="glass sheet quiz" role="dialog" aria-modal="true" aria-label="Results">
+    <div class="qtop"><span class="course" style="color:${(COURSES[QZ.course]||COURSES.LIFE).color}"><b></b>${QZ.course} · ${esc(QZ.title)}</span><span></span>
+    <button type="button" class="icon-btn" data-qz="close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div class="qscore"><strong>${pct}%</strong><span>${right} of ${qs.length} right${gain?` · +${gain} XP`:''}</span></div>
+    <p class="why" style="margin:0">${pct>=80?'Strong. Move to the next topic or run a mock.':pct>=60?'Close. Redo the missed ones tomorrow.':'This one needs work. Reread the must-know list, then redo the missed questions.'}</p>
+    ${wrong.length?`<div class="shead" style="padding:0"><h2 style="font-size:17px">Review what you missed</h2></div><div class="qreview">${wrong.map(x=>`<div class="frost qr"><div class="t">${esc(x.q.code?x.q.q.split('\n\n')[0]:x.q.q)}</div>${x.q.code?`<pre class="qcode"><code>${esc(x.q.code)}</code></pre>`:''}<div class="s">${x.p==null?'No answer':'You: '+esc(x.q.o[x.p])}<br><b>Answer: ${esc(x.q.o[x.q.a])}</b></div><p>${esc(x.q.e)}</p></div>`).join('')}</div>`:''}
+    <div class="actions"><button type="button" class="btn primary" data-qz="close">Done</button>${wrong.length?`<button type="button" class="btn ghost small" data-qz="redo" style="grid-column:1/-1">Redo these ${wrong.length}</button>`:''}</div>
+  </div></div>`;
+  QZ.wrong=wrong.map(x=>x.q);
+  if(gain) await award(gain);
+}
+/* ---- subnet drill ---- */
+let SN=null;
+const ip2s=n=>[24,16,8,0].map(s=>(n>>>s)&255).join('.');
+function newSubnet(){
+  const prefix=24+Math.floor(Math.random()*7); // /24 to /30
+  const priv=[[10,Math.floor(Math.random()*256),Math.floor(Math.random()*256)],[172,16+Math.floor(Math.random()*16),Math.floor(Math.random()*256)],[192,168,Math.floor(Math.random()*256)]][Math.floor(Math.random()*3)];
+  const last=1+Math.floor(Math.random()*254);
+  const ip=((priv[0]<<24)|(priv[1]<<16)|(priv[2]<<8)|last)>>>0;
+  const mask=prefix===0?0:(0xFFFFFFFF<<(32-prefix))>>>0;
+  const net=(ip&mask)>>>0, bc=(net|(~mask>>>0))>>>0;
+  SN={ip:ip2s(ip),prefix,mask:ip2s(mask),net:ip2s(net),bc:ip2s(bc),first:ip2s(net+1),lastH:ip2s(bc-1),hosts:String(Math.pow(2,32-prefix)-2),block:256-((mask&255)),checked:false};
+}
+function paintSubnet(){
+  if(!SN) newSubnet();
+  const f=(id,label,ph)=>`<div class="field"><label for="sn-${id}">${label}</label><input id="sn-${id}" inputmode="decimal" autocomplete="off" placeholder="${ph}" data-sn="${id}"></div>`;
+  $('#layer').innerHTML=`<div class="scrim qscrim"><form class="glass sheet quiz" id="snForm" novalidate aria-label="Subnet drill">
+    <div class="qtop"><span class="course" style="color:var(--c-itm301)"><b></b>ITM301 · Subnet drill</span><span></span><button type="button" class="icon-btn" data-qz="close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <h2 class="qq" style="font-variant-numeric:tabular-nums">${SN.ip}/${SN.prefix}</h2>
+    <p class="note" style="margin:-6px 0 0">No calculator. Find each value, then check.</p>
+    <div class="two">${f('mask','Subnet mask','255.255.255.?')}${f('hosts','Usable hosts','?')}</div>
+    <div class="two">${f('net','Network address','')}${f('bc','Broadcast address','')}</div>
+    <div class="two">${f('first','First usable host','')}${f('lastH','Last usable host','')}</div>
+    <div id="snFb"></div>
+    <div class="actions"><button type="submit" class="btn primary">Check</button><button type="button" class="btn ghost small" data-qz="snnew" style="grid-column:1/-1">New question</button></div>
+  </form></div>`;
+}
+function checkSubnet(){
+  const keys=['mask','hosts','net','bc','first','lastH']; let right=0;
+  keys.forEach(k=>{const el=document.querySelector(`[data-sn="${k}"]`), v=(el.value||'').trim(), ok=v===SN[k]; el.classList.toggle('good',ok); el.classList.toggle('bad',!ok); if(ok) right++});
+  const oct=SN.mask.split('.')[3];
+  document.getElementById('snFb').innerHTML=`<div class="qfb ${right===6?'ok':'no'}"><b>${right}/6 right.</b> /${SN.prefix} → last octet of the mask = ${oct}. Block size = 256 − ${oct} = ${SN.block}. Count up in ${SN.block}s to find the block that holds .${SN.ip.split('.')[3]}: network ${SN.net}, broadcast ${SN.bc}. Usable: ${SN.first} to ${SN.lastH} (${SN.hosts} hosts = 2^${32-SN.prefix} − 2).</div>`;
+  if(!SN.checked&&right===6){SN.checked=true;award(10);toast('+10 XP')}
+}
+document.addEventListener('click',ev=>{
+  const sc=ev.target.closest('[data-scourse]'); if(sc){studySel=sc.dataset.scourse;render();window.scrollTo({top:0,behavior:'smooth'});return}
+  const cf=ev.target.closest('[data-conf]'); if(cf){const [code,i]=cf.dataset.conf.split(':');SP.ok[code]=SP.ok[code]||{};SP.ok[code][i]=!SP.ok[code][i];sset(SP);cf.classList.toggle('on',!!SP.ok[code][i]);cf.setAttribute('aria-pressed',String(!!SP.ok[code][i]));return}
+  const qb=ev.target.closest('[data-quiz]'); if(qb){startQuiz(qb.dataset.quiz,qb.dataset.topic);return}
+  if(ev.target.closest('[data-act="subnet"]')){SN=null;paintSubnet();return}
+  const pk=ev.target.closest('[data-pick]');
+  if(pk&&QZ){const j=Number(pk.dataset.pick); if(QZ.mode==='mock'){QZ.picks[QZ.i]=j;paintQuiz()} else if(!QZ.answered){QZ.picks[QZ.i]=j;QZ.answered=true;SP.res[QZ.qs[QZ.i].id]=j===QZ.qs[QZ.i].a?1:0;sset(SP);paintQuiz()} return}
+  const z=ev.target.closest('[data-qz]'); if(!z) return;
+  const a=z.dataset.qz;
+  if(a==='close'){clearInterval(qzTick);QZ=null;SN=null;$('#layer').innerHTML='';render();return}
+  if(a==='next'){QZ.i++;QZ.answered=QZ.mode==='mock'?false:QZ.picks[QZ.i]!=null;paintQuiz();return}
+  if(a==='prev'){QZ.i--;paintQuiz();return}
+  if(a==='finish'){finishQuiz();return}
+  if(a==='redo'){const w=QZ.wrong.map(q=>{const idx=shuffle(q.o.map((_,i)=>i));return {...q,o:idx.map(i=>q.o[i]),a:idx.indexOf(q.a)}});QZ={mode:'missed',course:QZ.course,qs:shuffle(w),i:0,picks:[],answered:false,end:null,title:'Redo missed'};paintQuiz();return}
+  if(a==='snnew'){newSubnet();paintSubnet();return}
+});
+document.addEventListener('submit',ev=>{if(ev.target.id==='snForm'){ev.preventDefault();checkSubnet()}});
+document.addEventListener('toggle',ev=>{const d=ev.target; if(d.matches&&d.matches('details[data-sec]')) studyOpen[d.dataset.sec]=d.open},true);
+document.addEventListener('keydown',ev=>{if(!QZ||!document.querySelector('.quiz')) return; const k=ev.key.toLowerCase(); const idx='abcd'.indexOf(k); if(idx>=0&&ev.target.tagName!=='INPUT'){const b=document.querySelector(`[data-pick="${idx}"]`); if(b&&!b.disabled) b.click()} else if(k==='enter'&&ev.target.tagName!=='INPUT'){const n=document.querySelector('[data-qz="next"],[data-qz="finish"]'); if(n&&!n.disabled){ev.preventDefault();n.click()}}});
 
 /* ---------- boot ---------- */
 function attach(store){

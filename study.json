@@ -1,0 +1,1568 @@
+{
+ "version": 1,
+ "courses": [
+  {
+   "code": "ECN503",
+   "name": "Economic Development",
+   "date": "2026-10-21",
+   "dateLabel": "Wed Oct 21 · in class",
+   "weight": 33,
+   "format": "In-class midterm. Bring your one-page, double-sided cheat sheet.",
+   "covers": [
+    "Lecture 1: Intro",
+    "Lecture 2: Institutions & colonialism",
+    "Lecture 3: Hunger & nutrition traps (Poor Economics Ch 2)",
+    "Lecture 4: Health & de-worming (Poor Economics Ch 3)",
+    "Oct 7 lecture",
+    "Oct 14 lecture (check it’s not reading week)",
+    "All bolded required readings"
+   ],
+   "cheat": [
+    "North: institutions = 'the rules of the game', the humanly devised constraints that shape interaction. Formal (laws) vs informal (norms).",
+    "Inclusive = secure property rights, rule of law, open entry. Extractive = take from many to benefit a narrow elite.",
+    "AJR IV chain: settler mortality -> settlements -> early institutions -> current institutions -> GDP today. Exclusion restriction: mortality affects income ONLY through institutions.",
+    "Reversal of fortune: rich, dense colonies in 1500 got extractive institutions, so they're relatively poor today.",
+    "Poverty trap graph: income today (x) vs tomorrow (y) with a 45° line. S-curve below the line at low income = trap. Inverted L above the line = no trap.",
+    "Nutrition trap evidence: the poor buy tastier calories, not more calories. Jensen & Miller rice subsidy = Giffen behaviour.",
+    "Health: underinvestment in cheap prevention; small prices kill take-up of bed nets (Cohen & Dupas).",
+    "De-worming (Miguel & Kremer): spillovers, so randomize by school.",
+    "ATE = mean(treatment) - mean(control). Randomization removes selection bias."
+   ],
+   "traps": [
+    "Drawing the S-curve and L-shape the wrong way round. Practise drawing both with the 45° line.",
+    "Saying settler mortality affects income directly. It's only through institutions.",
+    "Mixing up 'percent' and 'percentage points' in the ATE.",
+    "Forgetting the readings. Bolded readings are fair game."
+   ],
+   "links": [
+    {
+     "t": "MIT 14.73 (Banerjee & Duflo’s own course): quizzes with solutions",
+     "u": "https://ocw.mit.edu/courses/14-73-the-challenge-of-world-poverty-spring-2011/pages/exams/"
+    },
+    {
+     "t": "MIT 14.73 quiz 1 solutions (Giffen goods, Jensen & Miller)",
+     "u": "https://ocw.mit.edu/courses/14-73-the-challenge-of-world-poverty-spring-2011/resources/mit14_73s11_quiz1_sol/"
+    },
+    {
+     "t": "MIT 14.73 lecture slides (nutrition, health, poverty traps)",
+     "u": "https://ocw.mit.edu/courses/14-73-the-challenge-of-world-poverty-spring-2011/pages/lecture-notes/"
+    }
+   ],
+   "q": [
+    {
+     "id": "e1",
+     "topic": "Institutions (North)",
+     "q": "Douglass North defines institutions as:",
+     "o": [
+      "Government buildings and agencies",
+      "The rules of the game in a society: the humanly devised constraints that shape interaction",
+      "Only written laws",
+      "Banks and financial markets"
+     ],
+     "a": 1,
+     "e": "North: institutions are 'the rules of the game'. They can be formal (laws, constitutions) or informal (norms, customs)."
+    },
+    {
+     "id": "e2",
+     "topic": "Institutions (North)",
+     "q": "Which is an INFORMAL institution?",
+     "o": [
+      "A constitution",
+      "Property law",
+      "A social norm about repaying debts within a village",
+      "A central bank charter"
+     ],
+     "a": 2,
+     "e": "Informal = unwritten norms, customs, codes of conduct. Formal = written rules backed by the state."
+    },
+    {
+     "id": "e3",
+     "topic": "Inclusive vs extractive",
+     "q": "Extractive economic institutions are designed to:",
+     "o": [
+      "Protect everyone's property rights",
+      "Take income and wealth from many people to benefit a narrow elite",
+      "Encourage broad participation in markets",
+      "Lower taxes for everyone"
+     ],
+     "a": 1,
+     "e": "Extractive = concentrate power and wealth in a small group. Inclusive = secure property rights, rule of law, open entry, broad participation."
+    },
+    {
+     "id": "e4",
+     "topic": "Inclusive vs extractive",
+     "q": "Which feature belongs to INCLUSIVE institutions?",
+     "o": [
+      "Forced labour",
+      "Barriers that block new businesses",
+      "Secure property rights and contracts for most people",
+      "Monopolies granted to the ruler's friends"
+     ],
+     "a": 2,
+     "e": "Inclusive institutions give people incentives to invest and innovate because they keep what they earn."
+    },
+    {
+     "id": "e5",
+     "topic": "AJR (colonial origins)",
+     "q": "In Acemoglu, Johnson and Robinson (2001), the instrument for institutions is:",
+     "o": [
+      "Distance from the equator",
+      "Settler mortality",
+      "Today's GDP",
+      "Ethnic diversity"
+     ],
+     "a": 1,
+     "e": "Where early European settlers died a lot, they didn't settle. They set up extractive institutions instead."
+    },
+    {
+     "id": "e6",
+     "topic": "AJR (colonial origins)",
+     "q": "Which chain is the AJR argument?",
+     "o": [
+      "Income -> institutions -> settler mortality",
+      "Settler mortality -> settlements -> early institutions -> current institutions -> income today",
+      "Geography -> income -> institutions",
+      "Culture -> settler mortality -> income"
+     ],
+     "a": 1,
+     "e": "High mortality -> few settlers -> extractive early institutions -> they persist -> lower income today."
+    },
+    {
+     "id": "e7",
+     "topic": "AJR (colonial origins)",
+     "q": "Why can't you just regress GDP on institutions to find the effect of institutions?",
+     "o": [
+      "There isn't enough data",
+      "Reverse causality and omitted variables: richer countries may afford better institutions",
+      "Institutions can't be measured",
+      "GDP is always rising"
+     ],
+     "a": 1,
+     "e": "That's the endogeneity problem. The instrument (settler mortality) shifts institutions for reasons unrelated to today's income."
+    },
+    {
+     "id": "e8",
+     "topic": "AJR (colonial origins)",
+     "q": "The exclusion restriction in AJR says settler mortality affects income today:",
+     "o": [
+      "Directly through disease today",
+      "Only through its effect on institutions",
+      "Not at all",
+      "Only in Africa"
+     ],
+     "a": 1,
+     "e": "If old settler mortality affected income through some other channel (like today's disease burden), the IV estimate would be biased."
+    },
+    {
+     "id": "e9",
+     "topic": "AJR (colonial origins)",
+     "q": "'Reversal of fortune' means:",
+     "o": [
+      "Rich countries always stay rich",
+      "Colonies that were relatively rich in 1500 are relatively poor today",
+      "Poor countries grow faster",
+      "Commodity prices reverse every decade"
+     ],
+     "a": 1,
+     "e": "Rich, dense places got extractive institutions (easier to exploit). Sparse places got settlers and inclusive institutions, so the ranking flipped."
+    },
+    {
+     "id": "e10",
+     "topic": "Poverty traps",
+     "q": "A poverty trap exists when the curve of income today vs income tomorrow is:",
+     "o": [
+      "An inverted L shape that stays above the 45° line at low incomes",
+      "An S shape that is BELOW the 45° line at low incomes",
+      "A straight 45° line",
+      "Always flat"
+     ],
+     "a": 1,
+     "e": "S-curve: below the threshold, tomorrow's income < today's, so the poor get poorer and get stuck. Above it, people climb."
+    },
+    {
+     "id": "e11",
+     "topic": "Poverty traps",
+     "q": "With an inverted-L (no trap) curve, a very poor person:",
+     "o": [
+      "Gets poorer forever",
+      "Still grows richer over time, because tomorrow's income is above today's at low levels",
+      "Stays exactly where they are",
+      "Needs a big push to escape"
+     ],
+     "a": 1,
+     "e": "If the curve starts above the 45° line, everyone moves up toward the same steady state. No threshold, so no trap."
+    },
+    {
+     "id": "e12",
+     "topic": "Hunger (Poor Economics Ch 2)",
+     "q": "The nutrition-based poverty trap says:",
+     "o": [
+      "Food prices always rise",
+      "People are too poor to eat enough to be productive, so they stay too poor to eat enough",
+      "Rich people eat less",
+      "Calories don't matter for work"
+     ],
+     "a": 1,
+     "e": "Low income -> low calories -> low productivity -> low income. That's the S-curve logic applied to food."
+    },
+    {
+     "id": "e13",
+     "topic": "Hunger (Poor Economics Ch 2)",
+     "q": "Banerjee and Duflo find that when the very poor get a bit more money, they often:",
+     "o": [
+      "Buy many more cheap calories",
+      "Buy tastier, more expensive food (or TVs and festivals) instead of more calories",
+      "Save all of it",
+      "Spend it all on medicine"
+     ],
+     "a": 1,
+     "e": "This is their main evidence that most people aren't stuck in a calorie-based trap."
+    },
+    {
+     "id": "e14",
+     "topic": "Hunger (Poor Economics Ch 2)",
+     "q": "Jensen and Miller subsidized rice in Hunan, China. Some very poor households:",
+     "o": [
+      "Bought a lot more rice",
+      "Bought LESS rice and more meat/shrimp: Giffen behaviour",
+      "Stopped eating",
+      "Sold the rice"
+     ],
+     "a": 1,
+     "e": "Cheaper rice freed up money, so people switched to tastier foods. Calories didn't go up."
+    },
+    {
+     "id": "e15",
+     "topic": "Health (Poor Economics Ch 3)",
+     "q": "Charging even a small price for bed nets (Cohen and Dupas) tends to:",
+     "o": [
+      "Increase take-up a lot",
+      "Sharply cut take-up without getting nets to the people who need them most",
+      "Make no difference",
+      "Raise malaria"
+     ],
+     "a": 1,
+     "e": "Small fees -> big drop in demand, and paying didn't screen for the neediest. A key 'free vs cost-sharing' finding."
+    },
+    {
+     "id": "e16",
+     "topic": "Health: de-worming",
+     "q": "In the Kenya de-worming study (Miguel and Kremer), untreated kids in treatment schools also got healthier. That shows:",
+     "o": [
+      "The pills were fake",
+      "Externalities (spillovers): fewer worms around means less reinfection for everyone",
+      "Selection bias",
+      "Reverse causality"
+     ],
+     "a": 1,
+     "e": "That's why they randomized whole SCHOOLS, not individual kids. Individual randomization would underestimate the true effect."
+    },
+    {
+     "id": "e17",
+     "topic": "RCTs & the ATE",
+     "q": "In an RCT, average attendance is 82% in the treatment group and 75% in the control group. The ATE is:",
+     "o": [
+      "82%",
+      "157 percentage points",
+      "7 percentage points",
+      "75%"
+     ],
+     "a": 2,
+     "e": "ATE = mean(treatment) - mean(control) = 82 - 75 = 7 percentage points."
+    },
+    {
+     "id": "e18",
+     "topic": "RCTs & the ATE",
+     "q": "Why does random assignment give an unbiased estimate of the effect?",
+     "o": [
+      "It makes the sample bigger",
+      "Treatment and control groups are the same on average before treatment, so there's no selection bias",
+      "It guarantees the program works",
+      "It removes all measurement error"
+     ],
+     "a": 1,
+     "e": "Random assignment = no one chooses their group, so any later difference comes from the treatment."
+    },
+    {
+     "id": "e19",
+     "topic": "RCTs & the ATE",
+     "q": "Comparing kids whose parents CHOSE to buy deworming pills vs kids whose parents didn't would suffer from:",
+     "o": [
+      "Externalities",
+      "Selection bias",
+      "Reverse fortune",
+      "The exclusion restriction"
+     ],
+     "a": 1,
+     "e": "Parents who buy pills are probably different (richer, more informed), so the groups weren't comparable to begin with."
+    },
+    {
+     "id": "e20",
+     "topic": "Health (Poor Economics Ch 3)",
+     "q": "Banerjee and Duflo argue the poor underinvest in cheap prevention (chlorine, nets) partly because:",
+     "o": [
+      "Prevention is useless",
+      "Benefits are in the future and invisible, while costs are now (plus beliefs and present bias)",
+      "They have no information at all",
+      "Governments ban it"
+     ],
+     "a": 1,
+     "e": "Cheap prevention has high returns but delayed, invisible payoffs. Curative care feels more valuable even when it isn't."
+    }
+   ]
+  },
+  {
+   "code": "PCS181",
+   "name": "Introduction to Astronomy",
+   "date": "2026-10-23",
+   "dateLabel": "Fri Oct 23 · section 011",
+   "weight": 15,
+   "format": "90 minutes. Multiple choice + short answer. No calculations.",
+   "covers": [
+    "Intro: how science works, criteria for a theory",
+    "Scales of the Universe (Ch 1)",
+    "Gravity & orbits (Ch 4): Kepler, Newton",
+    "Light & telescopes (Ch 5 & 6): spectrum, spectra, Doppler, telescopes",
+    "The Sun (Ch 7)",
+    "The Solar System (Ch 16 & 17), the Oct 9 lecture"
+   ],
+   "cheat": [
+    "Theory checklist: explains observations, physically motivated and consistent, makes falsifiable predictions.",
+    "Light-year = distance. Looking far = looking back in time.",
+    "Kepler: 1) ellipses, Sun at one focus. 2) equal areas, fastest at perihelion. 3) farther = longer period.",
+    "Newton: inverse-square gravity. 2x distance = 1/4 force. Orbiting = free fall.",
+    "EM spectrum, low to high energy: radio, microwave, IR, visible, UV, X-ray, gamma.",
+    "Hotter = bluer (Wien). Kirchhoff: continuous / emission / absorption.",
+    "Redshift = moving away. Aperture (area) matters most. Space telescopes beat the atmosphere.",
+    "Sun: H -> He fusion in the core. Layers: core, radiative, convective, photosphere, chromosphere, corona. Sunspots = cooler, magnetic, 11-year cycle.",
+    "Solar system: nebular theory (flat spinning disk), frost line -> rocky inside, giants outside."
+   ],
+   "traps": [
+    "Light-year as time. It's distance.",
+    "Kepler's focus vs centre.",
+    "'No gravity in space' is wrong.",
+    "Magnification is not the most important telescope feature."
+   ],
+   "links": [
+    {
+     "t": "OpenStax Astronomy 2e: Ch 3 review questions (orbits & gravity)",
+     "u": "https://openstax.org/books/astronomy-2e/pages/3-review-questions"
+    },
+    {
+     "t": "OpenStax Astronomy 2e: Ch 5 review questions (light & spectra)",
+     "u": "https://openstax.org/books/astronomy-2e/pages/5-review-questions"
+    },
+    {
+     "t": "OpenStax Astronomy 2e: Ch 6 review questions (telescopes)",
+     "u": "https://openstax.org/books/astronomy-2e/pages/6-review-questions"
+    },
+    {
+     "t": "OpenStax Astronomy 2e: Ch 15 review questions (the Sun)",
+     "u": "https://openstax.org/books/astronomy-2e/pages/15-review-questions"
+    },
+    {
+     "t": "OpenStax Astronomy 2e: Ch 7 review questions (solar system)",
+     "u": "https://openstax.org/books/astronomy-2e/pages/7-review-questions"
+    }
+   ],
+   "q": [
+    {
+     "id": "a1",
+     "topic": "Intro: how science works",
+     "q": "A new astronomical theory should make novel predictions that are:",
+     "o": [
+      "Falsifiable",
+      "Universally accepted",
+      "Mathematically proven",
+      "Consistent with every older theory"
+     ],
+     "a": 0,
+     "e": "Falsifiable = there's an observation that could prove it wrong. That's criterion (c) from your intro lecture."
+    },
+    {
+     "id": "a2",
+     "topic": "Intro: how science works",
+     "q": "Which is NOT one of the three criteria a good theory should meet?",
+     "o": [
+      "Explain current observations",
+      "Be physically motivated and internally consistent",
+      "Make novel, falsifiable predictions",
+      "Be supported by most astronomers"
+     ],
+     "a": 3,
+     "e": "Popularity isn't a criterion. The three: explain observations, be physically motivated and consistent, make falsifiable predictions."
+    },
+    {
+     "id": "a3",
+     "topic": "Scales of the Universe",
+     "q": "A light-year is a unit of:",
+     "o": [
+      "Time",
+      "Distance",
+      "Speed",
+      "Brightness"
+     ],
+     "a": 1,
+     "e": "A light-year is the DISTANCE light travels in one year (about 9.5 trillion km). Classic trick question."
+    },
+    {
+     "id": "a4",
+     "topic": "Scales of the Universe",
+     "q": "Smallest to largest:",
+     "o": [
+      "Solar System, Earth, Milky Way, Local Group",
+      "Earth, Solar System, Milky Way, Local Group",
+      "Earth, Milky Way, Solar System, Local Group",
+      "Earth, Solar System, Local Group, Milky Way"
+     ],
+     "a": 1,
+     "e": "Planet -> planetary system -> galaxy -> group of galaxies -> cluster -> universe."
+    },
+    {
+     "id": "a5",
+     "topic": "Scales of the Universe",
+     "q": "When you look at a galaxy 2 million light-years away, you see it:",
+     "o": [
+      "As it is right now",
+      "As it was 2 million years ago",
+      "As it will be in 2 million years",
+      "As it was 2 million light-years ago, which is the same as now"
+     ],
+     "a": 1,
+     "e": "Light takes time to travel. Looking far away = looking back in time."
+    },
+    {
+     "id": "a6",
+     "topic": "Gravity & orbits",
+     "q": "Kepler's first law says planets orbit the Sun in:",
+     "o": [
+      "Perfect circles centred on the Sun",
+      "Ellipses with the Sun at one focus",
+      "Ellipses with the Sun at the centre",
+      "Spirals"
+     ],
+     "a": 1,
+     "e": "Ellipse, Sun at ONE focus (not the centre). The other focus is empty."
+    },
+    {
+     "id": "a7",
+     "topic": "Gravity & orbits",
+     "q": "By Kepler's second law, a planet moves fastest when it is:",
+     "o": [
+      "Farthest from the Sun (aphelion)",
+      "Closest to the Sun (perihelion)",
+      "At the same speed the whole time",
+      "Crossing the ecliptic"
+     ],
+     "a": 1,
+     "e": "Equal areas in equal times means it has to speed up when it's close to the Sun."
+    },
+    {
+     "id": "a8",
+     "topic": "Gravity & orbits",
+     "q": "Kepler's third law tells us that planets farther from the Sun:",
+     "o": [
+      "Orbit faster",
+      "Take longer to orbit (P² ∝ a³)",
+      "Have more circular orbits",
+      "Are always bigger"
+     ],
+     "a": 1,
+     "e": "The bigger the orbit, the longer the period, and the period grows faster than the distance."
+    },
+    {
+     "id": "a9",
+     "topic": "Gravity & orbits",
+     "q": "If the distance between two objects doubles, the gravity between them becomes:",
+     "o": [
+      "Twice as strong",
+      "Half as strong",
+      "One quarter as strong",
+      "The same"
+     ],
+     "a": 2,
+     "e": "Newton's law is an inverse SQUARE: 2x the distance -> 1/2² = 1/4 the force."
+    },
+    {
+     "id": "a10",
+     "topic": "Gravity & orbits",
+     "q": "Astronauts on the ISS float because:",
+     "o": [
+      "There's no gravity in space",
+      "They're in constant free fall around Earth",
+      "The station spins",
+      "They're outside the atmosphere"
+     ],
+     "a": 1,
+     "e": "Gravity at ISS height is still about 90% of surface gravity. They float because they and the station fall together around Earth."
+    },
+    {
+     "id": "a11",
+     "topic": "Light & telescopes",
+     "q": "Which list goes from LOWEST to HIGHEST energy?",
+     "o": [
+      "Gamma, X-ray, UV, visible, infrared, radio",
+      "Radio, infrared, visible, UV, X-ray, gamma",
+      "Visible, radio, UV, infrared, gamma, X-ray",
+      "Radio, visible, infrared, UV, gamma, X-ray"
+     ],
+     "a": 1,
+     "e": "Longer wavelength = lower frequency = lower energy. Radio is longest, gamma is shortest."
+    },
+    {
+     "id": "a12",
+     "topic": "Light & telescopes",
+     "q": "A star that looks blue compared to a red star is:",
+     "o": [
+      "Cooler",
+      "Hotter",
+      "Closer",
+      "Older"
+     ],
+     "a": 1,
+     "e": "Wien's law: hotter objects peak at shorter wavelengths, so they look bluer."
+    },
+    {
+     "id": "a13",
+     "topic": "Light & telescopes",
+     "q": "Cool, thin gas in front of a hot, dense light source produces:",
+     "o": [
+      "A continuous spectrum",
+      "An emission line spectrum",
+      "An absorption line spectrum",
+      "No spectrum"
+     ],
+     "a": 2,
+     "e": "Kirchhoff's laws: hot dense = continuous, hot thin gas = emission lines, cool gas in front of a hot source = absorption (dark) lines."
+    },
+    {
+     "id": "a14",
+     "topic": "Light & telescopes",
+     "q": "A galaxy's spectral lines are shifted toward longer wavelengths. It is:",
+     "o": [
+      "Moving toward us",
+      "Moving away from us",
+      "Getting hotter",
+      "Not moving"
+     ],
+     "a": 1,
+     "e": "Redshift = longer wavelength = moving away (Doppler effect). Blueshift = approaching."
+    },
+    {
+     "id": "a15",
+     "topic": "Light & telescopes",
+     "q": "The MOST important feature of a telescope for seeing faint objects is:",
+     "o": [
+      "Magnification",
+      "Length of the tube",
+      "Light-gathering area (aperture)",
+      "Colour of the lens"
+     ],
+     "a": 2,
+     "e": "Light gathering grows with the area of the mirror. Double the diameter -> 4x the light."
+    },
+    {
+     "id": "a16",
+     "topic": "Light & telescopes",
+     "q": "The main reason to put telescopes in space is:",
+     "o": [
+      "To get closer to the stars",
+      "Earth's atmosphere blurs images and blocks X-ray, UV and much infrared",
+      "Space is darker during the day only",
+      "Telescopes are cheaper in space"
+     ],
+     "a": 1,
+     "e": "Distance to the stars barely changes. The atmosphere is the problem: twinkling (blur) and absorption."
+    },
+    {
+     "id": "a17",
+     "topic": "The Sun",
+     "q": "The Sun makes its energy by:",
+     "o": [
+      "Burning gas like a fire",
+      "Slowly shrinking",
+      "Fusing hydrogen into helium in its core",
+      "Splitting uranium"
+     ],
+     "a": 2,
+     "e": "Nuclear fusion in the core: 4 hydrogen -> 1 helium, and the lost mass becomes energy (E = mc²)."
+    },
+    {
+     "id": "a18",
+     "topic": "The Sun",
+     "q": "Sunspots look dark because they are:",
+     "o": [
+      "Holes in the Sun",
+      "Cooler than the surrounding photosphere",
+      "Shadows from planets",
+      "Hotter than the rest of the surface"
+     ],
+     "a": 1,
+     "e": "They're still very hot, just cooler than their surroundings, caused by strong magnetic fields. The cycle is about 11 years."
+    },
+    {
+     "id": "a19",
+     "topic": "The Sun",
+     "q": "The Sun doesn't collapse or explode because:",
+     "o": [
+      "Its magnetic field holds it together",
+      "Gravity pulling in is balanced by gas pressure pushing out",
+      "It rotates fast",
+      "Its corona traps the heat"
+     ],
+     "a": 1,
+     "e": "Hydrostatic equilibrium: inward gravity = outward pressure, layer by layer."
+    },
+    {
+     "id": "a20",
+     "topic": "Solar System",
+     "q": "Why are the giant planets far from the Sun?",
+     "o": [
+      "They formed there because beyond the frost line ices could condense, giving them more solid material",
+      "They were pushed out by the solar wind",
+      "They're younger than the rocky planets",
+      "Gravity is stronger far from the Sun"
+     ],
+     "a": 0,
+     "e": "Beyond the frost line, ices could freeze, so cores grew big enough to grab hydrogen and helium gas."
+    },
+    {
+     "id": "a21",
+     "topic": "Solar System",
+     "q": "The nebular theory explains why planets:",
+     "o": [
+      "Have rings",
+      "Orbit in the same direction and in nearly the same plane",
+      "Have moons",
+      "Are all the same size"
+     ],
+     "a": 1,
+     "e": "A spinning cloud flattened into a disk, so everything formed going the same way in roughly one plane."
+    }
+   ]
+  },
+  {
+   "code": "ITM200",
+   "name": "Fundamentals of Programming",
+   "date": "2026-10-26",
+   "dateLabel": "Week of Oct 26 · day TBA",
+   "weight": 40,
+   "format": "Mostly 'what does this code print?' tracing, fill-in-the-blank code, and data types. Pen and paper, no computer.",
+   "covers": [
+    "Ch 1–2: variables, types, operators, input()",
+    "Ch 3: conditionals, try/except",
+    "Ch 5: loops: while, for, range(), break/continue, loop patterns",
+    "Ch 6: strings: indexing, slicing, methods",
+    "Ch 8: lists",
+    "Ch 4: functions (Oct 19 lecture). Confirm with your prof if it's on the midterm"
+   ],
+   "cheat": [
+    "range(start, stop, step) stops BEFORE stop. range(5, 1, -1) = 5 4 3 2.",
+    "/ always gives a float. // = floor division. % = remainder. ** before * before +.",
+    "input() always returns a string. Convert with int() / float().",
+    "if/elif/else: only the FIRST true branch runs.",
+    "continue = skip to the next loop item. break = exit the loop now.",
+    "Slices include the start, exclude the stop. s[-1] = last char. s[::-1] = reversed.",
+    "Strings are immutable: s.upper() returns a new string.",
+    "b = a on a list makes an alias, not a copy.",
+    "No return statement = function returns None."
+   ],
+   "traps": [
+    "Off-by-one with range() stops.",
+    "Thinking print and return are the same.",
+    "Expecting int('3.5') to work.",
+    "Forgetting nested loops multiply."
+   ],
+   "links": [
+    {
+     "t": "Python for Everybody (your textbook) interactive: loops MCQs",
+     "u": "https://runestone.academy/ns/books/published/py4e-int/iterations/Exercises.html"
+    },
+    {
+     "t": "PY4E interactive: conditionals MCQs",
+     "u": "https://runestone.academy/ns/books/published/py4e-int/conditional/Exercises.html"
+    },
+    {
+     "t": "PY4E interactive: strings MCQs",
+     "u": "https://runestone.academy/ns/books/published/py4e-int/strings/Exercises.html"
+    },
+    {
+     "t": "PY4E interactive: lists MCQs",
+     "u": "https://runestone.academy/ns/books/published/py4e-int/lists/Exercises.html"
+    },
+    {
+     "t": "PY4E interactive: functions MCQs",
+     "u": "https://runestone.academy/ns/books/published/py4e-int/functions/Exercises.html"
+    },
+    {
+     "t": "PY4E interactive: variables & expressions MCQs",
+     "u": "https://runestone.academy/ns/books/published/py4e-int/variables/Exercises.html"
+    },
+    {
+     "t": "Older TMU ITM200 study material (Studocu, needs login)",
+     "u": "https://www.studocu.com/en-ca/course/toronto-metropolitan-university/fundamentals-of-programming/5970546"
+    }
+   ],
+   "q": [
+    {
+     "id": "p1",
+     "topic": "Loops & range",
+     "q": "What prints?",
+     "o": [
+      "5 4 3 2 1",
+      "5 4 3 2",
+      "4 3 2 1",
+      "Nothing prints"
+     ],
+     "a": 1,
+     "e": "range(start, stop, step) stops BEFORE stop. Counting down from 5 with step -1, it stops before 1. Your prof flagged this exact pattern.",
+     "code": "for i in range(5, 1, -1):\n    print(i, end=' ')"
+    },
+    {
+     "id": "p2",
+     "topic": "Loops & range",
+     "q": "What prints?",
+     "o": [
+      "2 5 8",
+      "2 5 8 11",
+      "3 6 9",
+      "2 4 6 8 10"
+     ],
+     "a": 0,
+     "e": "Start at 2, add 3 each time: 2, 5, 8. The next one would be 11, but 11 is the stop value, so it's excluded.",
+     "code": "for i in range(2, 11, 3):\n    print(i, end=' ')"
+    },
+    {
+     "id": "p3",
+     "topic": "Variables & operators",
+     "q": "What prints?",
+     "o": [
+      "3 1 3.5",
+      "3.5 1 3.5",
+      "3 1 3",
+      "4 1 3.5"
+     ],
+     "a": 0,
+     "e": "// is floor division (3), % is the remainder (1), / always gives a float (3.5).",
+     "code": "print(7 // 2, 7 % 2, 7 / 2)"
+    },
+    {
+     "id": "p4",
+     "topic": "Variables & operators",
+     "q": "What prints?",
+     "o": [
+      "50",
+      "400",
+      "98",
+      "146"
+     ],
+     "a": 0,
+     "e": "Exponent first: 4**2 = 16. Then 3*16 = 48. Then 2 + 48 = 50.",
+     "code": "print(2 + 3 * 4 ** 2)"
+    },
+    {
+     "id": "p5",
+     "topic": "Variables & operators",
+     "q": "The user types 5 at this prompt. What happens?\n\nx = input('Number: ')\nprint(x + 1)",
+     "o": [
+      "It prints 6",
+      "It prints 51",
+      "TypeError: can't add str and int",
+      "It prints 5 1"
+     ],
+     "a": 2,
+     "e": "input() ALWAYS returns a string. '5' + 1 mixes str and int, so Python raises a TypeError. Fix: int(input(...)).",
+     "code": "x = input('Number: ')\nprint(x + 1)"
+    },
+    {
+     "id": "p6",
+     "topic": "Loops: break / continue",
+     "q": "What prints? (This is the wordcount pattern your prof flagged.)",
+     "o": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "a": 0,
+     "e": "'hi' counts (1). '#skip' hits continue, so it jumps to the next item without counting. 'done' hits break, so the loop ends. 'later' never runs. Final: 1.",
+     "code": "count = 0\nfor line in ['hi', '#skip', 'done', 'later']:\n    if line.startswith('#'):\n        continue\n    if line == 'done':\n        break\n    count = count + 1\nprint(count)"
+    },
+    {
+     "id": "p7",
+     "topic": "Variables & operators",
+     "q": "What prints?",
+     "o": [
+      "<class 'int'>",
+      "<class 'float'>",
+      "<class 'str'>",
+      "3"
+     ],
+     "a": 1,
+     "e": "/ always returns a float in Python 3, even when it divides evenly (6/2 = 3.0).",
+     "code": "print(type(6 / 2))"
+    },
+    {
+     "id": "p8",
+     "topic": "Strings",
+     "q": "What prints?",
+     "o": [
+      "oro",
+      "Tor",
+      "oron",
+      "ron"
+     ],
+     "a": 0,
+     "e": "Slices include the start index and exclude the stop. Index 1 = 'o', 2 = 'r', 3 = 'o'. Stop at 4.",
+     "code": "s = 'Toronto'\nprint(s[1:4])"
+    },
+    {
+     "id": "p9",
+     "topic": "Strings",
+     "q": "What prints?",
+     "o": [
+      "oT",
+      "To",
+      "ot",
+      "TO"
+     ],
+     "a": 0,
+     "e": "s[-1] is the last character ('o'), s[0] is the first ('T'). Joined: 'oT'.",
+     "code": "s = 'Toronto'\nprint(s[-1] + s[0])"
+    },
+    {
+     "id": "p10",
+     "topic": "Loops & range",
+     "q": "Which range() prints the string s in REVERSE, one character per line?\n\nfor i in ________:\n    print(s[i])",
+     "o": [
+      "range(len(s), 0, -1)",
+      "range(len(s)-1, -1, -1)",
+      "range(len(s)-1, 0, -1)",
+      "range(0, len(s), -1)"
+     ],
+     "a": 1,
+     "e": "Last valid index is len(s)-1. To include index 0, the stop has to be -1 (one past 0 going down). range(len(s), 0, -1) starts out of range, range(len(s)-1, 0, -1) misses index 0, and range(0, len(s), -1) prints nothing.",
+     "code": "for i in ________:\n    print(s[i])"
+    },
+    {
+     "id": "p11",
+     "topic": "Lists",
+     "q": "What prints?",
+     "o": [
+      "[1, 2, 3]",
+      "[1, 2, 3, 4]",
+      "[4, 1, 2, 3]",
+      "Error"
+     ],
+     "a": 1,
+     "e": "b = a doesn't copy the list. Both names point to the SAME list, so appending through b changes a too.",
+     "code": "a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)"
+    },
+    {
+     "id": "p12",
+     "topic": "Functions",
+     "q": "What prints?",
+     "o": [
+      "6",
+      "3",
+      "None",
+      "Error"
+     ],
+     "a": 2,
+     "e": "The function calculates x*2 but never returns it. A function with no return gives back None.",
+     "code": "def double(x):\n    x * 2\n\nprint(double(3))"
+    },
+    {
+     "id": "p13",
+     "topic": "Conditionals",
+     "q": "What prints?",
+     "o": [
+      "A",
+      "A B",
+      "B",
+      "A B C"
+     ],
+     "a": 0,
+     "e": "Only the FIRST true branch of an if/elif/else chain runs. x > 10 is true, so it prints A and skips the rest.",
+     "code": "x = 15\nif x > 10:\n    print('A')\nelif x > 5:\n    print('B')\nelse:\n    print('C')"
+    },
+    {
+     "id": "p14",
+     "topic": "Loops: patterns",
+     "q": "What prints?",
+     "o": [
+      "3",
+      "4",
+      "8",
+      "9"
+     ],
+     "a": 3,
+     "e": "This is the 'find the largest' loop pattern from the slides. None means 'nothing seen yet', then it keeps the bigger number each time.",
+     "code": "largest = None\nfor n in [3, 8, 2, 9, 4]:\n    if largest is None or n > largest:\n        largest = n\nprint(largest)"
+    },
+    {
+     "id": "p15",
+     "topic": "Strings",
+     "q": "What prints?",
+     "o": [
+      "ababab",
+      "ab3",
+      "ab ab ab",
+      "Error"
+     ],
+     "a": 0,
+     "e": "Multiplying a string by an int repeats it.",
+     "code": "print('ab' * 3)"
+    },
+    {
+     "id": "p16",
+     "topic": "Lists",
+     "q": "What prints?",
+     "o": [
+      "3",
+      "4",
+      "2",
+      "5"
+     ],
+     "a": 0,
+     "e": "The inner list [2, 3] counts as ONE element. Three elements total.",
+     "code": "print(len([1, [2, 3], 4]))"
+    },
+    {
+     "id": "p17",
+     "topic": "Conditionals: try/except",
+     "q": "What prints?",
+     "o": [
+      "ok",
+      "bad",
+      "ok bad",
+      "3"
+     ],
+     "a": 1,
+     "e": "int() can't convert the string '3.5' (it has a decimal point), so it raises ValueError and jumps straight to except. 'ok' never prints.",
+     "code": "try:\n    n = int('3.5')\n    print('ok')\nexcept:\n    print('bad')"
+    },
+    {
+     "id": "p18",
+     "topic": "Loops & range",
+     "q": "How many stars print?",
+     "o": [
+      "5",
+      "6",
+      "3",
+      "2"
+     ],
+     "a": 1,
+     "e": "Nested loops multiply: 3 outer x 2 inner = 6 stars.",
+     "code": "for i in range(3):\n    for j in range(2):\n        print('*')"
+    },
+    {
+     "id": "p19",
+     "topic": "Strings",
+     "q": "What prints?",
+     "o": [
+      "2",
+      "3",
+      "1",
+      "-1"
+     ],
+     "a": 0,
+     "e": "find() returns the index where the match starts. P=0, y=1, t=2.",
+     "code": "print('Python'.find('th'))"
+    },
+    {
+     "id": "p20",
+     "topic": "Lists",
+     "q": "What prints?",
+     "o": [
+      "3 blue",
+      "4 blue",
+      "3 green",
+      "2 blue"
+     ],
+     "a": 0,
+     "e": "split() with no argument splits on any run of spaces, so the double space doesn't create an empty item. 3 words, last is 'blue'.",
+     "code": "words = 'red  green blue'.split()\nprint(len(words), words[-1])"
+    },
+    {
+     "id": "p21",
+     "topic": "Loops: while",
+     "q": "What prints?",
+     "o": [
+      "9",
+      "27",
+      "20",
+      "81"
+     ],
+     "a": 1,
+     "e": "1 -> 3 -> 9 -> 27. At 27 the condition n < 20 is false, so the loop stops and prints 27.",
+     "code": "n = 1\nwhile n < 20:\n    n = n * 3\nprint(n)"
+    },
+    {
+     "id": "p22",
+     "topic": "Variables & operators",
+     "q": "What prints?",
+     "o": [
+      "False True False",
+      "False False False",
+      "True True False",
+      "False True True"
+     ],
+     "a": 0,
+     "e": "Empty string and 0 are 'falsy'. Any non-empty string is True, even the text 'False'.",
+     "code": "print(bool(''), bool('False'), bool(0))"
+    },
+    {
+     "id": "p23",
+     "topic": "Strings",
+     "q": "What prints?",
+     "o": [
+      "HELLO",
+      "hello",
+      "Hello",
+      "None"
+     ],
+     "a": 1,
+     "e": "Strings are immutable. upper() RETURNS a new string, but nothing saved it, so s is still 'hello'.",
+     "code": "s = 'hello'\ns.upper()\nprint(s)"
+    },
+    {
+     "id": "p24",
+     "topic": "Lists",
+     "q": "What prints?",
+     "o": [
+      "[20, 30, 40] [40, 50]",
+      "[10, 20, 30, 40] [40, 50]",
+      "[20, 30, 40] [50]",
+      "[20, 30] [40, 50]"
+     ],
+     "a": 0,
+     "e": "Slice 1:4 gives indexes 1, 2, 3. -2: means 'from the second-last to the end'.",
+     "code": "nums = [10, 20, 30, 40, 50]\nprint(nums[1:4], nums[-2:])"
+    }
+   ]
+  },
+  {
+   "code": "ITM301",
+   "name": "IT Infrastructure",
+   "date": "2026-10-27",
+   "dateLabel": "Tue Oct 27 · week 7 (confirm)",
+   "weight": 30,
+   "format": "No devices at all, including calculators. Subnetting by hand.",
+   "covers": [
+    "Ch 1: networking basics, OSI model, topologies, P2P vs client-server",
+    "Ch 2: infrastructure & documentation",
+    "Ch 3–4: addressing (MAC, IPv4, IPv6, ports, DHCP, DNS) and protocols (TCP/UDP)",
+    "Ch 5: transmission media / cabling",
+    "Ch 6: wireless",
+    "Ch 7 (Oct 20 lecture) only if your prof says so"
+   ],
+   "cheat": [
+    "OSI top down: Application, Presentation, Session, Transport, Network, Data Link, Physical. PDUs: data, segment, packet, frame, bits.",
+    "Switch = inside a network (MAC, L2). Router = between networks (IP, L3).",
+    "Private: 10/8, 172.16–172.31, 192.168/16. APIPA 169.254 = DHCP failed. Loopback 127.0.0.1.",
+    "Ports: 20/21 FTP, 22 SSH, 23 Telnet, 25 SMTP, 53 DNS, 67/68 DHCP, 80 HTTP, 110 POP3, 143 IMAP, 443 HTTPS, 3389 RDP.",
+    "DHCP = DORA. TCP = SYN, SYN-ACK, ACK. UDP = no handshake.",
+    "Subnetting: block size = 256 − mask octet. Hosts = 2^(host bits) − 2. /25=128, /26=64, /27=32, /28=16, /29=8, /30=4.",
+    "Cat5e 1G/100m, Cat6 10G/~55m, Cat6a 10G/100m. SMF = laser, long. MMF = shorter.",
+    "2.4 GHz non-overlapping: 1, 6, 11. Wi-Fi = CSMA/CA. WPA3 (SAE) > WPA2 (AES)."
+   ],
+   "traps": [
+    "Subtracting 2 for hosts (network + broadcast) and forgetting it.",
+    "CSMA/CA vs CSMA/CD.",
+    "172.32.x.x is NOT private.",
+    "Layer numbers vs names."
+   ],
+   "links": [
+    {
+     "t": "Subnetting practice (random questions with answers)",
+     "u": "https://subnettingpractice.com/subnets.html"
+    },
+    {
+     "t": "subnetting.org: unlimited generated subnet questions",
+     "u": "https://www.subnetting.org/"
+    },
+    {
+     "t": "Professor Messer: free Network+ N10-009 course + pop quizzes",
+     "u": "https://www.professormesser.com/get-n10-009-network-plus-certified/"
+    },
+    {
+     "t": "Professor Messer: Network+ pop quiz archive",
+     "u": "https://www.professormesser.com/category/network-plus/n10-009/n10-009-pop-quiz/"
+    },
+    {
+     "t": "ExamCompass: free Network+ N10-009 practice tests",
+     "u": "https://www.examcompass.com/comptia-network-plus-certification-practice-test-1-exam-n10-009"
+    }
+   ],
+   "q": [
+    {
+     "id": "n1",
+     "topic": "Ch 1: Network basics",
+     "q": "Which device connects DIFFERENT networks and forwards traffic between them?",
+     "o": [
+      "Switch",
+      "Router",
+      "Hub",
+      "Access point"
+     ],
+     "a": 1,
+     "e": "Rule of thumb from the slides: inside one network = switch, between networks = router."
+    },
+    {
+     "id": "n2",
+     "topic": "Ch 1: OSI model",
+     "q": "IP addresses and routing happen at which OSI layer?",
+     "o": [
+      "Layer 2: Data Link",
+      "Layer 3: Network",
+      "Layer 4: Transport",
+      "Layer 7: Application"
+     ],
+     "a": 1,
+     "e": "Layer 3 (Network) handles logical addressing (IP) and routing. Layer 2 uses MAC addresses."
+    },
+    {
+     "id": "n3",
+     "topic": "Ch 1: OSI model",
+     "q": "What is the PDU called at Layer 2?",
+     "o": [
+      "Packet",
+      "Segment",
+      "Frame",
+      "Bit"
+     ],
+     "a": 2,
+     "e": "Data (L5-7) -> Segment (L4) -> Packet (L3) -> Frame (L2) -> Bits (L1)."
+    },
+    {
+     "id": "n4",
+     "topic": "Ch 1: Topologies",
+     "q": "Every node connects directly to every other node. Which topology?",
+     "o": [
+      "Star",
+      "Bus",
+      "Full mesh",
+      "Ring"
+     ],
+     "a": 2,
+     "e": "Full mesh = every node linked to every other. Most redundant, most expensive."
+    },
+    {
+     "id": "n5",
+     "topic": "Ch 1: Network models",
+     "q": "In a peer-to-peer network:",
+     "o": [
+      "A central server controls all logins",
+      "Each computer manages its own resources and security",
+      "Only Windows Server can be used",
+      "Resources are shared through a domain controller"
+     ],
+     "a": 1,
+     "e": "P2P has no central server. Each machine controls its own files and accounts. Cheap and simple, but doesn't scale and is hard to secure."
+    },
+    {
+     "id": "n6",
+     "topic": "Ch 2: Infrastructure",
+     "q": "The MDF is:",
+     "o": [
+      "A small closet on each floor",
+      "The main hub for the whole building's cabling, often near the entrance facility",
+      "A type of fiber connector",
+      "A backup power supply"
+     ],
+     "a": 1,
+     "e": "MDF = main distribution frame (the central hub). IDFs are the smaller rooms on each floor that connect back to it."
+    },
+    {
+     "id": "n7",
+     "topic": "Ch 2: Documentation",
+     "q": "What is the main point of change management?",
+     "o": [
+      "To stop any change to the network",
+      "To make sure changes are approved, documented and can be rolled back",
+      "To speed up hardware purchases",
+      "To replace network diagrams"
+     ],
+     "a": 1,
+     "e": "Change management controls risk: request, approve, schedule, document, and plan a rollback."
+    },
+    {
+     "id": "n8",
+     "topic": "Ch 3: Addressing",
+     "q": "How long is a MAC address, and what are its first 24 bits?",
+     "o": [
+      "32 bits; the host ID",
+      "48 bits; the OUI (manufacturer ID)",
+      "48 bits; the network ID",
+      "128 bits; the interface ID"
+     ],
+     "a": 1,
+     "e": "MAC = 48 bits, written in hex. First 24 bits = OUI, which identifies the manufacturer."
+    },
+    {
+     "id": "n9",
+     "topic": "Ch 3: Addressing",
+     "q": "Which address is PRIVATE?",
+     "o": [
+      "172.32.1.1",
+      "192.169.0.5",
+      "172.20.5.4",
+      "11.0.0.1"
+     ],
+     "a": 2,
+     "e": "Private ranges: 10.0.0.0/8, 172.16.0.0 to 172.31.255.255, and 192.168.0.0/16. 172.32 is just past the range."
+    },
+    {
+     "id": "n10",
+     "topic": "Ch 3: Addressing",
+     "q": "A PC shows the address 169.254.33.7. What most likely happened?",
+     "o": [
+      "It got a public IP",
+      "It couldn't reach a DHCP server, so it assigned itself an APIPA address",
+      "It's using IPv6",
+      "It's in loopback mode"
+     ],
+     "a": 1,
+     "e": "169.254.x.x = APIPA. Windows assigns it when DHCP fails. Usual fix: check the cable or DHCP server."
+    },
+    {
+     "id": "n11",
+     "topic": "Ch 3: Ports",
+     "q": "Which pair is correct?",
+     "o": [
+      "SSH = 23",
+      "DNS = 53",
+      "HTTPS = 80",
+      "RDP = 22"
+     ],
+     "a": 1,
+     "e": "Memorize: 20/21 FTP, 22 SSH, 23 Telnet, 25 SMTP, 53 DNS, 67/68 DHCP, 80 HTTP, 110 POP3, 143 IMAP, 443 HTTPS, 3389 RDP."
+    },
+    {
+     "id": "n12",
+     "topic": "Ch 3: DHCP",
+     "q": "What's the correct order of the DHCP process?",
+     "o": [
+      "Request, Offer, Discover, Ack",
+      "Discover, Offer, Request, Ack",
+      "Offer, Discover, Ack, Request",
+      "Discover, Request, Offer, Ack"
+     ],
+     "a": 1,
+     "e": "DORA: Discover, Offer, Request, Acknowledge."
+    },
+    {
+     "id": "n13",
+     "topic": "Ch 3: DNS",
+     "q": "Which DNS record points a domain to its mail server?",
+     "o": [
+      "A",
+      "AAAA",
+      "CNAME",
+      "MX"
+     ],
+     "a": 3,
+     "e": "A = IPv4, AAAA = IPv6, CNAME = alias, MX = mail exchanger, PTR = reverse lookup."
+    },
+    {
+     "id": "n14",
+     "topic": "Ch 4: Protocols",
+     "q": "The TCP three-way handshake is:",
+     "o": [
+      "SYN, ACK, FIN",
+      "SYN, SYN-ACK, ACK",
+      "ACK, SYN, SYN-ACK",
+      "HELLO, OFFER, ACK"
+     ],
+     "a": 1,
+     "e": "Client sends SYN, server replies SYN-ACK, client confirms with ACK."
+    },
+    {
+     "id": "n15",
+     "topic": "Ch 4: Protocols",
+     "q": "Which statement about UDP is true?",
+     "o": [
+      "It guarantees delivery",
+      "It's connectionless and has no handshake, so it's faster",
+      "It's used for every web page",
+      "It works at Layer 3"
+     ],
+     "a": 1,
+     "e": "UDP = connectionless, no acknowledgments. Used for streaming, VoIP, DNS queries. TCP = reliable, connection-oriented."
+    },
+    {
+     "id": "n16",
+     "topic": "Subnetting (no calculator)",
+     "q": "What is the NETWORK address of 192.168.10.77/26?",
+     "o": [
+      "192.168.10.0",
+      "192.168.10.64",
+      "192.168.10.76",
+      "192.168.10.128"
+     ],
+     "a": 1,
+     "e": "/26 -> mask 255.255.255.192 -> block size 256-192 = 64. Blocks: 0, 64, 128, 192. 77 falls in the 64 block."
+    },
+    {
+     "id": "n17",
+     "topic": "Subnetting (no calculator)",
+     "q": "What is the BROADCAST address of 192.168.10.77/26?",
+     "o": [
+      "192.168.10.127",
+      "192.168.10.255",
+      "192.168.10.128",
+      "192.168.10.126"
+     ],
+     "a": 0,
+     "e": "The block is 64-127. Broadcast = last address in the block = .127. Usable hosts are .65 to .126."
+    },
+    {
+     "id": "n18",
+     "topic": "Subnetting (no calculator)",
+     "q": "How many USABLE hosts does a /27 give you?",
+     "o": [
+      "32",
+      "30",
+      "62",
+      "14"
+     ],
+     "a": 1,
+     "e": "32 - 27 = 5 host bits. 2^5 = 32 addresses, minus network and broadcast = 30."
+    },
+    {
+     "id": "n19",
+     "topic": "Subnetting (no calculator)",
+     "q": "What is the subnet mask for /28?",
+     "o": [
+      "255.255.255.224",
+      "255.255.255.240",
+      "255.255.255.248",
+      "255.255.255.192"
+     ],
+     "a": 1,
+     "e": "/28 = 24 + 4 bits in the last octet: 128+64+32+16 = 240."
+    },
+    {
+     "id": "n20",
+     "topic": "Ch 5: Cabling",
+     "q": "Which cable supports 10 Gbps over the full 100 m?",
+     "o": [
+      "Cat 5e",
+      "Cat 6 (only up to about 55 m at 10G)",
+      "Cat 6a",
+      "Coax RG-6"
+     ],
+     "a": 2,
+     "e": "Cat 5e = 1 Gbps at 100 m. Cat 6 = 10 Gbps but only ~55 m. Cat 6a = 10 Gbps at 100 m."
+    },
+    {
+     "id": "n21",
+     "topic": "Ch 5: Cabling",
+     "q": "Compared to multimode fiber, single-mode fiber:",
+     "o": [
+      "Has a bigger core and is used for short runs",
+      "Uses a laser, has a tiny core and goes much longer distances",
+      "Is copper-based",
+      "Can't carry data both ways"
+     ],
+     "a": 1,
+     "e": "SMF: narrow core, laser light, long distance (km). MMF: wider core, LED/VCSEL, shorter runs inside buildings."
+    },
+    {
+     "id": "n22",
+     "topic": "Ch 6: Wireless",
+     "q": "Which 2.4 GHz channels don't overlap?",
+     "o": [
+      "1, 2, 3",
+      "1, 6, 11",
+      "2, 7, 12",
+      "5, 10, 15"
+     ],
+     "a": 1,
+     "e": "In North America the only non-overlapping 2.4 GHz channels are 1, 6 and 11."
+    },
+    {
+     "id": "n23",
+     "topic": "Ch 6: Wireless",
+     "q": "Wi-Fi avoids collisions using:",
+     "o": [
+      "CSMA/CD",
+      "CSMA/CA",
+      "Token passing",
+      "Full-duplex switching"
+     ],
+     "a": 1,
+     "e": "Wireless = CSMA/CA (collision Avoidance). Old wired Ethernet = CSMA/CD (collision Detection)."
+    },
+    {
+     "id": "n24",
+     "topic": "Ch 6: Wireless",
+     "q": "Which is the strongest wireless security option?",
+     "o": [
+      "WEP",
+      "WPA (TKIP)",
+      "WPA2 (AES)",
+      "WPA3 (SAE)"
+     ],
+     "a": 3,
+     "e": "WPA3 uses SAE, which protects against offline password guessing. WEP and TKIP are broken."
+    },
+    {
+     "id": "n25",
+     "topic": "Ch 3: IPv6",
+     "q": "How long is an IPv6 address?",
+     "o": [
+      "32 bits",
+      "48 bits",
+      "64 bits",
+      "128 bits"
+     ],
+     "a": 3,
+     "e": "IPv6 = 128 bits in hex. :: can replace one run of zero groups, only once per address."
+    }
+   ]
+  }
+ ],
+ "plan": [
+  [
+   "2026-10-08",
+   [
+    "ECN503: review Lecture 1 + start your cheat sheet"
+   ]
+  ],
+  [
+   "2026-10-09",
+   [
+    "ECN503: Lecture 2 (North, inclusive vs extractive)",
+    "ITM200: loops drill (Study tab, 10 Q)"
+   ]
+  ],
+  [
+   "2026-10-10",
+   [
+    "ECN503: AJR IV logic, then ECN practice",
+    "ITM301: Ch 1–2 review + 10 practice Q"
+   ]
+  ],
+  [
+   "2026-10-11",
+   [
+    "ECN503: pick your VoxDev podcast",
+    "ITM200: conditionals + strings drill",
+    "ITM301: Assignment 4 due tonight"
+   ]
+  ],
+  [
+   "2026-10-12",
+   [
+    "ITM301: Ch 3 addressing + 15 min subnet drill",
+    "PCS181: Intro + Scales + Kepler/Newton"
+   ]
+  ],
+  [
+   "2026-10-13",
+   [
+    "ECN503: Lecture 3 + Poor Economics Ch 2 (draw S-curve vs L)",
+    "ITM200: lists drill"
+   ]
+  ],
+  [
+   "2026-10-14",
+   [
+    "ECN503: Oct 14 lecture (if it’s on)",
+    "PCS181: Light & telescopes",
+    "ITM301: Ch 4 TCP/UDP + ports"
+   ]
+  ],
+  [
+   "2026-10-15",
+   [
+    "ECN503: Lecture 4 + Ch 3 + ATE calc",
+    "ITM301: Ch 5 cabling + subnet drill"
+   ]
+  ],
+  [
+   "2026-10-16",
+   [
+    "ECN503: Oct 7 lecture",
+    "PCS181: The Sun",
+    "ITM200: functions + mock test"
+   ]
+  ],
+  [
+   "2026-10-17",
+   [
+    "ECN503: review Oct 14 lecture",
+    "PCS181: Solar System",
+    "ITM301: Ch 6 wireless"
+   ]
+  ],
+  [
+   "2026-10-18",
+   [
+    "Mock tests for all 4 courses. Redo everything you miss."
+   ]
+  ],
+  [
+   "2026-10-19",
+   [
+    "ECN503: finish the cheat sheet",
+    "ITM200: code tracing mock"
+   ]
+  ],
+  [
+   "2026-10-20",
+   [
+    "ECN503: full mock + MIT 14.73 quiz 1",
+    "ITM301: class (Ch 7)"
+   ]
+  ],
+  [
+   "2026-10-21",
+   [
+    "ECN503 MIDTERM",
+    "Evening: PCS181 review"
+   ]
+  ],
+  [
+   "2026-10-22",
+   [
+    "PCS181: full mock + OpenStax review questions"
+   ]
+  ],
+  [
+   "2026-10-23",
+   [
+    "PCS181 MIDTERM",
+    "Evening: ITM200 tracing"
+   ]
+  ],
+  [
+   "2026-10-24",
+   [
+    "ITM200: big day. Every drill + PY4E MCQs"
+   ]
+  ],
+  [
+   "2026-10-25",
+   [
+    "ITM200: mock test x2",
+    "ITM301: subnet drill 20 min"
+   ]
+  ],
+  [
+   "2026-10-26",
+   [
+    "ITM200 MIDTERM (confirm the day)",
+    "Evening: ITM301 cheat-sheet review + mock"
+   ]
+  ],
+  [
+   "2026-10-27",
+   [
+    "ITM301 MIDTERM"
+   ]
+  ]
+ ]
+}
