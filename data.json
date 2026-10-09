@@ -246,13 +246,13 @@
  "exams": {
   "itm301-mid": {
    "course": "ITM301",
-   "date": "2026-10-27T12:00:00-04:00",
+   "date": "2026-10-24T10:00:00-04:00",
    "done": 0,
    "goal": 8,
    "lastPrep": "",
    "name": "ITM301 Midterm",
-   "note": "Week 7, likely Tue Oct 27. No calculators, so practise subnetting by hand.",
-   "tentative": true,
+   "note": "Sat Oct 24, 10\u201311:30 AM, TRS 1-067. 60 MCQs in 90 min. Modules 1\u20135 (Ch 1\u20136 selected sections). Do the D2L Midterm Exam Practice bank until you hit 90%+.",
+   "tentative": false,
    "weight": 30
   },
   "pcs181-mid": {
