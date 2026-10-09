@@ -877,7 +877,7 @@ function renderPlanGuide(){
       <ul>${items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`}).join('');
   const sum=STUDY.courses.map(c=>{const s=courseStats(c),d=daysTo(c.date);return `<button type="button" class="frost sumcard" data-scourse="${c.code}"><span class="course" style="color:${(COURSES[c.code]||COURSES.LIFE).color}"><b></b>${c.code}</span><strong>${d<0?'Done':d===0?'Today':d+' days'}</strong><small>${esc(c.dateLabel)} · ${c.weight}%</small><span class="minibar"><i style="width:${s.pct}%"></i></span><small>${s.right}/${s.n} practice Q right</small></button>`}).join('');
   return `<section class="section"><div class="sumgrid">${sum}</div></section>
-  <section class="glass planbox"><div class="shead"><h2>Your midterm run, day by day</h2><span>Oct 8 → Oct 27</span></div>${rows}</section>`;
+  <section class="glass planbox"><div class="shead"><h2>Your midterm run, day by day</h2><span>Oct 8 → Oct 30</span></div>${rows}</section>`;
 }
 function renderCourseGuide(c){
   const s=courseStats(c), d=daysTo(c.date), k=COURSES[c.code]||COURSES.LIFE;
