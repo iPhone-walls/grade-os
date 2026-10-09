@@ -268,13 +268,13 @@
   },
   "itm200-mid": {
    "course": "ITM200",
-   "date": "2026-10-26T12:00:00-04:00",
+   "date": "2026-10-30T12:00:00-04:00",
    "done": 0,
    "goal": 10,
    "lastPrep": "",
    "name": "ITM200 Midterm",
-   "note": "Week of Oct 26, exact day TBA. Exams are 90% of this course.",
-   "tentative": true,
+   "note": "Fri Oct 30, 12 PM, room KHE321C. 90 min, 40 multiple-choice on paper. Covers classes 1\u20136 (through functions).",
+   "tentative": false,
    "weight": 40
   },
   "ecn503-mid": {
