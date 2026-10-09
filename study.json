@@ -644,43 +644,45 @@
   {
    "code": "ITM301",
    "name": "IT Infrastructure",
-   "date": "2026-10-27",
-   "dateLabel": "Tue Oct 27 · week 7 (confirm)",
+   "date": "2026-10-24",
+   "dateLabel": "Sat Oct 24 · 10 AM · TRS 1-067",
    "weight": 30,
-   "format": "No devices at all, including calculators. Subnetting by hand.",
+   "format": "90 minutes, 60 multiple-choice questions. That's 1.5 minutes each, so speed matters. No devices.",
    "covers": [
-    "Ch 1: networking basics, OSI model, topologies, P2P vs client-server",
-    "Ch 2: infrastructure & documentation",
-    "Ch 3–4: addressing (MAC, IPv4, IPv6, ports, DHCP, DNS) and protocols (TCP/UDP)",
-    "Ch 5: transmission media / cabling",
-    "Ch 6: wireless",
-    "Ch 7 (Oct 20 lecture) only if your prof says so"
+    "Ch 1 (1.1–1.4): network models, network services, network hardware, OSI model",
+    "Ch 2 (2.1, 2.2.1): structured cabling components, network diagrams",
+    "Ch 3 (3.1–3.3): addressing overview, IP addresses, ports and sockets",
+    "Ch 4 (4.1–4.3): TCP/IP core protocols, encryption protocols, remote access protocols",
+    "Ch 5 (5.2.3–5.2.7, 5.3.2, 5.3.3, 5.3.6): twisted pair, STP/UTP, pinouts, single-mode and multimode fiber",
+    "Ch 6 (6.4.1–6.4.5, 6.5.1): Wi-Fi security, Wi-Fi tools",
+    "D2L ‘Midterm Exam Practice’: 80-question bank, 60 random per attempt, unlimited tries",
+    "End-of-chapter review + scenario questions in the textbook"
    ],
    "cheat": [
+    "The D2L practice bank is your #1 tool. Keep retaking it until you score 90%+. The real exam is likely written in the same style.",
     "OSI top down: Application, Presentation, Session, Transport, Network, Data Link, Physical. PDUs: data, segment, packet, frame, bits.",
-    "Switch = inside a network (MAC, L2). Router = between networks (IP, L3).",
-    "Private: 10/8, 172.16–172.31, 192.168/16. APIPA 169.254 = DHCP failed. Loopback 127.0.0.1.",
+    "Hub = repeats to all ports. Switch = inside a network (MAC, L2). Router = between networks (IP, L3).",
+    "P2P = no central server. Client-server = NOS controls access.",
+    "Demarc = ISP's responsibility ends. MDF = main hub, IDF = per floor. Horizontal = closet to desk (100 m). Backbone = between closets.",
+    "Physical diagram = real cabling and locations. Logical diagram = IPs, subnets, data flow.",
+    "Private: 10/8, 172.16–172.31, 192.168/16. APIPA 169.254 = DHCP failed. DHCP = DORA. IPv6 = 128 bits. MAC = 48 bits, OUI = first 24.",
+    "Socket = IP + port. Well-known 0–1023, registered 1024–49151, dynamic 49152–65535.",
     "Ports: 20/21 FTP, 22 SSH, 23 Telnet, 25 SMTP, 53 DNS, 67/68 DHCP, 80 HTTP, 110 POP3, 143 IMAP, 443 HTTPS, 3389 RDP.",
-    "DHCP = DORA. TCP = SYN, SYN-ACK, ACK. UDP = no handshake.",
-    "Subnetting: block size = 256 − mask octet. Hosts = 2^(host bits) − 2. /25=128, /26=64, /27=32, /28=16, /29=8, /30=4.",
-    "Cat5e 1G/100m, Cat6 10G/~55m, Cat6a 10G/100m. SMF = laser, long. MMF = shorter.",
-    "2.4 GHz non-overlapping: 1, 6, 11. Wi-Fi = CSMA/CA. WPA3 (SAE) > WPA2 (AES)."
+    "TCP = SYN, SYN-ACK, ACK. UDP = no handshake. ICMP = ping. ARP = IP → MAC. TTL stops loops.",
+    "IPsec = L3, VPNs. TLS = HTTPS. Symmetric = one key. Asymmetric = public + private key.",
+    "SSH (22, encrypted) beats Telnet (23, plain text). RDP 3389. Site-to-site vs client-to-site VPN. Split vs full tunnel.",
+    "STP = shielded against EMI. Cat5e 1G/100m, Cat6 10G/~55m, Cat6a 10G/100m. Straight-through = same standard both ends. Crossover = A + B. 10/100 uses pins 1,2,3,6.",
+    "SMF = laser, tiny core, long distance. MMF = bigger core, shorter runs.",
+    "WPA3 (SAE) > WPA2 (AES) > WPA/WEP. Personal = PSK. Enterprise = 802.1X + RADIUS. Evil twin = fake AP with the same SSID. MAC filtering = spoofable. Spectrum analyzer = finds interference."
    ],
    "traps": [
-    "Subtracting 2 for hosts (network + broadcast) and forgetting it.",
-    "CSMA/CA vs CSMA/CD.",
-    "172.32.x.x is NOT private.",
-    "Layer numbers vs names."
+    "Running out of time: 60 questions in 90 min. Don't sit on one question for 3 minutes. Flag it and move on.",
+    "Telnet vs SSH ports (23 vs 22).",
+    "Straight-through vs crossover pinouts.",
+    "WPA2-Personal vs Enterprise.",
+    "172.32.x.x is NOT private."
    ],
    "links": [
-    {
-     "t": "Subnetting practice (random questions with answers)",
-     "u": "https://subnettingpractice.com/subnets.html"
-    },
-    {
-     "t": "subnetting.org: unlimited generated subnet questions",
-     "u": "https://www.subnetting.org/"
-    },
     {
      "t": "Professor Messer: free Network+ N10-009 course + pop quizzes",
      "u": "https://www.professormesser.com/get-n10-009-network-plus-certified/"
@@ -697,7 +699,7 @@
    "q": [
     {
      "id": "n1",
-     "topic": "Ch 1: Network basics",
+     "topic": "Ch 1: Network hardware",
      "q": "Which device connects DIFFERENT networks and forwards traffic between them?",
      "o": [
       "Switch",
@@ -706,10 +708,23 @@
       "Access point"
      ],
      "a": 1,
-     "e": "Rule of thumb from the slides: inside one network = switch, between networks = router."
+     "e": "Rule of thumb: inside one network = switch, between networks = router."
     },
     {
      "id": "n2",
+     "topic": "Ch 1: Network hardware",
+     "q": "A hub receives a frame. What does it do?",
+     "o": [
+      "Sends it only to the destination port",
+      "Repeats it out every port",
+      "Drops it",
+      "Routes it to another network"
+     ],
+     "a": 1,
+     "e": "A hub is dumb: it repeats everything to every port. A switch learns MAC addresses and sends frames only where they need to go."
+    },
+    {
+     "id": "n3",
      "topic": "Ch 1: OSI model",
      "q": "IP addresses and routing happen at which OSI layer?",
      "o": [
@@ -722,7 +737,7 @@
      "e": "Layer 3 (Network) handles logical addressing (IP) and routing. Layer 2 uses MAC addresses."
     },
     {
-     "id": "n3",
+     "id": "n4",
      "topic": "Ch 1: OSI model",
      "q": "What is the PDU called at Layer 2?",
      "o": [
@@ -732,20 +747,7 @@
       "Bit"
      ],
      "a": 2,
-     "e": "Data (L5-7) -> Segment (L4) -> Packet (L3) -> Frame (L2) -> Bits (L1)."
-    },
-    {
-     "id": "n4",
-     "topic": "Ch 1: Topologies",
-     "q": "Every node connects directly to every other node. Which topology?",
-     "o": [
-      "Star",
-      "Bus",
-      "Full mesh",
-      "Ring"
-     ],
-     "a": 2,
-     "e": "Full mesh = every node linked to every other. Most redundant, most expensive."
+     "e": "Data (L5–7) → Segment (L4) → Packet (L3) → Frame (L2) → Bits (L1)."
     },
     {
      "id": "n5",
@@ -758,11 +760,37 @@
       "Resources are shared through a domain controller"
      ],
      "a": 1,
-     "e": "P2P has no central server. Each machine controls its own files and accounts. Cheap and simple, but doesn't scale and is hard to secure."
+     "e": "P2P has no central server. Each machine controls its own files and accounts. Cheap and simple, but it doesn't scale and is hard to secure."
     },
     {
      "id": "n6",
-     "topic": "Ch 2: Infrastructure",
+     "topic": "Ch 1: Network models",
+     "q": "A client-server network needs:",
+     "o": [
+      "No special software",
+      "A network operating system (NOS) on the server that controls access to shared resources",
+      "Every user to be an admin",
+      "A hub instead of a switch"
+     ],
+     "a": 1,
+     "e": "Client-server = central NOS (e.g. Windows Server) managing accounts, resources and security. Easier to scale and secure than P2P."
+    },
+    {
+     "id": "n7",
+     "topic": "Ch 2: Structured cabling",
+     "q": "The demarc (demarcation point) is:",
+     "o": [
+      "The main switch in the building",
+      "Where the ISP's responsibility ends and the customer's network begins",
+      "A patch panel on each floor",
+      "The server room's air conditioning"
+     ],
+     "a": 1,
+     "e": "Demarc = the handoff point between the service provider and you. Problems past the demarc are your problem."
+    },
+    {
+     "id": "n8",
+     "topic": "Ch 2: Structured cabling",
      "q": "The MDF is:",
      "o": [
       "A small closet on each floor",
@@ -774,20 +802,33 @@
      "e": "MDF = main distribution frame (the central hub). IDFs are the smaller rooms on each floor that connect back to it."
     },
     {
-     "id": "n7",
-     "topic": "Ch 2: Documentation",
-     "q": "What is the main point of change management?",
+     "id": "n9",
+     "topic": "Ch 2: Structured cabling",
+     "q": "Cabling that connects workstations to the nearest telecom closet is called:",
      "o": [
-      "To stop any change to the network",
-      "To make sure changes are approved, documented and can be rolled back",
-      "To speed up hardware purchases",
-      "To replace network diagrams"
+      "Backbone cabling",
+      "Horizontal cabling",
+      "Entrance cabling",
+      "Crossover cabling"
      ],
      "a": 1,
-     "e": "Change management controls risk: request, approve, schedule, document, and plan a rollback."
+     "e": "Horizontal = closet to the work area (max 100 m total). Backbone (vertical) = between closets, floors and the MDF."
     },
     {
-     "id": "n8",
+     "id": "n10",
+     "topic": "Ch 2: Network diagrams",
+     "q": "A diagram showing how devices are actually cabled and where they sit is a:",
+     "o": [
+      "Logical diagram",
+      "Physical diagram",
+      "Rack diagram only",
+      "Flowchart"
+     ],
+     "a": 1,
+     "e": "Physical = real cables, devices, locations. Logical = how data flows: IP ranges, VLANs, subnets."
+    },
+    {
+     "id": "n11",
      "topic": "Ch 3: Addressing",
      "q": "How long is a MAC address, and what are its first 24 bits?",
      "o": [
@@ -800,8 +841,8 @@
      "e": "MAC = 48 bits, written in hex. First 24 bits = OUI, which identifies the manufacturer."
     },
     {
-     "id": "n9",
-     "topic": "Ch 3: Addressing",
+     "id": "n12",
+     "topic": "Ch 3: IP addresses",
      "q": "Which address is PRIVATE?",
      "o": [
       "172.32.1.1",
@@ -813,12 +854,12 @@
      "e": "Private ranges: 10.0.0.0/8, 172.16.0.0 to 172.31.255.255, and 192.168.0.0/16. 172.32 is just past the range."
     },
     {
-     "id": "n10",
-     "topic": "Ch 3: Addressing",
+     "id": "n13",
+     "topic": "Ch 3: IP addresses",
      "q": "A PC shows the address 169.254.33.7. What most likely happened?",
      "o": [
       "It got a public IP",
-      "It couldn't reach a DHCP server, so it assigned itself an APIPA address",
+      "It couldn't reach a DHCP server, so it gave itself an APIPA address",
       "It's using IPv6",
       "It's in loopback mode"
      ],
@@ -826,21 +867,8 @@
      "e": "169.254.x.x = APIPA. Windows assigns it when DHCP fails. Usual fix: check the cable or DHCP server."
     },
     {
-     "id": "n11",
-     "topic": "Ch 3: Ports",
-     "q": "Which pair is correct?",
-     "o": [
-      "SSH = 23",
-      "DNS = 53",
-      "HTTPS = 80",
-      "RDP = 22"
-     ],
-     "a": 1,
-     "e": "Memorize: 20/21 FTP, 22 SSH, 23 Telnet, 25 SMTP, 53 DNS, 67/68 DHCP, 80 HTTP, 110 POP3, 143 IMAP, 443 HTTPS, 3389 RDP."
-    },
-    {
-     "id": "n12",
-     "topic": "Ch 3: DHCP",
+     "id": "n14",
+     "topic": "Ch 3: IP addresses",
      "q": "What's the correct order of the DHCP process?",
      "o": [
       "Request, Offer, Discover, Ack",
@@ -852,21 +880,60 @@
      "e": "DORA: Discover, Offer, Request, Acknowledge."
     },
     {
-     "id": "n13",
-     "topic": "Ch 3: DNS",
-     "q": "Which DNS record points a domain to its mail server?",
+     "id": "n15",
+     "topic": "Ch 3: IP addresses",
+     "q": "How long is an IPv6 address?",
      "o": [
-      "A",
-      "AAAA",
-      "CNAME",
-      "MX"
+      "32 bits",
+      "48 bits",
+      "64 bits",
+      "128 bits"
      ],
      "a": 3,
-     "e": "A = IPv4, AAAA = IPv6, CNAME = alias, MX = mail exchanger, PTR = reverse lookup."
+     "e": "IPv6 = 128 bits in hex. :: can replace one run of zero groups, only once per address."
     },
     {
-     "id": "n14",
-     "topic": "Ch 4: Protocols",
+     "id": "n16",
+     "topic": "Ch 3: Ports and sockets",
+     "q": "A socket is:",
+     "o": [
+      "A physical network jack",
+      "An IP address plus a port number",
+      "A type of cable",
+      "A MAC address plus a port"
+     ],
+     "a": 1,
+     "e": "Socket = IP:port, e.g. 10.0.0.5:443. It identifies one specific connection endpoint."
+    },
+    {
+     "id": "n17",
+     "topic": "Ch 3: Ports and sockets",
+     "q": "Well-known ports are in which range?",
+     "o": [
+      "0 to 1023",
+      "1024 to 49151",
+      "49152 to 65535",
+      "0 to 65535"
+     ],
+     "a": 0,
+     "e": "0–1023 well-known (HTTP, SSH...), 1024–49151 registered, 49152–65535 dynamic/private."
+    },
+    {
+     "id": "n18",
+     "topic": "Ch 3: Ports and sockets",
+     "q": "Which pair is correct?",
+     "o": [
+      "SSH = 23",
+      "DNS = 53",
+      "HTTPS = 80",
+      "RDP = 22"
+     ],
+     "a": 1,
+     "e": "Memorize: 20/21 FTP, 22 SSH, 23 Telnet, 25 SMTP, 53 DNS, 67/68 DHCP, 80 HTTP, 110 POP3, 143 IMAP, 443 HTTPS, 3389 RDP."
+    },
+    {
+     "id": "n19",
+     "topic": "Ch 4: Core protocols",
      "q": "The TCP three-way handshake is:",
      "o": [
       "SYN, ACK, FIN",
@@ -878,12 +945,12 @@
      "e": "Client sends SYN, server replies SYN-ACK, client confirms with ACK."
     },
     {
-     "id": "n15",
-     "topic": "Ch 4: Protocols",
+     "id": "n20",
+     "topic": "Ch 4: Core protocols",
      "q": "Which statement about UDP is true?",
      "o": [
       "It guarantees delivery",
-      "It's connectionless and has no handshake, so it's faster",
+      "It's connectionless with no handshake, so it's faster",
       "It's used for every web page",
       "It works at Layer 3"
      ],
@@ -891,73 +958,164 @@
      "e": "UDP = connectionless, no acknowledgments. Used for streaming, VoIP, DNS queries. TCP = reliable, connection-oriented."
     },
     {
-     "id": "n16",
-     "topic": "Subnetting (no calculator)",
-     "q": "What is the NETWORK address of 192.168.10.77/26?",
+     "id": "n21",
+     "topic": "Ch 4: Core protocols",
+     "q": "Which protocol does ping use?",
      "o": [
-      "192.168.10.0",
-      "192.168.10.64",
-      "192.168.10.76",
-      "192.168.10.128"
+      "ARP",
+      "ICMP",
+      "UDP port 53",
+      "TCP port 80"
      ],
      "a": 1,
-     "e": "/26 -> mask 255.255.255.192 -> block size 256-192 = 64. Blocks: 0, 64, 128, 192. 77 falls in the 64 block."
+     "e": "ping sends ICMP echo requests. ICMP reports errors and status, it doesn't carry user data."
     },
     {
-     "id": "n17",
-     "topic": "Subnetting (no calculator)",
-     "q": "What is the BROADCAST address of 192.168.10.77/26?",
+     "id": "n22",
+     "topic": "Ch 4: Core protocols",
+     "q": "ARP is used to:",
      "o": [
-      "192.168.10.127",
-      "192.168.10.255",
-      "192.168.10.128",
-      "192.168.10.126"
+      "Find the MAC address that matches a known IP address",
+      "Assign IP addresses",
+      "Encrypt traffic",
+      "Resolve domain names"
      ],
      "a": 0,
-     "e": "The block is 64-127. Broadcast = last address in the block = .127. Usable hosts are .65 to .126."
+     "e": "ARP: 'who has 192.168.1.1? tell me your MAC.' DHCP assigns IPs, DNS resolves names."
     },
     {
-     "id": "n18",
-     "topic": "Subnetting (no calculator)",
-     "q": "How many USABLE hosts does a /27 give you?",
+     "id": "n23",
+     "topic": "Ch 4: Core protocols",
+     "q": "What is the purpose of the TTL field in an IP packet?",
      "o": [
-      "32",
-      "30",
-      "62",
-      "14"
+      "Encrypts the payload",
+      "Stops packets from looping forever: each router subtracts 1 and drops it at 0",
+      "Sets the packet's priority",
+      "Holds the MAC address"
      ],
      "a": 1,
-     "e": "32 - 27 = 5 host bits. 2^5 = 32 addresses, minus network and broadcast = 30."
+     "e": "TTL = time to live. Every hop decreases it. At 0 the packet is dropped and an ICMP message goes back."
     },
     {
-     "id": "n19",
-     "topic": "Subnetting (no calculator)",
-     "q": "What is the subnet mask for /28?",
+     "id": "n24",
+     "topic": "Ch 4: Encryption protocols",
+     "q": "Which protocol encrypts at the Network layer and is commonly used for VPNs?",
      "o": [
-      "255.255.255.224",
-      "255.255.255.240",
-      "255.255.255.248",
-      "255.255.255.192"
+      "TLS",
+      "IPsec",
+      "HTTP",
+      "FTP"
      ],
      "a": 1,
-     "e": "/28 = 24 + 4 bits in the last octet: 128+64+32+16 = 240."
+     "e": "IPsec works at Layer 3, so it can protect all traffic between two points. TLS works higher up (e.g. HTTPS)."
     },
     {
-     "id": "n20",
-     "topic": "Ch 5: Cabling",
+     "id": "n25",
+     "topic": "Ch 4: Encryption protocols",
+     "q": "Asymmetric encryption uses:",
+     "o": [
+      "One shared secret key",
+      "A public key and a matching private key",
+      "No keys",
+      "A MAC address as the key"
+     ],
+     "a": 1,
+     "e": "Public key encrypts, private key decrypts (or vice versa for signatures). Symmetric = one shared key, faster."
+    },
+    {
+     "id": "n26",
+     "topic": "Ch 4: Remote access",
+     "q": "Why use SSH instead of Telnet?",
+     "o": [
+      "SSH is faster",
+      "SSH encrypts the session, Telnet sends everything (even passwords) in plain text",
+      "Telnet doesn't work on Linux",
+      "SSH uses port 23"
+     ],
+     "a": 1,
+     "e": "SSH (port 22) = encrypted remote command line. Telnet (port 23) = plain text, so avoid it."
+    },
+    {
+     "id": "n27",
+     "topic": "Ch 4: Remote access",
+     "q": "A VPN that connects two offices' networks together is a:",
+     "o": [
+      "Client-to-site (host-to-site) VPN",
+      "Site-to-site VPN",
+      "Split tunnel",
+      "Remote desktop gateway"
+     ],
+     "a": 1,
+     "e": "Site-to-site links whole networks (router to router). Client-to-site connects one remote user into the network."
+    },
+    {
+     "id": "n28",
+     "topic": "Ch 4: Remote access",
+     "q": "In a split-tunnel VPN:",
+     "o": [
+      "All traffic goes through the VPN",
+      "Only traffic for the company network goes through the VPN, internet traffic goes direct",
+      "The VPN is turned off",
+      "Two VPNs run at once"
+     ],
+     "a": 1,
+     "e": "Split tunnel saves bandwidth but is less secure. Full tunnel sends everything through the VPN."
+    },
+    {
+     "id": "n29",
+     "topic": "Ch 5: Twisted pair",
+     "q": "STP differs from UTP because STP:",
+     "o": [
+      "Has no twists",
+      "Has shielding that protects against EMI",
+      "Is fiber",
+      "Only works for phones"
+     ],
+     "a": 1,
+     "e": "Shielded twisted pair adds foil/braid shielding for noisy environments. UTP is cheaper and more common."
+    },
+    {
+     "id": "n30",
+     "topic": "Ch 5: Twisted pair",
      "q": "Which cable supports 10 Gbps over the full 100 m?",
      "o": [
       "Cat 5e",
       "Cat 6 (only up to about 55 m at 10G)",
       "Cat 6a",
-      "Coax RG-6"
+      "Cat 3"
      ],
      "a": 2,
      "e": "Cat 5e = 1 Gbps at 100 m. Cat 6 = 10 Gbps but only ~55 m. Cat 6a = 10 Gbps at 100 m."
     },
     {
-     "id": "n21",
-     "topic": "Ch 5: Cabling",
+     "id": "n31",
+     "topic": "Ch 5: Pinouts",
+     "q": "A straight-through cable uses:",
+     "o": [
+      "T568A on one end, T568B on the other",
+      "The same standard (usually T568B) on both ends",
+      "No standard",
+      "Only 2 wires"
+     ],
+     "a": 1,
+     "e": "Straight-through = same pinout both ends (PC to switch). Crossover = T568A on one end, T568B on the other."
+    },
+    {
+     "id": "n32",
+     "topic": "Ch 5: Pinouts",
+     "q": "10/100 Mbps Ethernet uses which pins to transmit and receive?",
+     "o": [
+      "1, 2, 3, 6",
+      "4, 5, 7, 8",
+      "1, 2, 7, 8",
+      "All 8"
+     ],
+     "a": 0,
+     "e": "Fast Ethernet uses pins 1, 2 (transmit) and 3, 6 (receive). Gigabit uses all 8 pins."
+    },
+    {
+     "id": "n33",
+     "topic": "Ch 5: Fiber",
      "q": "Compared to multimode fiber, single-mode fiber:",
      "o": [
       "Has a bigger core and is used for short runs",
@@ -969,34 +1127,8 @@
      "e": "SMF: narrow core, laser light, long distance (km). MMF: wider core, LED/VCSEL, shorter runs inside buildings."
     },
     {
-     "id": "n22",
-     "topic": "Ch 6: Wireless",
-     "q": "Which 2.4 GHz channels don't overlap?",
-     "o": [
-      "1, 2, 3",
-      "1, 6, 11",
-      "2, 7, 12",
-      "5, 10, 15"
-     ],
-     "a": 1,
-     "e": "In North America the only non-overlapping 2.4 GHz channels are 1, 6 and 11."
-    },
-    {
-     "id": "n23",
-     "topic": "Ch 6: Wireless",
-     "q": "Wi-Fi avoids collisions using:",
-     "o": [
-      "CSMA/CD",
-      "CSMA/CA",
-      "Token passing",
-      "Full-duplex switching"
-     ],
-     "a": 1,
-     "e": "Wireless = CSMA/CA (collision Avoidance). Old wired Ethernet = CSMA/CD (collision Detection)."
-    },
-    {
-     "id": "n24",
-     "topic": "Ch 6: Wireless",
+     "id": "n34",
+     "topic": "Ch 6: Wi-Fi security",
      "q": "Which is the strongest wireless security option?",
      "o": [
       "WEP",
@@ -1008,17 +1140,56 @@
      "e": "WPA3 uses SAE, which protects against offline password guessing. WEP and TKIP are broken."
     },
     {
-     "id": "n25",
-     "topic": "Ch 3: IPv6",
-     "q": "How long is an IPv6 address?",
+     "id": "n35",
+     "topic": "Ch 6: Wi-Fi security",
+     "q": "WPA2-Enterprise authenticates each user with:",
      "o": [
-      "32 bits",
-      "48 bits",
-      "64 bits",
-      "128 bits"
+      "One shared password (PSK)",
+      "802.1X and a RADIUS server, with individual logins",
+      "MAC filtering only",
+      "A hidden SSID"
      ],
-     "a": 3,
-     "e": "IPv6 = 128 bits in hex. :: can replace one run of zero groups, only once per address."
+     "a": 1,
+     "e": "Personal = one pre-shared key for everyone. Enterprise = 802.1X/EAP with a RADIUS server, so each user has their own credentials."
+    },
+    {
+     "id": "n36",
+     "topic": "Ch 6: Wi-Fi security",
+     "q": "An attacker sets up an access point with the same SSID as your coffee shop's Wi-Fi. This is:",
+     "o": [
+      "War driving",
+      "An evil twin",
+      "A deauth bug",
+      "MAC filtering"
+     ],
+     "a": 1,
+     "e": "Evil twin = rogue AP impersonating a legit SSID to steal traffic or logins. War driving = driving around looking for networks."
+    },
+    {
+     "id": "n37",
+     "topic": "Ch 6: Wi-Fi security",
+     "q": "Why is MAC filtering weak security?",
+     "o": [
+      "It slows the network",
+      "MAC addresses can be spoofed easily",
+      "It only works on 5 GHz",
+      "It blocks all devices"
+     ],
+     "a": 1,
+     "e": "Anyone can sniff an allowed MAC and copy it. Use WPA2/WPA3 instead."
+    },
+    {
+     "id": "n38",
+     "topic": "Ch 6: Wi-Fi tools",
+     "q": "Which tool finds radio interference, like a microwave messing with Wi-Fi?",
+     "o": [
+      "Cable tester",
+      "Spectrum analyzer",
+      "Toner probe",
+      "Loopback plug"
+     ],
+     "a": 1,
+     "e": "Spectrum analyzer = sees all RF energy, Wi-Fi or not. A Wi-Fi analyzer shows networks, channels and signal strength."
     }
    ]
   },
@@ -1434,29 +1605,29 @@
   [
    "2026-10-09",
    [
-    "ECN503: Lecture 2 (North, inclusive vs extractive)",
-    "ITM200: loops drill (Study tab, 10 Q)"
+    "PCS181: go to class (Solar System)",
+    "ECN503: Lecture 2 (North, inclusive vs extractive)"
    ]
   ],
   [
    "2026-10-10",
    [
-    "ECN503: AJR IV logic, then ECN practice",
-    "ITM301: Ch 1–2 review + 10 practice Q"
+    "ITM301: Ch 1 + first D2L practice attempt (just to see your baseline)",
+    "ECN503: AJR IV logic + practice"
    ]
   ],
   [
    "2026-10-11",
    [
+    "ITM301: Ch 2 + Ch 3 (ports, sockets, IP addresses)",
     "ECN503: pick your VoxDev podcast",
-    "ITM200: conditionals + strings drill",
     "ITM301: Assignment 4 due tonight"
    ]
   ],
   [
    "2026-10-12",
    [
-    "ITM301: Ch 3 addressing + 15 min subnet drill",
+    "ITM301: Ch 4 (core protocols, encryption, remote access)",
     "PCS181: Intro + Scales + Kepler/Newton"
    ]
   ],
@@ -1464,22 +1635,22 @@
    "2026-10-13",
    [
     "ECN503: Lecture 3 + Poor Economics Ch 2 (draw S-curve vs L)",
-    "ITM200: lists drill"
+    "ITM301: Ch 5 (twisted pair, pinouts, fiber)"
    ]
   ],
   [
    "2026-10-14",
    [
     "ECN503: Oct 14 lecture (if it’s on)",
-    "PCS181: Light & telescopes",
-    "ITM301: Ch 4 TCP/UDP + ports"
+    "ITM301: Ch 6 (Wi-Fi security + tools)",
+    "PCS181: Light & telescopes"
    ]
   ],
   [
    "2026-10-15",
    [
     "ECN503: Lecture 4 + Ch 3 + ATE calc",
-    "ITM301: Ch 5 cabling + subnet drill"
+    "ITM301: D2L practice attempt #2 + redo missed"
    ]
   ],
   [
@@ -1487,7 +1658,7 @@
    [
     "ECN503: Oct 7 lecture",
     "PCS181: The Sun",
-    "ITM200: functions + mock test"
+    "ITM301: textbook end-of-chapter questions Ch 1–3"
    ]
   ],
   [
@@ -1495,27 +1666,27 @@
    [
     "ECN503: review Oct 14 lecture",
     "PCS181: Solar System",
-    "ITM301: Ch 6 wireless"
+    "ITM301: textbook end-of-chapter questions Ch 4–6"
    ]
   ],
   [
    "2026-10-18",
    [
-    "Mock tests for all 4 courses. Redo everything you miss."
+    "Mock tests: ECN503, PCS181, ITM301 + D2L practice #3. Redo everything you miss."
    ]
   ],
   [
    "2026-10-19",
    [
     "ECN503: finish the cheat sheet",
-    "ITM200: code tracing mock"
+    "ITM301: weak spots from the D2L bank"
    ]
   ],
   [
    "2026-10-20",
    [
     "ECN503: full mock + MIT 14.73 quiz 1",
-    "ITM301: class (Ch 7)"
+    "ITM301: class + 20 min ports/OSI flashcards"
    ]
   ],
   [
@@ -1528,48 +1699,46 @@
   [
    "2026-10-22",
    [
-    "PCS181: full mock + OpenStax review questions"
+    "PCS181: full mock + OpenStax review questions",
+    "ITM301: D2L practice #4 (aim for 90%+)"
    ]
   ],
   [
    "2026-10-23",
    [
     "PCS181 MIDTERM",
-    "Evening: ITM301 Ch 1–3 blurt"
+    "Evening: ITM301 cheat-sheet skim + weak spots. Bed early."
    ]
   ],
   [
    "2026-10-24",
    [
-    "ITM301: big day. Ch 4–6 blurt + 20 min subnet drill",
-    "ITM200: loops + lists drill"
+    "ITM301 MIDTERM 10 AM, TRS 1-067",
+    "Afternoon: rest. You earned it."
    ]
   ],
   [
    "2026-10-25",
    [
-    "ITM301: mock test x2, redo missed",
-    "ITM200: functions drill"
+    "ITM200: loops + lists drill"
    ]
   ],
   [
    "2026-10-26",
    [
-    "ITM301: ports/OSI/cables flashcards + subnet drill",
-    "ITM200: strings drill"
+    "ITM200: strings + functions drill"
    ]
   ],
   [
    "2026-10-27",
    [
-    "ITM301 MIDTERM",
-    "Evening: rest"
+    "ITM200: conditionals + trace code on paper"
    ]
   ],
   [
    "2026-10-28",
    [
-    "ITM200: trace code on paper + PY4E MCQs (all 6 classes)"
+    "ITM200: PY4E MCQs, all 6 classes"
    ]
   ],
   [

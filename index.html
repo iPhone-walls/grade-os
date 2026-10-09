@@ -904,7 +904,7 @@ function renderCourseGuide(c){
       <button class="btn ghost small" data-quiz="all">Practise all ${s.n}</button>
       <button class="btn ghost small" data-quiz="missed" ${s.miss?'':'disabled'}>Redo missed (${s.miss})</button>
     </div>
-    ${c.code==='ITM301'?`<button class="btn ghost small" data-act="subnet" style="width:100%">Subnet drill · no calculator</button>`:''}
+    ${c.code==='ITM301'?`<button class="btn ghost small" data-act="subnet" style="width:100%">Subnet drill · for the final (not on this midterm)</button>`:''}
   </section>
   <div class="side gcol">
     <section class="section"><div class="shead"><h2>Practice by topic</h2><span>tap to drill</span></div>${topicRows}</section>
