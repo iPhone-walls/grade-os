@@ -96,11 +96,11 @@
   },
   "ecn503-draft": {
    "course": "ECN503",
-   "detail": "Draft for feedback by Nov 18. Weight not confirmed yet.",
+   "detail": "1,500\u20132,000 words on your VoxDev podcast. Optional, but the feedback is free marks.",
    "due": "2026-11-11T14:00:00-05:00",
-   "mins": 180,
+   "mins": 240,
    "status": "todo",
-   "title": "ECN503 Essay draft",
+   "title": "ECN503 Essay draft (optional, free feedback)",
    "weight": 0
   },
   "biz-repost": {
@@ -121,8 +121,9 @@
    "due": "2026-11-25T14:00:00-05:00",
    "mins": 240,
    "status": "todo",
-   "title": "ECN503 Essay final",
-   "weight": 0
+   "title": "ECN503 Essay final (mandatory to pass)",
+   "weight": 34,
+   "detail": "You can\u2019t pass ECN503 without submitting this."
   },
   "itm301-a4": {
    "course": "ITM301",
@@ -150,6 +151,96 @@
    "status": "done",
    "title": "Screenshot the ECN503 outline: grade breakdown + test dates",
    "weight": 0
+  },
+  "ecn-podcast": {
+   "title": "Pick your VoxDev podcast for the ECN503 essay",
+   "course": "ECN503",
+   "due": "2026-10-12T23:59:00-04:00",
+   "mins": 30,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Browse the list on the course site, pick one you can actually write 1,500\u20132,000 words on. This is the bottleneck for the essay.",
+   "createdAt": "2026-10-08T20:40:00-04:00"
+  },
+  "ecn-l1": {
+   "title": "ECN503 review: Lecture 1 (Intro)",
+   "course": "ECN503",
+   "due": "2026-10-10T23:59:00-04:00",
+   "mins": 40,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Slides + bolded readings. Write down every definition for the cheat sheet.",
+   "createdAt": "2026-10-08T20:40:00-04:00"
+  },
+  "ecn-l2": {
+   "title": "ECN503 review: Lecture 2 (Institutions / colonialism)",
+   "course": "ECN503",
+   "due": "2026-10-11T23:59:00-04:00",
+   "mins": 50,
+   "weight": 0,
+   "status": "todo",
+   "detail": "North\u2019s \u201crules of the game\u201d, inclusive vs extractive institutions, AJR instrumental-variable logic.",
+   "createdAt": "2026-10-08T20:40:00-04:00"
+  },
+  "ecn-l3": {
+   "title": "ECN503 review: Lecture 3 (Hunger / nutrition traps)",
+   "course": "ECN503",
+   "due": "2026-10-13T23:59:00-04:00",
+   "mins": 50,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Poor Economics Ch 2. Poverty trap S-curve vs L-shape: draw both from memory.",
+   "createdAt": "2026-10-08T20:40:00-04:00"
+  },
+  "ecn-l4": {
+   "title": "ECN503 review: Lecture 4 (Health / de-worming)",
+   "course": "ECN503",
+   "due": "2026-10-15T23:59:00-04:00",
+   "mins": 50,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Poor Economics Ch 3. Practise the ATE calculation by hand.",
+   "createdAt": "2026-10-08T20:40:00-04:00"
+  },
+  "ecn-l5": {
+   "title": "ECN503 review: Oct 7 lecture",
+   "course": "ECN503",
+   "due": "2026-10-16T23:59:00-04:00",
+   "mins": 45,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Slides + any bolded readings from that week.",
+   "createdAt": "2026-10-08T20:40:00-04:00"
+  },
+  "ecn-l6": {
+   "title": "ECN503 review: Oct 14 lecture",
+   "course": "ECN503",
+   "due": "2026-10-17T23:59:00-04:00",
+   "mins": 45,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Probably on the midterm. Go to the lecture, then review it here.",
+   "createdAt": "2026-10-08T20:40:00-04:00"
+  },
+  "ecn-cheat": {
+   "title": "ECN503 cheat sheet (1 page, double-sided)",
+   "course": "ECN503",
+   "due": "2026-10-19T23:59:00-04:00",
+   "mins": 90,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Definitions (North\u2019s rules of the game, inclusive vs extractive), AJR IV logic, S-curve vs L-shape, ATE calc.",
+   "createdAt": "2026-10-08T20:40:00-04:00"
+  },
+  "life-drop-deadline": {
+   "title": "Last day to drop a course with no grade",
+   "course": "LIFE",
+   "due": "2026-11-20T23:59:00-05:00",
+   "mins": 10,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Check your marks in every course first.",
+   "createdAt": "2026-10-08T20:40:00-04:00"
   }
  },
  "exams": {
@@ -190,12 +281,12 @@
    "course": "ECN503",
    "name": "ECN503 Midterm",
    "date": "2026-10-21T12:00:00-04:00",
-   "weight": 20,
-   "goal": 6,
+   "weight": 33,
+   "goal": 8,
    "done": 0,
    "lastPrep": "",
-   "tentative": true,
-   "note": "Weight assumed 20% until we see the outline. Check D2L for the time and room."
+   "tentative": false,
+   "note": "In class. Covers lectures 1\u20135 + Oct 14, bolded readings, Poor Economics Ch 2\u20133. Sick? Email Li before the test and hand in a medical note within 5 working days, or it\u2019s a zero."
   }
  },
  "state": {
