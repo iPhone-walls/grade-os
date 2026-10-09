@@ -315,10 +315,22 @@
    "code": "PCS181",
    "name": "Introduction to Astronomy",
    "date": "2026-10-23",
-   "dateLabel": "Fri Oct 23 · section 011",
+   "dateLabel": "Fri Oct 23 · in class · starts 10 min after the hour",
    "weight": 15,
-   "format": "90 minutes. Multiple choice + short answer. No calculations.",
+   "format": "90 minutes. 30 multiple choice (1 mark each) + short answers (10 marks). No calculators or study aids. No calculations, but you may need to explain what a formula means (e.g. what happens to gravity if distance doubles).",
+   "short": [
+    "Explain why astronauts on the ISS feel weightless even though gravity still acts on them.",
+    "Use Kepler’s second law to explain why a planet moves fastest at perihelion.",
+    "If the distance between two objects triples, what happens to the gravity between them? Explain using the inverse-square law.",
+    "Explain how astronomers can tell a star’s temperature from its colour.",
+    "Describe the three kinds of spectra and the conditions that produce each one.",
+    "Give two reasons we build bigger telescopes, and one reason we put some in space.",
+    "Explain how the Sun makes energy, and why it doesn’t collapse under its own gravity.",
+    "Use the frost line to explain why rocky planets are close to the Sun and gas giants are far.",
+    "Why must a scientific theory make falsifiable predictions? Give an example."
+   ],
    "covers": [
+    "Everything up to and including Lecture 9 (Fri Oct 9, The Solar System). Go to that class.",
     "Intro: how science works, criteria for a theory",
     "Scales of the Universe (Ch 1)",
     "Gravity & orbits (Ch 4): Kepler, Newton",
@@ -338,6 +350,7 @@
     "Solar system: nebular theory (flat spinning disk), frost line -> rocky inside, giants outside."
    ],
    "traps": [
+    "Short answers are 10 of 40 marks. Practise writing 2–4 sentence explanations out loud, not just MCQs.",
     "Light-year as time. It's distance.",
     "Kepler's focus vs centre.",
     "'No gravity in space' is wrong.",

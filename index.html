@@ -911,6 +911,7 @@ function renderCourseGuide(c){
   </div></div>
   <div class="cols">
     ${sec('cov','What’s on it',`<ul class="checks">${c.covers.map((x,i)=>`<li><button type="button" class="chk ${conf[i]?'on':''}" data-conf="${c.code}:${i}" aria-pressed="${!!conf[i]}" aria-label="Mark as reviewed: ${esc(x)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></button><span>${esc(x)}</span></li>`).join('')}</ul><p class="note">Tick each one once you’ve reviewed it.</p>`)}
+    ${c.short?sec('short','Short-answer practice',`<ol class="gl">${c.short.map(x=>`<li>${esc(x)}</li>`).join('')}</ol><p class="note">Answer each out loud or on paper in 2–4 sentences, then check against the must-know list.</p>`):''}
     ${sec('cheat','Must-know (cheat sheet material)',`<ul class="gl">${c.cheat.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`)}
     ${sec('trap','Exam traps',`<ul class="gl">${c.traps.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`)}
     ${sec('links','More practice online',`<div class="links">${c.links.map(l=>`<a href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.t)}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>`).join('')}</div><p class="note">Older tests from past terms are fine to practise with. Anything from THIS term’s tests is a misconduct risk, so skip it.</p>`)}
