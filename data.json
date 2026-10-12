@@ -241,6 +241,226 @@
    "status": "todo",
    "detail": "Check your marks in every course first.",
    "createdAt": "2026-10-08T20:40:00-04:00"
+  },
+  "itm301-r1": {
+   "title": "ITM301: Ch 1 + first D2L practice attempt (baseline)",
+   "course": "ITM301",
+   "due": "2026-10-12T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Blurt Ch 1 (network models, services, hardware, OSI), then take the practice quiz once just to see where you are. D2L \u2192 ITM301 \u2192 Midterm Exam Practice. 60 random questions from an 80-question bank.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm301-r2": {
+   "title": "ITM301: Ch 2 + Ch 3 (cabling, IP addresses, ports, sockets)",
+   "course": "ITM301",
+   "due": "2026-10-13T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Structured cabling + diagrams, then IPv4/IPv6, APIPA, DHCP, ports and sockets. Do the Study tab topic drills after.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm301-r3": {
+   "title": "ITM301: Ch 4 (core protocols, encryption, remote access)",
+   "course": "ITM301",
+   "due": "2026-10-14T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "TCP/UDP, ICMP, ARP, TTL, IPsec vs TLS, SSH vs Telnet, VPN types.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm301-r4": {
+   "title": "ITM301: Ch 5 (twisted pair, pinouts, fiber)",
+   "course": "ITM301",
+   "due": "2026-10-15T23:59:00-04:00",
+   "mins": 45,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Sections 5.2.3\u20135.2.7, 5.3.2, 5.3.3, 5.3.6 only. STP/UTP, cable cats, T568A/B, SMF vs MMF.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm301-r5": {
+   "title": "ITM301: Ch 6 (Wi-Fi security + tools)",
+   "course": "ITM301",
+   "due": "2026-10-16T23:59:00-04:00",
+   "mins": 45,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Sections 6.4.1\u20136.4.5 and 6.5.1. WPA2/WPA3, Personal vs Enterprise, evil twin, spectrum analyzer.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm301-r6": {
+   "title": "ITM301: D2L practice attempt #2 + redo what you missed",
+   "course": "ITM301",
+   "due": "2026-10-17T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "D2L \u2192 ITM301 \u2192 Midterm Exam Practice. 60 random questions from an 80-question bank.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm301-r7": {
+   "title": "ITM301: textbook review + scenario questions, Ch 1\u20136",
+   "course": "ITM301",
+   "due": "2026-10-19T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "End-of-chapter questions, only the sections on the midterm. Your prof specifically recommended these.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm301-r8": {
+   "title": "ITM301: D2L practice #3 (aim for 80%+)",
+   "course": "ITM301",
+   "due": "2026-10-20T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "D2L \u2192 ITM301 \u2192 Midterm Exam Practice. 60 random questions from an 80-question bank.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm301-r9": {
+   "title": "ITM301: D2L practice #4 (aim for 90%+)",
+   "course": "ITM301",
+   "due": "2026-10-22T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "D2L \u2192 ITM301 \u2192 Midterm Exam Practice. 60 random questions from an 80-question bank.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm301-r10": {
+   "title": "ITM301: night-before skim + weak spots",
+   "course": "ITM301",
+   "due": "2026-10-23T23:59:00-04:00",
+   "mins": 40,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Must-know list in the Study tab + anything you keep missing. Bed early, exam is 10 AM Saturday at TRS 1-067.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "pcs-r1": {
+   "title": "PCS181: review Intro + Scales of the Universe",
+   "course": "PCS181",
+   "due": "2026-10-13T23:59:00-04:00",
+   "mins": 40,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Blurt, then the Study tab drills for those topics.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "pcs-r2": {
+   "title": "PCS181: review Gravity & orbits (Kepler, Newton)",
+   "course": "PCS181",
+   "due": "2026-10-14T23:59:00-04:00",
+   "mins": 45,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Kepler\u2019s 3 laws, inverse-square gravity, why orbiting = free fall.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "pcs-r3": {
+   "title": "PCS181: review Light & telescopes",
+   "course": "PCS181",
+   "due": "2026-10-16T23:59:00-04:00",
+   "mins": 50,
+   "weight": 0,
+   "status": "todo",
+   "detail": "EM spectrum order, Wien, Kirchhoff\u2019s 3 spectra, Doppler, aperture, why space telescopes.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "pcs-r4": {
+   "title": "PCS181: review The Sun",
+   "course": "PCS181",
+   "due": "2026-10-17T23:59:00-04:00",
+   "mins": 40,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Fusion in the core, layers, hydrostatic equilibrium, sunspots, 11-year cycle.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "pcs-r5": {
+   "title": "PCS181: review the Solar System (Lecture 9)",
+   "course": "PCS181",
+   "due": "2026-10-18T23:59:00-04:00",
+   "mins": 40,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Nebular theory, frost line, rocky vs giant planets.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "pcs-r6": {
+   "title": "PCS181: short-answer practice (all 9, out loud)",
+   "course": "PCS181",
+   "due": "2026-10-20T23:59:00-04:00",
+   "mins": 40,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Study tab \u2192 PCS181 \u2192 Short-answer practice. 2\u20134 sentences each. Short answers are 10 of 40 marks.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "pcs-r7": {
+   "title": "PCS181: full mock + OpenStax review questions",
+   "course": "PCS181",
+   "due": "2026-10-22T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Mock test in the Study tab, then OpenStax Ch 3, 5, 6, 15 review questions (links in the Study tab).",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm200-r1": {
+   "title": "ITM200: classes 4\u20135 (loops + lists) drill",
+   "course": "ITM200",
+   "due": "2026-10-25T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Trace code on paper first, then check. range() with negative steps and break/continue WILL be on it.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm200-r2": {
+   "title": "ITM200: classes 2 + 6 (strings + functions) drill",
+   "course": "ITM200",
+   "due": "2026-10-26T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Slicing, string methods, return vs print, functions returning None.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm200-r3": {
+   "title": "ITM200: classes 1 + 3 (basics + conditionals), trace code on paper",
+   "course": "ITM200",
+   "due": "2026-10-27T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Operators, types, input(), if/elif/else, try/except.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm200-r4": {
+   "title": "ITM200: PY4E MCQs for all 6 classes",
+   "course": "ITM200",
+   "due": "2026-10-28T23:59:00-04:00",
+   "mins": 75,
+   "weight": 0,
+   "status": "todo",
+   "detail": "Links are in the Study tab under ITM200.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
+  },
+  "itm200-r5": {
+   "title": "ITM200: mock test x2 + redo missed. Bed early",
+   "course": "ITM200",
+   "due": "2026-10-29T23:59:00-04:00",
+   "mins": 60,
+   "weight": 0,
+   "status": "todo",
+   "detail": "40 questions in 90 min on the real thing, so aim for about 1.5 min per question in the mock. Exam: Fri 12 PM, KHE321C.",
+   "createdAt": "2026-10-12T17:45:00-04:00"
   }
  },
  "exams": {
