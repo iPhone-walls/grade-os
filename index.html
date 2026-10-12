@@ -242,6 +242,7 @@ h1.task{font-family:var(--display);font-weight:800;font-size:clamp(27px,7vw,36px
 @media (min-width:1400px){.app{max-width:1280px}.fab{right:max(32px,calc(50% - 640px + 32px))}}
 .field input,.field select,.crow textarea{font-size:16px}
 .studyhead{display:flex;min-width:0}
+.cfbar{display:flex;min-width:0;margin-bottom:14px}
 .schips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:2px;gap:6px;min-width:0}
 .schips::-webkit-scrollbar{display:none}
 .schips button{display:inline-flex;align-items:baseline;gap:6px;white-space:nowrap;padding:9px 15px}
@@ -510,6 +511,14 @@ const COURSES={
 const KIND_FACTOR={school:1,biz:.8,life:1.15};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let cf='all'; try{cf=localStorage.getItem('gos-cf')||'all'}catch(e){}
+window.__allTasks=()=>tasks; window.__allExams=()=>exams;
+function cfChips(){
+  const codes=Object.keys(COURSES).filter(c=>tasks.some(t=>t.course===c&&t.status!=='done')||exams.some(e=>e.course===c));
+  if(cf!=='all'&&!codes.includes(cf)) cf='all';
+  const n=c=>tasks.filter(t=>t.status!=='done'&&(c==='all'||t.course===c)).length;
+  return `<div class="cfbar"><div class="seg schips" role="group" aria-label="Show tasks for">${['all',...codes].map(c=>`<button type="button" data-cf="${c}" aria-pressed="${cf===c}">${c==='all'?'All':esc(COURSES[c].name)}<small>${n(c)}</small></button>`).join('')}</div></div>`;
+}
 let calMonth=new Date(new Date().getFullYear(),new Date().getMonth(),1), calSel=null;
 let db=null, tasks=[], exams=[], st={xp:0,streak:0,lastDay:'',snoozed:{}}, loaded={t:false,e:false};
 let tab='now', showAnyway=false, timer=null, tick=null, confirmDel=null;
@@ -561,7 +570,8 @@ function queue(){
       detail:'Practice questions on the newest topics. Star anything you get wrong and redo it at the end.',
       mins:40,due:e.date,weight:e.weight,s:48/(h/2+6)*w*.4});
   });
-  return items.sort((a,b)=>b.s-a.s);
+  const sorted=items.sort((a,b)=>b.s-a.s);
+  return cf==='all'?sorted:sorted.filter(x=>x.course===cf);
 }
 function reason(t){
   if(t.virtual) return `Midterm in ${daysUntil(t.exam.date)} days, worth ${t.weight}%. One prep block a day keeps it from turning into a cram.`;
@@ -620,13 +630,18 @@ function statsHTML(){
 }
 function courseTag(c){const k=COURSES[c]||COURSES.LIFE;return `<span class="course" style="color:${k.color}"><b></b>${esc(k.name)}</span>`}
 
-function renderNow(){
+function renderNow(){return cfChips()+renderNowInner()}
+function renderNowInner(){
   const q=queue(), h=new Date().getHours();
   if((h>=23||h<7)&&!showAnyway){
     return `<section class="glass rest"><div class="eyebrow"><span class="dot" style="background:var(--c-itm301);box-shadow:0 0 12px var(--c-itm301)"></span>Off hours</div>
       <h1>You’re off. Go sleep.</h1><p>Tomorrow’s first move is already picked. Open this when you sit down and it’ll be waiting.</p>
       ${q[0]?`<p class="note">First up tomorrow: ${esc(q[0].title)}</p>`:''}
       <div><button class="btn ghost small" data-act="anyway">Show it anyway</button></div></section>`;
+  }
+  if(!q.length&&cf!=='all'){
+    return `<section class="glass rest"><div class="eyebrow"><span class="dot" style="background:var(--good);box-shadow:0 0 12px var(--good)"></span>Clear</div>
+      <h1>Nothing left for ${esc(COURSES[cf].name)} right now.</h1><p>Switch back to All to see what’s next.</p></section>`;
   }
   if(!q.length){
     return `<section class="glass rest"><div class="eyebrow"><span class="dot" style="background:var(--good);box-shadow:0 0 12px var(--good)"></span>Clear</div>
@@ -676,7 +691,9 @@ function rowHTML(t,withActions){
     <div style="min-width:0"><div class="t">${esc(t.title)}</div><div class="s">${bits.map(b=>`<span>${b}</span>`).join('<span>·</span>')}</div></div>
     <div class="end">${t.status==='done'?'':urgencyPill(t.due)}${check}${del}</div></div>`;
 }
-function renderPlan(){
+function renderPlan(){return cfChips()+renderPlanInner()}
+function renderPlanInner(){
+  const tasks=window.__allTasks().filter(t=>cf==='all'||t.course===cf);
   const now=Date.now(), today=dayKey(now);
   const open=tasks.filter(t=>t.status!=='done').sort((a,b)=>(a.due?new Date(a.due):Infinity)-(b.due?new Date(b.due):Infinity));
   const groups=[['Overdue',[]],['Today',[]],['Next 7 days',[]],['Later',[]],['No date',[]]];
@@ -709,7 +726,9 @@ function renderTests(){
         ${d<=14?'<div class="note">Prep blocks for this now appear in your Now queue, one per day.</div>':''}
       </article>`}).join('')+`</div></section>`;
 }
-function renderCal(){
+function renderCal(){return cfChips()+renderCalInner()}
+function renderCalInner(){
+  const tasks=window.__allTasks().filter(t=>cf==='all'||t.course===cf), exams=window.__allExams().filter(e=>cf==='all'||e.course===cf);
   const now=new Date(), today=dayKey(now); if(!calSel) calSel=today;
   const y=calMonth.getFullYear(), m=calMonth.getMonth();
   const byDay={};
@@ -749,6 +768,7 @@ function renderCal(){
   <section class="section"><div class="shead"><h2>${esc(selDate.toLocaleDateString('en-CA',{weekday:'long',month:'short',day:'numeric'}))}</h2>${calSel!==today||calMonth.getMonth()!==now.getMonth()?'<button class="btn ghost small" data-act="caltoday" style="min-height:34px;padding:6px 14px;font-size:13px">Today</button>':`<span>${sel.length} item${sel.length===1?'':'s'}</span>`}</div>${agenda}</section></div>`;
 }
 document.addEventListener('click',ev=>{
+  const f=ev.target.closest('[data-cf]'); if(f){cf=f.dataset.cf;try{localStorage.setItem('gos-cf',cf)}catch(e){}render();return}
   const d=ev.target.closest('[data-day]');
   if(d){calSel=d.dataset.day;const x=new Date(calSel+'T12:00:00');if(x.getMonth()!==calMonth.getMonth()) calMonth=new Date(x.getFullYear(),x.getMonth(),1);render();return}
   const b=ev.target.closest('[data-act="calprev"],[data-act="calnext"],[data-act="caltoday"]'); if(!b) return;
