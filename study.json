@@ -1610,154 +1610,121 @@
  ],
  "plan": [
   [
-   "2026-10-08",
-   [
-    "ECN503: review Lecture 1 + start your cheat sheet"
-   ]
-  ],
-  [
-   "2026-10-09",
-   [
-    "PCS181: go to class (Solar System)",
-    "ECN503: Lecture 2 (North, inclusive vs extractive)"
-   ]
-  ],
-  [
-   "2026-10-10",
-   [
-    "ITM301: Ch 1 + first D2L practice attempt (just to see your baseline)",
-    "ECN503: AJR IV logic + practice"
-   ]
-  ],
-  [
-   "2026-10-11",
-   [
-    "ITM301: Ch 2 + Ch 3 (ports, sockets, IP addresses)",
-    "ECN503: pick your VoxDev podcast",
-    "ITM301: Assignment 4 due tonight"
-   ]
-  ],
-  [
    "2026-10-12",
    [
-    "ITM301: Ch 4 (core protocols, encryption, remote access)",
-    "PCS181: Intro + Scales + Kepler/Newton"
+    "CONTENT: ITM301 Ch 1–3 (about 3 hrs)"
    ]
   ],
   [
    "2026-10-13",
    [
-    "ECN503: Lecture 3 + Poor Economics Ch 2 (draw S-curve vs L)",
-    "ITM301: Ch 5 (twisted pair, pinouts, fiber)"
+    "CONTENT: ITM301 Ch 4–6 + first D2L practice attempt (4 hrs)"
    ]
   ],
   [
    "2026-10-14",
    [
-    "ECN503: Oct 14 lecture (if it’s on)",
-    "ITM301: Ch 6 (Wi-Fi security + tools)",
-    "PCS181: Light & telescopes"
+    "CONTENT: ECN503 Lectures 1–5 + Poor Economics Ch 2–3 (5 hrs)",
+    "Go to the Oct 14 lecture if it’s on"
    ]
   ],
   [
    "2026-10-15",
    [
-    "ECN503: Lecture 4 + Ch 3 + ATE calc",
-    "ITM301: D2L practice attempt #2 + redo missed"
+    "CONTENT: PCS181 Lectures 1–9 (4 hrs)"
    ]
   ],
   [
    "2026-10-16",
    [
-    "ECN503: Oct 7 lecture",
-    "PCS181: The Sun",
-    "ITM301: textbook end-of-chapter questions Ch 1–3"
+    "CONTENT: ITM200 classes 1–6 (4 hrs)"
    ]
   ],
   [
    "2026-10-17",
    [
-    "ECN503: review Oct 14 lecture",
-    "PCS181: Solar System",
-    "ITM301: textbook end-of-chapter questions Ch 4–6"
+    "PRACTICE: ECN503 old midterm, timed",
+    "PRACTICE: ITM301 D2L #2"
    ]
   ],
   [
    "2026-10-18",
    [
-    "Mock tests: ECN503, PCS181, ITM301 + D2L practice #3. Redo everything you miss."
+    "PRACTICE: PCS181 mock + short answers",
+    "PRACTICE: ECN503 redo missed + MIT quiz 1"
    ]
   ],
   [
    "2026-10-19",
    [
-    "ECN503: finish the cheat sheet",
-    "ITM301: weak spots from the D2L bank"
+    "PRACTICE: ITM301 textbook end-of-chapter + scenarios",
+    "ECN503: cheat sheet"
    ]
   ],
   [
    "2026-10-20",
    [
-    "ECN503: full mock + MIT 14.73 quiz 1",
-    "ITM301: class + 20 min ports/OSI flashcards"
+    "PRACTICE: ECN503 full mock + finish cheat sheet",
+    "PRACTICE: PCS181 OpenStax questions",
+    "PRACTICE: ITM301 D2L #3"
    ]
   ],
   [
    "2026-10-21",
    [
     "ECN503 MIDTERM",
-    "Evening: PCS181 review"
+    "Evening: PCS181 old midterm / mock"
    ]
   ],
   [
    "2026-10-22",
    [
-    "PCS181: full mock + OpenStax review questions",
-    "ITM301: D2L practice #4 (aim for 90%+)"
+    "PRACTICE: PCS181 full mock + short answers",
+    "PRACTICE: ITM301 D2L #4 (aim 90%+)"
    ]
   ],
   [
    "2026-10-23",
    [
     "PCS181 MIDTERM",
-    "Evening: ITM301 cheat-sheet skim + weak spots. Bed early."
+    "Evening: ITM301 skim + weak spots. Bed early."
    ]
   ],
   [
    "2026-10-24",
    [
     "ITM301 MIDTERM 10 AM, TRS 1-067",
-    "Afternoon: rest. You earned it."
+    "Afternoon: rest"
    ]
   ],
   [
    "2026-10-25",
    [
-    "ITM200: loops + lists drill"
+    "PRACTICE: ITM200 old midterm (Studocu), timed"
    ]
   ],
   [
    "2026-10-26",
    [
-    "ITM200: strings + functions drill"
+    "PRACTICE: ITM200 trace code on paper"
    ]
   ],
   [
    "2026-10-27",
    [
-    "ITM200: conditionals + trace code on paper"
+    "PRACTICE: ITM200 PY4E MCQs"
    ]
   ],
   [
    "2026-10-28",
    [
-    "ITM200: PY4E MCQs, all 6 classes"
+    "PRACTICE: ITM200 Study tab mock x2"
    ]
   ],
   [
    "2026-10-29",
    [
-    "ITM200: mock test x2, redo missed. Bed early"
+    "PRACTICE: ITM200 second old midterm + weak spots. Bed early"
    ]
   ],
   [
