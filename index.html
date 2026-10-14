@@ -243,6 +243,8 @@ h1.task{font-family:var(--display);font-weight:800;font-size:clamp(27px,7vw,36px
 .field input,.field select,.crow textarea{font-size:16px}
 .studyhead{display:flex;min-width:0}
 .cfbar{display:flex;min-width:0;margin-bottom:14px}
+.row.pinnable{cursor:pointer}
+@media (hover:hover){.row.pinnable:hover{background:rgba(255,255,255,.16)}}
 .schips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:2px;gap:6px;min-width:0}
 .schips::-webkit-scrollbar{display:none}
 .schips button{display:inline-flex;align-items:baseline;gap:6px;white-space:nowrap;padding:9px 15px}
@@ -511,6 +513,8 @@ const COURSES={
 const KIND_FACTOR={school:1,biz:.8,life:1.15};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let pinId=null; try{pinId=localStorage.getItem('gos-pin')}catch(e){}
+function setPin(id){pinId=id;try{id?localStorage.setItem('gos-pin',id):localStorage.removeItem('gos-pin')}catch(e){}}
 let cf='all'; try{cf=localStorage.getItem('gos-cf')||'all'}catch(e){}
 window.__allTasks=()=>tasks; window.__allExams=()=>exams;
 function cfChips(){
@@ -571,6 +575,9 @@ function queue(){
       mins:40,due:e.date,weight:e.weight,s:48/(h/2+6)*w*.4});
   });
   const sorted=items.sort((a,b)=>b.s-a.s);
+  const pi=pinId?sorted.findIndex(x=>x.id===pinId):-1;
+  if(pinId&&!pinId.startsWith('prep:')&&!tasks.some(x=>x.id===pinId&&x.status!=='done')) setPin(null);
+  if(pi>0) sorted.unshift(sorted.splice(pi,1)[0]);
   return cf==='all'?sorted:sorted.filter(x=>x.course===cf);
 }
 function reason(t){
@@ -596,6 +603,7 @@ function nextRepeat(t){
   return null;
 }
 async function complete(item){
+  if(item.id===pinId) setPin(null);
   const mins=item.mins||30, now=new Date(), today=dayKey(now);
   try{
     if(item.virtual){
@@ -614,6 +622,7 @@ async function complete(item){
   toast('+'+gain+' XP. Next one’s ready.');
 }
 async function snooze(item){
+  if(item.id===pinId) setPin(null);
   const sn={...(st.snoozed||{})}, now=Date.now();
   Object.keys(sn).forEach(k=>{if(sn[k]<now) delete sn[k]});
   sn[item.id]=now+2*36e5;
@@ -654,7 +663,7 @@ function renderNowInner(){
   return `<div class="split">
   <section class="glass now" aria-live="polite">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
-      <div class="eyebrow"><span class="dot"></span>Do this now</div>${courseTag(t.course)}
+      <div class="eyebrow"><span class="dot"></span>${t.id===pinId?'Your pick':'Do this now'}</div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">${t.id===pinId?'<button type="button" class="btn ghost small mini" data-act="unpin">Back to auto-pick</button>':''}${courseTag(t.course)}</div>
     </div>
     <h1 class="task">${esc(t.title)}</h1>
     <p class="why">${esc(t.detail||reason(t))}</p>
@@ -687,7 +696,7 @@ function rowHTML(t,withActions){
     ?`<button class="btn ghost small" data-act="del" data-id="${esc(t.id)}" style="color:var(--crit)">Delete</button>`
     :`<button class="icon-btn danger" data-act="askdel" data-id="${esc(t.id)}" aria-label="Delete ${esc(t.title)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></button>`):'';
   const check=withActions&&!t.virtual?`<button class="icon-btn ${t.status==='done'?'on':''}" data-act="toggle" data-id="${esc(t.id)}" aria-label="${t.status==='done'?'Mark not done':'Mark done'}: ${esc(t.title)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5 9-10"/></svg></button>`:'';
-  return `<div class="row frost" style="${t.status==='done'?'opacity:.55':''}"><span class="stripe" style="background:${k.color};color:${k.color}"></span>
+  return `<div class="row frost ${t.status!=='done'?'pinnable':''}" ${t.status!=='done'?`data-pin="${esc(t.id)}" title="Tap to do this now"`:''} style="${t.status==='done'?'opacity:.55':''}"><span class="stripe" style="background:${k.color};color:${k.color}"></span>
     <div style="min-width:0"><div class="t">${esc(t.title)}</div><div class="s">${bits.map(b=>`<span>${b}</span>`).join('<span>·</span>')}</div></div>
     <div class="end">${t.status==='done'?'':urgencyPill(t.due)}${check}${del}</div></div>`;
 }
@@ -768,6 +777,9 @@ function renderCalInner(){
   <section class="section"><div class="shead"><h2>${esc(selDate.toLocaleDateString('en-CA',{weekday:'long',month:'short',day:'numeric'}))}</h2>${calSel!==today||calMonth.getMonth()!==now.getMonth()?'<button class="btn ghost small" data-act="caltoday" style="min-height:34px;padding:6px 14px;font-size:13px">Today</button>':`<span>${sel.length} item${sel.length===1?'':'s'}</span>`}</div>${agenda}</section></div>`;
 }
 document.addEventListener('click',ev=>{
+  if(ev.target.closest('[data-act="unpin"]')){setPin(null);timer=null;saveTimer();render();return}
+  const pr=ev.target.closest('[data-pin]');
+  if(pr&&!ev.target.closest('button')){const id=pr.dataset.pin;if(timer&&timer.id!==id){timer=null;saveTimer()}setPin(id);tab='now';render();window.scrollTo({top:0,behavior:'smooth'});toast('Moved to Do this now. Hit Start.');return}
   const f=ev.target.closest('[data-cf]'); if(f){cf=f.dataset.cf;try{localStorage.setItem('gos-cf',cf)}catch(e){}render();return}
   const d=ev.target.closest('[data-day]');
   if(d){calSel=d.dataset.day;const x=new Date(calSel+'T12:00:00');if(x.getMonth()!==calMonth.getMonth()) calMonth=new Date(x.getFullYear(),x.getMonth(),1);render();return}
